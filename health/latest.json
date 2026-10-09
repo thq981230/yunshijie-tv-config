@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-09T08:06:23Z",
+  "checkedAt": "2026-10-09T08:07:48Z",
   "checkedCount": 9,
   "failedCount": 6,
   "sources": [
@@ -12,8 +12,8 @@
       "latencyMs": null,
       "httpCode": null,
       "detail": "RuntimeError:HTTP_404",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
-      "failCount": 3,
+      "lastCheckTime": "2026-10-09T08:07:48Z",
+      "failCount": 4,
       "successCount": 0
     },
     {
@@ -24,8 +24,8 @@
       "latencyMs": null,
       "httpCode": null,
       "detail": "RuntimeError:HTTP_400",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
-      "failCount": 3,
+      "lastCheckTime": "2026-10-09T08:07:48Z",
+      "failCount": 4,
       "successCount": 0
     },
     {
@@ -33,24 +33,24 @@
       "channelId": "sat112",
       "status": "HEALTHY",
       "lastCheckSucceeded": true,
-      "latencyMs": 1665,
+      "latencyMs": 2785,
       "httpCode": 206,
       "detail": "manifest_and_first_segment_ok",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
+      "lastCheckTime": "2026-10-09T08:07:48Z",
       "failCount": 0,
-      "successCount": 3
+      "successCount": 4
     },
     {
       "sourceId": "sub-iptv_org-sat119-3647c9cb9e",
       "channelId": "sat119",
       "status": "HEALTHY",
       "lastCheckSucceeded": true,
-      "latencyMs": 503,
+      "latencyMs": 378,
       "httpCode": 206,
       "detail": "manifest_and_first_segment_ok",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
+      "lastCheckTime": "2026-10-09T08:07:48Z",
       "failCount": 0,
-      "successCount": 3
+      "successCount": 4
     },
     {
       "sourceId": "sub-chinaiptv-sat121-ed6c81f036",
@@ -60,8 +60,8 @@
       "latencyMs": null,
       "httpCode": null,
       "detail": "RuntimeError:HTTP_404",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
-      "failCount": 3,
+      "lastCheckTime": "2026-10-09T08:07:48Z",
+      "failCount": 4,
       "successCount": 0
     },
     {
@@ -72,8 +72,8 @@
       "latencyMs": null,
       "httpCode": null,
       "detail": "RuntimeError:HTTP_403",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
-      "failCount": 3,
+      "lastCheckTime": "2026-10-09T08:07:48Z",
+      "failCount": 4,
       "successCount": 0
     },
     {
@@ -84,8 +84,8 @@
       "latencyMs": null,
       "httpCode": null,
       "detail": "RuntimeError:HTTP_403",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
-      "failCount": 3,
+      "lastCheckTime": "2026-10-09T08:07:48Z",
+      "failCount": 4,
       "successCount": 0
     },
     {
@@ -96,8 +96,8 @@
       "latencyMs": null,
       "httpCode": null,
       "detail": "RuntimeError:HTTP_403",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
-      "failCount": 3,
+      "lastCheckTime": "2026-10-09T08:07:48Z",
+      "failCount": 4,
       "successCount": 0
     },
     {
@@ -105,12 +105,12 @@
       "channelId": "world302",
       "status": "HEALTHY",
       "lastCheckSucceeded": true,
-      "latencyMs": 246,
+      "latencyMs": 275,
       "httpCode": 200,
       "detail": "manifest_and_first_segment_ok",
-      "lastCheckTime": "2026-10-09T08:06:23Z",
+      "lastCheckTime": "2026-10-09T08:07:48Z",
       "failCount": 0,
-      "successCount": 3
+      "successCount": 4
     }
   ],
   "scope": "ALL",
