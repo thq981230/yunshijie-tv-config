@@ -52,9 +52,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate source catalog and run unit tests
+        env:
+          YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: ${{ secrets.YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON }}
         run: |
           python -m unittest discover -s tests -v
           python scripts/validate_config.py --inputs-only
+          python scripts/discover_subscriptions.py
       - name: Stage the stable channel catalog
         run: python scripts/publish_catalog.py
       - name: Probe manifests and first media segments
@@ -89,3 +92,4 @@ jobs:
         run: |
           echo "::error::Source promotion was refused. Health counters were saved; the previous public sources file was preserved."
           exit 1
+

@@ -56,8 +56,8 @@ def load_candidates():
                 raise ValueError(f"{path.relative_to(ROOT)}: duplicate channelId {channel_id}")
             seen_channels.add(channel_id)
             sources = channel.get("sources", [])
-            if not isinstance(sources, list) or (sources and len(sources) not in range(2, 6)):
-                raise ValueError(f"{path.relative_to(ROOT)}: {channel_id} must have 0 or 2-5 candidate sources")
+            if not isinstance(sources, list) or (sources and len(sources) not in range(1, 6)):
+                raise ValueError(f"{path.relative_to(ROOT)}: {channel_id} must have 0 or 1-5 candidate sources")
             for source in sources:
                 source_id = source.get("id", "")
                 if not source_id or source_id in candidate_ids:
@@ -157,3 +157,4 @@ def validate_repository(include_published: bool = True) -> None:
 if __name__ == "__main__":
     validate_repository(include_published="--inputs-only" not in sys.argv)
     print("config valid")
+

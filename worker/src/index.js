@@ -17,8 +17,12 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders() });
 
     try {
-      if (url.pathname === "/api/v1/health" && request.method === "GET") {
-        return json({ status: "OK", refreshReady: Boolean(env.GITHUB_TOKEN) }, 200);
+      if (url.pathname === "/health" && request.method === "GET") {
+        return json({
+          status: "ok",
+          service: "yunshijie-tv-refresh-api",
+          githubConfigured: Boolean(env.GITHUB_TOKEN)
+        }, 200);
       }
       if (url.pathname === "/api/v1/channels/refresh" && request.method === "POST") {
         return await startRefresh(request, env);
@@ -29,7 +33,7 @@ export default {
       if (url.pathname === "/api/v1/playback/resolve" && request.method === "GET") {
         const channelId = url.searchParams.get("channelId") ?? "";
         if (!/^[a-z0-9][a-z0-9_-]{0,63}$/i.test(channelId)) return json({ error: "INVALID_CHANNEL_ID" }, 400);
-        return json({ error: "NO_AUTHORIZED_DYNAMIC_PROVIDER", channelId }, 404);
+        return await resolvePublishedSource(url, channelId, env);
       }
       return json({ error: "NOT_FOUND" }, 404);
     } catch (error) {
@@ -38,6 +42,66 @@ export default {
     }
   }
 };
+
+async function resolvePublishedSource(url, channelId, env) {
+  const published = await fetchRawJson(env, "public/sources.json");
+  if (!published || !published.channels || typeof published.channels !== "object") {
+    return json({ error: "SOURCE_CATALOG_UNAVAILABLE", channelId }, 503);
+  }
+  const channel = published.channels[channelId];
+  if (!channel) return json({ error: "CHANNEL_NOT_FOUND", channelId }, 404);
+  const excluded = new Set(url.searchParams.getAll("excludeSourceIds")
+    .flatMap(value => value.split(",")).map(value => value.trim()).filter(Boolean));
+  const candidates = (Array.isArray(channel.sources) ? channel.sources : [])
+    .filter(source => source && source.enabled !== false && source.type === "STATIC" &&
+      ["HLS", "DASH"].includes(String(source.protocol).toUpperCase()) &&
+      ["HEALTHY", "DEGRADED"].includes(source.health) && isPublicHttpsStream(source.url))
+    .sort((left, right) => sourceOrder(left, right));
+  if (candidates.length === 0) {
+    return json({ error: channel.status === "OFFLINE" ? "ALL_SOURCES_OFFLINE" : "NO_SOURCE", channelId },
+      channel.status === "OFFLINE" ? 503 : 404);
+  }
+  const available = candidates.filter(source => !excluded.has(source.id));
+  if (available.length === 0) return json({ error: "NO_REMAINING_SOURCE", channelId }, 404);
+  const source = available[0];
+  return json({
+    channelId,
+    sourceId: source.id,
+    sessionId: crypto.randomUUID(),
+    protocol: String(source.protocol).toUpperCase(),
+    url: source.url,
+    expiresAt: Number.MAX_SAFE_INTEGER,
+    headers: source.headers && typeof source.headers === "object" ? source.headers : {},
+    backupAvailable: available.length > 1,
+    isLocal: false,
+    availableSourceCount: candidates.length
+  }, 200);
+}
+
+function sourceOrder(left, right) {
+  const health = value => value === "HEALTHY" ? 0 : 1;
+  const quality = value => ({ "8K": 8000, "4K": 4000, "2160P": 2160, "1080P": 1080, FHD: 1080,
+    "720P": 720, HD: 720, "480P": 480, "360P": 360, SD: 360 }[String(value).toUpperCase()] ?? 0);
+  return health(left.health) - health(right.health) || Number(left.priority ?? 100) - Number(right.priority ?? 100) ||
+    Number(left.latencyMs ?? Number.MAX_SAFE_INTEGER) - Number(right.latencyMs ?? Number.MAX_SAFE_INTEGER) ||
+    quality(right.quality) - quality(left.quality) || String(left.id).localeCompare(String(right.id));
+}
+
+function isPublicHttpsStream(value) {
+  try {
+    const parsed = new URL(String(value));
+    const host = parsed.hostname.toLowerCase().replace(/\.$/, "");
+    if (parsed.protocol !== "https:" || parsed.username || parsed.password || !host ||
+      host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local")) return false;
+    if (/^(?:0|10|127|169\.254|192\.168)\./.test(host) || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) ||
+      host === "::1" || host.startsWith("fc") || host.startsWith("fd") || host.startsWith("fe80:")) return false;
+    const queryKeys = new Set(parsed.searchParams.keys());
+    return !["token", "auth", "authorization", "signature", "sig", "expires", "expire", "key"]
+      .some(key => queryKeys.has(key));
+  } catch {
+    return false;
+  }
+}
 
 async function startRefresh(request, env) {
   if (!env.GITHUB_TOKEN) return json({ error: "REFRESH_NOT_CONFIGURED" }, 503);
@@ -198,3 +262,4 @@ function corsHeaders() {
   return { "access-control-allow-origin": "*", "access-control-allow-methods": "GET, POST, OPTIONS",
     "access-control-allow-headers": "content-type", "access-control-max-age": "86400" };
 }
+

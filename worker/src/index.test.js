@@ -10,9 +10,20 @@ function jsonResponse(payload, status = 200) {
   return new Response(JSON.stringify(payload), { status, headers: { "content-type": "application/json" } });
 }
 
-test("health reports missing GitHub credentials without exposing them", async () => {
-  const response = await worker.fetch(new Request("https://worker.test/api/v1/health"), { ...env, GITHUB_TOKEN: undefined });
-  assert.deepEqual(await response.json(), { status: "OK", refreshReady: false });
+test("health reports configuration state without exposing GitHub credentials", async () => {
+  const configured = await worker.fetch(new Request("https://worker.test/health"), env);
+  assert.equal(configured.status, 200);
+  assert.deepEqual(await configured.json(), {
+    status: "ok", service: "yunshijie-tv-refresh-api", githubConfigured: true
+  });
+
+  const unconfigured = await worker.fetch(new Request("https://worker.test/health"), { ...env, GITHUB_TOKEN: undefined });
+  const payload = await unconfigured.json();
+  assert.equal(unconfigured.status, 200);
+  assert.deepEqual(payload, {
+    status: "ok", service: "yunshijie-tv-refresh-api", githubConfigured: false
+  });
+  assert.equal(JSON.stringify(payload).includes(env.GITHUB_TOKEN), false);
 });
 
 test("refresh dispatch returns the actual Actions run id and keeps token server side", async () => {
@@ -108,3 +119,62 @@ test("status maps completed workflow steps to the current Chinese stage", async 
     globalThis.fetch = originalFetch;
   }
 });
+
+test("playback resolver returns the best published healthy source", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async input => {
+    assert.match(String(input), /public\/sources\.json$/);
+    return jsonResponse({ channels: { cctv1: { status: "AVAILABLE", sources: [
+      { id: "backup", channelId: "cctv1", type: "STATIC", protocol: "HLS", url: "https://cdn-b.example/live.m3u8", health: "HEALTHY", priority: 2 },
+      { id: "primary", channelId: "cctv1", type: "STATIC", protocol: "HLS", url: "https://cdn-a.example/live.m3u8", health: "HEALTHY", priority: 1 }
+    ] } } });
+  };
+  try {
+    const response = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1"), env);
+    const source = await response.json();
+    assert.equal(response.status, 200);
+    assert.equal(source.sourceId, "primary");
+    assert.equal(source.protocol, "HLS");
+    assert.equal(source.backupAvailable, true);
+    assert.equal(source.availableSourceCount, 2);
+    assert.equal(source.url, "https://cdn-a.example/live.m3u8");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("playback resolver can skip a failed source and reports empty production channels", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => jsonResponse({ channels: {
+    cctv1: { status: "AVAILABLE", sources: [
+      { id: "a", type: "STATIC", protocol: "HLS", url: "https://cdn-a.example/live.m3u8", health: "HEALTHY", priority: 1 },
+      { id: "b", type: "STATIC", protocol: "HLS", url: "https://cdn-b.example/live.m3u8", health: "HEALTHY", priority: 2 }
+    ] },
+    cctv2: { status: "NO_SOURCE", sources: [] }
+  } });
+  try {
+    const failover = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1&excludeSourceIds=a"), env);
+    assert.equal((await failover.json()).sourceId, "b");
+    const noSource = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv2"), env);
+    assert.equal(noSource.status, 404);
+    assert.deepEqual(await noSource.json(), { error: "NO_SOURCE", channelId: "cctv2" });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("playback resolver refuses unsafe or expiring stream URLs", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => jsonResponse({ channels: { cctv1: { status: "AVAILABLE", sources: [
+    { id: "private", type: "STATIC", protocol: "HLS", url: "http://192.168.1.1/live.m3u8", health: "HEALTHY", priority: 1 },
+    { id: "token", type: "STATIC", protocol: "HLS", url: "https://cdn-a.example/live.m3u8?token=secret", health: "HEALTHY", priority: 2 }
+  ] } } });
+  try {
+    const response = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1"), env);
+    assert.equal(response.status, 404);
+    assert.equal((await response.json()).error, "NO_SOURCE");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+

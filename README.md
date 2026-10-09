@@ -8,9 +8,18 @@
 - 不从 CCTV/卫视网页播放器提取内部 URL，不绕过 Token、Cookie、DRM、会员或地域限制。
 - 第一阶段只发布 `STATIC` HTTPS HLS/DASH 地址。`DYNAMIC` 仅保留模型字段，不会写入客户端配置；动态鉴权以后需要受控 Resolver。
 - 目前没有可核验的 CCTV/卫视第三方播放许可，候选 source 列表按空列表初始化；不能把演示视频或未经授权的 URL 冒充正式频道。
+- 单个频道允许配置 1–5 条候选线路；`priority` 越小越优先。健康检查会保留健康主线路和备用线路，App 现场仍可逐条 failover。
 - 单次失败不会删掉候选；连续失败通过健康状态降级。检测任务若 80% 或以上候选同时失败，会中止发布，保留最近一次 `public/sources.json`。
 
 获得授权后，在对应 `candidates/*.json` 追加线路并注明 `authorization` 记录（公开许可 URL、合同编号的非敏感标识或授权方说明；不要提交密钥）。运行 `python -m unittest discover -s tests`、`python scripts/validate_config.py`、`python scripts/check_sources.py`、`python scripts/promote_sources.py`、`python scripts/build_manifest.py`。
+
+### Provider 自动发现
+
+- `scripts/providers/` 提供 `OfficialProviderRegistry`、`StaticProviderAdapter`、`DynamicProviderAdapter`、`SubscriptionProviderAdapter` 和 `RemoteSubscriptionProvider`。
+- `RemoteSubscriptionProvider` 读取 M3U/M3U8 或 JSON。`ChannelMatcher` 依次使用 `tvg-id`、标准频道 ID、规范化名称、别名和保守模糊匹配；内置 CCTV、湖南、东方、江苏、浙江等别名。
+- Actions 可从私有仓库 Secret `YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON` 读取订阅配置。格式为 JSON 数组，例如 `[{"providerId":"partner-a","url":"https://feed.example/playlist.m3u","redistributable":true,"authorization":"agreement-ref-123","priority":1}]`。Secret 中的订阅地址不会写入日志或提交到仓库。
+- 只有明确允许在该 App 中再分发、且为无凭据 HTTPS 的公开 HLS/DASH 线路才会进入 `candidates/subscriptions.generated.json` 并参与探活。带 token、登录凭据、私网 URL 或没有再分发授权的订阅项会被拒绝；个人订阅观看权本身不等于公开再分发许可。
+- “一键更新”继续调用既有 Actions；工作流会先刷新授权订阅、匹配频道，再探活和发布。没有配置订阅 Secret 时，只会处理人工审核的 `candidates/*.json`。
 
 ## 文件
 
@@ -20,7 +29,7 @@
 - `public/`：Android 可公开读取的目录、已健康/保留的备用源和版本 manifest。
 - `releases/`：历次 sources 配置快照，便于回滚。
 - `scripts/`：验证、HLS 探活、提升和原子发布程序。
-- `scripts/providers/`：Provider Registry。当前只读取人工审查后提交的候选 JSON，不会扫描网页或猜测直播地址。
+- `scripts/providers/`：官方/静态/动态/订阅 Provider 接口、订阅解析器和频道匹配器。不抓取播放器内部线路，也不猜测直播地址。
 - `.github/workflows/source-health.yml`：每 6 小时自动探活，也支持手动执行。
 - `worker/`：Cloudflare Worker 刷新 API；GitHub Token 只保存在 Worker Secret 中。
 
@@ -37,10 +46,10 @@
 
 Worker 实现以下接口：
 
-- `GET /api/v1/health`
+- `GET /health`：返回 `status`、服务名和 `githubConfigured` 布尔值，不返回凭据。
 - `POST /api/v1/channels/refresh`（支持 `ALL`、`CHANNEL`、`CATEGORY`）
 - `GET /api/v1/channels/refresh/status?jobId=...`
-- `GET /api/v1/playback/resolve`（没有获准的动态 Provider 时明确返回未配置）
+- `GET /api/v1/playback/resolve?channelId=...`：按健康状态、优先级和延迟返回 `public/sources.json` 中的可用线路；传入 `excludeSourceIds` 可请求下一条备用线路。
 
 刷新接口通过 GitHub workflow dispatch 触发 `source-health.yml`，API 返回真实 Actions run ID；状态接口读取 Actions run/steps，完成后汇总公开配置。Android 收到成功状态后再使用已有 GitHub manifest 下载与 Room Last Known Good 更新路径。该流程不会把 GitHub Token 打进 APK。
 
@@ -48,10 +57,10 @@ Worker 实现以下接口：
 
 1. 在 Cloudflare 账户内启用 `workers.dev` 子域名。进入 `worker/` 执行 `npm install`，再执行 `npx wrangler login`、`npx wrangler whoami` 和 `npx wrangler deploy`。
 2. 在 GitHub 为 `thq981230/yunshijie-tv-config` 创建 Fine-grained PAT，只授予该仓库的 **Actions: Read and write**。在 `worker/` 执行 `npx wrangler secret put GITHUB_TOKEN`，在提示符中粘贴 Token；不要将它放进聊天、Git、Gradle 属性或 APK。然后再次执行 `npx wrangler deploy`。
-3. 用部署输出中的 Worker HTTPS URL 检查 `GET /api/v1/health` 的 `refreshReady` 为 `true`，然后设置 Android Gradle 属性 `tvWorkerApiBaseUrl` 为该 URL，并以末尾 `/` 结尾。例如：
+3. 用部署输出中的 Worker HTTPS URL 检查 `GET /health` 返回 HTTP 200 且 `githubConfigured` 为 `true`，然后设置 Android Gradle 属性 `tvRefreshApiBaseUrl` 为该 URL，并以末尾 `/` 结尾。例如：
 
    ```properties
-   tvWorkerApiBaseUrl=https://yunshijie-tv-refresh-api.<workers-dev-subdomain>.workers.dev/
+   tvRefreshApiBaseUrl=https://yunshijie-tv-refresh-api.<workers-dev-subdomain>.workers.dev/
    ```
 
 4. 构建 APK 后打开“源管理”并点击“一键更新频道”。Worker 限制每个客户端 IP 每分钟最多 20 次刷新请求、60 次状态查询；App 同一时间只提交一个任务。
@@ -61,3 +70,4 @@ Worker 实现以下接口：
 ## 定向探活
 
 `source-health.yml` 支持全量、单频道和频道分类刷新。Worker 会先用公开目录验证传入的频道/分类 ID。定向探活仅更新目标线路的健康记录，其他线路保留原健康数据；来源仍必须先经人工审查并写入 `candidates/`，且带有授权说明。当前仓库没有获准的正式电视台线路，因此定向刷新不会凭空发现或生成正式直播源。
+

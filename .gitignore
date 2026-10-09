@@ -3,3 +3,5 @@ __pycache__/
 *.new.json
 .venv/
 .env
+candidates/subscriptions.generated.json
+

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Protocol
+from typing import Iterable, Mapping, Protocol
 
 
 @dataclass(frozen=True)
@@ -16,9 +16,22 @@ class SourceCandidate:
     source_type: str = "STATIC"
 
 
+@dataclass(frozen=True)
+class DiscoveredSource:
+    channel_id: str
+    source: dict
+    provider_id: str
+    origin: str
+
+
 class ProviderAdapter(Protocol):
-    """An adapter may only resolve feeds the operator has documented permission to use."""
+    """A provider adapter only exposes sources it has documented permission to use."""
 
     provider_id: str
 
-    def discover(self, channel_id: str) -> list[SourceCandidate]: ...
+    def discover(self, catalog: dict) -> Iterable[DiscoveredSource]: ...
+
+    def resolve(self, channel_id: str, catalog: dict) -> list[DiscoveredSource]: ...
+
+    def health_check(self, source: Mapping[str, object]) -> dict: ...
+
