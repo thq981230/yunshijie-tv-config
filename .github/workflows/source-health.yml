@@ -83,7 +83,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add health/latest.json public releases candidates/subscriptions.generated.json unmatched_channels.json
+          git add health/latest.json public releases unmatched_channels.json
+          git add -f candidates/subscriptions.generated.json
           if git diff --cached --quiet; then
             echo "No config changes to publish."
           else
