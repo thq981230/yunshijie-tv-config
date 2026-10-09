@@ -95,6 +95,7 @@ def github_action_feed_config() -> str:
     feeds = payload.get("feeds")
     if not isinstance(feeds, list):
         raise SafeSubscriptionConfigError("Worker returned invalid subscription configuration")
+    print(f"subscription config source=Cloudflare Worker OIDC feeds={len(feeds)}")
     return json.dumps(feeds, ensure_ascii=False, separators=(",", ":"))
 
 
