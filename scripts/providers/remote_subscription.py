@@ -133,7 +133,7 @@ def parse_subscription(body: bytes | str) -> list[dict]:
 
 
 class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
-    """Imports M3U/M3U8/JSON feeds, but publishes only explicitly redistributable public streams."""
+    """Imports approved public streams or explicitly labelled community test streams."""
 
     provider_id = "remote-subscription"
 
@@ -148,13 +148,15 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
         matcher = ChannelMatcher(catalog)
         found: list[DiscoveredSource] = []
         stats = {key: 0 for key in self.last_stats}
+        matched_channels: set[str] = set()
         for feed_index, feed in enumerate(self.feeds):
             stats["feeds"] += 1
             feed_id = re.sub(r"[^a-zA-Z0-9_-]+", "-", str(feed.get("providerId") or f"subscription-{feed_index + 1}"))[:48].strip("-").lower()
             if not feed_id:
                 continue
             authorization = str(feed.get("authorization") or feed.get("publicationAuthorization") or "").strip()
-            if feed.get("redistributable") is not True or len(authorization) < 8:
+            community_test = feed.get("communityTest") is True
+            if not community_test and (feed.get("redistributable") is not True or len(authorization) < 8):
                 stats["withoutPublicationPermission"] += 1
                 continue
             feed_url = str(feed.get("url") or "").strip()
@@ -171,9 +173,12 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
                     continue
                 stats["matched"] += 1
                 channel_id = match.channel_id
+                matched_channels.add(channel_id)
                 url = str(entry.get("url") or entry.get("streamUrl") or entry.get("stream_url") or entry.get("uri") or "").strip()
                 try:
                     validate_publishable_stream_url(url)
+                    if community_test and urllib.parse.urlsplit(url).query:
+                        raise ValueError("community stream URL must not contain query credentials")
                 except ValueError:
                     stats["rejected"] += 1
                     continue
@@ -199,11 +204,16 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
                     "priority": priority,
                     "quality": str(entry.get("quality") or entry.get("resolution") or "AUTO").upper(),
                     "enabled": True,
-                    "authorization": authorization,
+                    "sourceClass": "COMMUNITY_SOURCE" if community_test else "AUTHORIZED",
+                    "providerId": feed_id,
                     "matchMethod": match.method,
                 }
+                if not community_test:
+                    source["authorization"] = authorization
                 found.append(DiscoveredSource(channel_id, source, self.provider_id, f"feed:{feed_id}"))
                 stats["published"] += 1
+        stats["matchedChannels"] = len(matched_channels)
+        stats["candidateChannels"] = len({row.channel_id for row in found})
         self.last_stats = stats
         # Preserve priority from feed ordering, with stable source-id tie breaking.
         self._discovered = sorted(found, key=lambda row: (row.channel_id, row.source["priority"], row.source["id"]))

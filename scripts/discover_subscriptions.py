@@ -143,7 +143,7 @@ def main() -> int:
         OUTPUT.unlink(missing_ok=True)
     # Feed URLs and stream URLs are intentionally omitted from logs.
     print("subscription discovery: " + " ".join(f"{key}={value}" for key, value in stats.items()))
-    print(f"generated authorized candidates={source_count} channels={sum(bool(row['sources']) for row in payload['channels'])}")
+    print(f"generated eligible candidates={source_count} channels={sum(bool(row['sources']) for row in payload['channels'])}")
     return 0
 
 

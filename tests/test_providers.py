@@ -108,6 +108,26 @@ class SubscriptionTests(unittest.TestCase):
         self.assertEqual(sources[0].source["url"], "https://cdn.example/live-ok.m3u8")
         self.assertEqual(provider.last_stats["rejected"], 1)
 
+    def test_community_test_feed_keeps_provenance_and_rejects_multicast(self):
+        feeds = [
+            {"providerId": "chinaiptv", "url": "https://feed.example/one.m3u", "communityTest": True},
+            {"providerId": "fanmingming", "url": "https://feed.example/two.m3u", "communityTest": True},
+            {"providerId": "iptv_org", "url": "https://feed.example/three.m3u", "communityTest": True},
+        ]
+        bodies = {
+            "one.m3u": '#EXTM3U\n#EXTINF:-1 tvg-id="cctv1",CCTV-1\nhttps://a.example/live.m3u8\n',
+            "two.m3u": '#EXTM3U\n#EXTINF:-1 tvg-id="cctv1",CCTV-1\nhttps://b.example/live.m3u8\n',
+            "three.m3u": ('#EXTM3U\n#EXTINF:-1 tvg-id="cctv1",CCTV-1\nrtp://239.1.1.1:1234\n'
+                          '#EXTINF:-1 tvg-id="cctv1",CCTV-1\nhttps://c.example/live.m3u8?auth_key=secret\n'),
+        }
+        provider = RemoteSubscriptionProvider(feeds, fetcher=lambda url: bodies[url.rsplit("/", 1)[-1]].encode())
+        found = provider.discover(CATALOG)
+        self.assertEqual([row.source["providerId"] for row in found], ["chinaiptv", "fanmingming"])
+        self.assertTrue(all(row.source["sourceClass"] == "COMMUNITY_SOURCE" for row in found))
+        self.assertTrue(all("authorization" not in row.source for row in found))
+        self.assertEqual(provider.last_stats["feeds"], 3)
+        self.assertEqual(provider.last_stats["rejected"], 2)
+
     def test_https_feed_and_stream_rules_reject_local_and_http_urls(self):
         provider = RemoteSubscriptionProvider(
             [{"providerId": "bad", "url": "http://subscription.example/list.m3u8",

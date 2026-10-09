@@ -42,8 +42,12 @@ def promote(catalog: dict, groups: dict[str, list[dict]], health: dict, previous
             elif source_id in prior_ids and state.get("status") in {"OFFLINE", "EXPIRED"}:
                 # Retain status metadata for the UI, but the app will never attempt an offline source.
                 offline.append((candidate, state))
-        order = lambda pair: (int(pair[0].get("priority", 100)), int(pair[1].get("latencyMs") or 2**31),
-                              -quality_rank(pair[0].get("quality", "AUTO")), pair[0]["id"])
+        def order(pair):
+            successes = int(pair[1].get("successCount") or 0)
+            failures = int(pair[1].get("failCount") or 0)
+            success_rate = successes / max(1, successes + failures)
+            return (int(pair[0].get("priority", 100)), int(pair[1].get("latencyMs") or 2**31),
+                    -success_rate, -quality_rank(pair[0].get("quality", "AUTO")), pair[0]["id"])
         healthy.sort(key=order)
         demoted.sort(key=order)
         offline.sort(key=order)
@@ -67,6 +71,10 @@ def promote(catalog: dict, groups: dict[str, list[dict]], health: dict, previous
                 "failCount": state.get("failCount", 0),
                 "successCount": state.get("successCount", 0),
             })
+            if candidate.get("sourceClass"):
+                published[-1]["sourceClass"] = candidate["sourceClass"]
+            if candidate.get("providerId"):
+                published[-1]["providerId"] = candidate["providerId"]
         has_healthy = any(source["health"] == "HEALTHY" for source in published)
         channels[channel_id] = {
             "status": "AVAILABLE" if has_healthy else ("OFFLINE" if published else "NO_SOURCE"),

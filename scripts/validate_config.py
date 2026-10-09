@@ -65,7 +65,12 @@ def load_candidates():
                 candidate_ids.add(source_id)
                 if source.get("channelId", channel_id) != channel_id:
                     raise ValueError(f"{source_id}: channelId does not match its parent")
-                if not isinstance(source.get("authorization"), str) or len(source["authorization"].strip()) < 8:
+                if source.get("sourceClass") == "COMMUNITY_SOURCE":
+                    if not str(source.get("providerId", "")).strip():
+                        raise ValueError(f"{source_id}: community source must name its provider")
+                    if source.get("authorization"):
+                        raise ValueError(f"{source_id}: community source must not claim authorization")
+                elif not isinstance(source.get("authorization"), str) or len(source["authorization"].strip()) < 8:
                     raise ValueError(f"{source_id}: a public license/permission reference is required")
                 protocol = str(source.get("protocol", "")).upper()
                 source_type = str(source.get("type", "STATIC")).upper()
@@ -73,6 +78,8 @@ def load_candidates():
                     raise ValueError(f"{source_id}: unsupported protocol/type")
                 if source_type == "STATIC":
                     require_https_public_url(source.get("url", ""), source_id)
+                    if source.get("sourceClass") == "COMMUNITY_SOURCE" and urlsplit(source["url"]).query:
+                        raise ValueError(f"{source_id}: community URL must not contain query credentials")
                 if not isinstance(source.get("priority", 0), int) or source.get("priority", 0) < 1:
                     raise ValueError(f"{source_id}: priority must be a positive integer")
                 if not isinstance(source.get("quality", "AUTO"), str):
@@ -108,8 +115,12 @@ def validate_sources_payload(payload: dict, known_channel_ids: set[str]) -> None
             if source.get("type") != "STATIC":
                 raise ValueError(f"{source_id}: DYNAMIC sources cannot be published in phase 1")
             require_https_public_url(source.get("url", ""), source_id)
+            if source.get("sourceClass") == "COMMUNITY_SOURCE" and urlsplit(source["url"]).query:
+                raise ValueError(f"{source_id}: community URL must not contain query credentials")
             if source.get("protocol") not in ALLOWED_PROTOCOLS:
                 raise ValueError(f"{source_id}: unsupported protocol")
+            if source.get("sourceClass") == "COMMUNITY_SOURCE" and not source.get("providerId"):
+                raise ValueError(f"{source_id}: community provider is missing")
             if source.get("health") not in {"HEALTHY", "DEGRADED", "OFFLINE", "EXPIRED"}:
                 raise ValueError(f"{source_id}: invalid published health state")
             healthy += source.get("health") == "HEALTHY"

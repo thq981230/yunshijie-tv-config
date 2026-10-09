@@ -124,6 +124,19 @@ class PromotionTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "80%"):
             promote(catalog, {"c1": candidates}, health, {"version": 7, "channels": {"c1": {"status": "AVAILABLE", "sources": []}}})
 
+    def test_community_source_remains_labelled_after_promotion(self):
+        candidate = self.candidate("community-a", 1)
+        candidate.pop("authorization")
+        candidate.update({"providerId": "chinaiptv", "sourceClass": "COMMUNITY_SOURCE"})
+        health = {"checkedAt": "now", "sources": [{"sourceId": candidate["id"], "channelId": "c1",
+                  "status": "HEALTHY", "lastCheckSucceeded": True, "lastCheckTime": "now", "latencyMs": 50}]}
+        output = promote({"channels": [{"id": "c1"}]}, {"c1": [candidate]}, health, None)
+        published = output["channels"]["c1"]["sources"][0]
+        self.assertEqual(published["sourceClass"], "COMMUNITY_SOURCE")
+        self.assertEqual(published["providerId"], "chinaiptv")
+        self.assertNotIn("authorization", published)
+        validate_sources_payload(output, {"c1"})
+
 
 if __name__ == "__main__":
     unittest.main()

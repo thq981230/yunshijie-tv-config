@@ -4,7 +4,7 @@
 
 ## Source 接入规则
 
-- 只提交已获书面授权、官方明确允许第三方播放、或用户拥有合法权利的源。
+- 正式 `AUTHORIZED` 线路只提交已获书面授权、官方明确允许第三方播放、或用户拥有合法权利的源。个人验证可临时启用 `COMMUNITY_SOURCE`，它只是社区列表链接，不代表电视台授权或商业再分发许可。
 - 不从 CCTV/卫视网页播放器提取内部 URL，不绕过 Token、Cookie、DRM、会员或地域限制。
 - 第一阶段只发布 `STATIC` HTTPS HLS/DASH 地址。`DYNAMIC` 仅保留模型字段，不会写入客户端配置；动态鉴权以后需要受控 Resolver。
 - 目前没有可核验的 CCTV/卫视第三方播放许可，候选 source 列表按空列表初始化；不能把演示视频或未经授权的 URL 冒充正式频道。
@@ -18,7 +18,7 @@
 - `scripts/providers/` 提供 `OfficialProviderRegistry`、`StaticProviderAdapter`、`DynamicProviderAdapter`、`SubscriptionProviderAdapter` 和 `RemoteSubscriptionProvider`。
 - `RemoteSubscriptionProvider` 读取 M3U/M3U8 或 JSON。`ChannelMatcher` 依次使用 `tvg-id`、标准频道 ID、规范化名称、别名和保守模糊匹配；内置 CCTV、湖南、东方、江苏、浙江等别名。
 - Actions 使用 GitHub OIDC 向 Cloudflare Worker 的 `/internal/v1/subscriptions` 读取私有订阅配置。Worker 只接受本仓库 `main` 分支的 `source-health.yml` 工作流身份，并从 Worker Secret `YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON` 读取配置；订阅 URL 不放进 GitHub Secret、工作流参数、日志或 Git 提交。配置格式为 JSON 数组，例如 `[{"providerId":"partner-a","url":"https://feed.example/playlist.m3u","redistributable":true,"authorization":"agreement-ref-123","priority":1}]`。
-- 只有明确允许在该 App 中再分发、且为无凭据 HTTPS 的公开 HLS/DASH 线路才会进入 `candidates/subscriptions.generated.json` 并参与探活。带 token、登录凭据、私网 URL 或没有再分发授权的订阅项会被拒绝；个人订阅观看权本身不等于公开再分发许可。
+- `redistributable=true` 且带许可引用的合作方源标为 `AUTHORIZED`。为个人验证明确设置 `communityTest=true` 的 Feed 标为 `COMMUNITY_SOURCE`，只接收无凭据 HTTPS HLS/DASH；HTTP、RTP 多播、带 token、登录凭据和私网 URL 不进入候选。社区列表不能证明电视台授予商业播放或再分发许可。
 - “一键更新”继续调用既有 Actions；工作流会先从 Worker 读取并刷新授权订阅、匹配频道，再探活和发布。没有配置订阅时，只会处理人工审核的 `candidates/*.json`。
 
 ## 文件
