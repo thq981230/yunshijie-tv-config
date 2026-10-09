@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "channels": [
+    {
+      "channelId": "cctv1",
+      "sources": []
+    },
+    {
+      "channelId": "cctv2",
+      "sources": []
+    },
+    {
+      "channelId": "cctv3",
+      "sources": []
+    },
+    {
+      "channelId": "cctv4",
+      "sources": []
+    },
+    {
+      "channelId": "cctv5",
+      "sources": []
+    },
+    {
+      "channelId": "cctv6",
+      "sources": []
+    },
+    {
+      "channelId": "cctv7",
+      "sources": []
+    },
+    {
+      "channelId": "cctv8",
+      "sources": []
+    },
+    {
+      "channelId": "cctv9",
+      "sources": []
+    },
+    {
+      "channelId": "cctv10",
+      "sources": []
+    },
+    {
+      "channelId": "cctv11",
+      "sources": []
+    },
+    {
+      "channelId": "cctv12",
+      "sources": []
+    },
+    {
+      "channelId": "cctv13",
+      "sources": []
+    },
+    {
+      "channelId": "cctv14",
+      "sources": []
+    },
+    {
+      "channelId": "cctv15",
+      "sources": []
+    },
+    {
+      "channelId": "cctv16",
+      "sources": []
+    },
+    {
+      "channelId": "cctv17",
+      "sources": []
+    },
+    {
+      "channelId": "cctv18",
+      "sources": []
+    },
+    {
+      "channelId": "cctv19",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "channels": [
+    {
+      "channelId": "world301",
+      "sources": []
+    },
+    {
+      "channelId": "world302",
+      "sources": []
+    },
+    {
+      "channelId": "world303",
+      "sources": []
+    },
+    {
+      "channelId": "world304",
+      "sources": []
+    },
+    {
+      "channelId": "world305",
+      "sources": []
+    },
+    {
+      "channelId": "world306",
+      "sources": []
+    },
+    {
+      "channelId": "world307",
+      "sources": []
+    },
+    {
+      "channelId": "world308",
+      "sources": []
+    },
+    {
+      "channelId": "world309",
+      "sources": []
+    },
+    {
+      "channelId": "world310",
+      "sources": []
+    },
+    {
+      "channelId": "world311",
+      "sources": []
+    },
+    {
+      "channelId": "world312",
+      "sources": []
+    }
+  ]
+}

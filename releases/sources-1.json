@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "generatedAt": "2026-10-09T03:43:15Z",
+  "channels": {
+    "cctv1": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv2": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv3": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv4": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv5": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv6": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv7": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv8": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv9": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv10": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv11": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv12": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv13": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv14": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv15": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv16": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv17": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv18": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "cctv19": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat101": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat102": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat103": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat104": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat105": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat106": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat107": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat108": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat109": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat110": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat111": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat112": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat113": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat114": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat115": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat116": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat117": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat118": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat119": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat120": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat121": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat122": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat123": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat124": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat125": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat126": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat127": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat128": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat129": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat130": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat131": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat132": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat133": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat134": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat135": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat136": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "sat137": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world301": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world302": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world303": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world304": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world305": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world306": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world307": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world308": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world309": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world310": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world311": {
+      "status": "NO_SOURCE",
+      "sources": []
+    },
+    "world312": {
+      "status": "NO_SOURCE",
+      "sources": []
+    }
+  }
+}

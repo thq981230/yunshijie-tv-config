@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "channels": [
+    {
+      "channelId": "sat101",
+      "sources": []
+    },
+    {
+      "channelId": "sat102",
+      "sources": []
+    },
+    {
+      "channelId": "sat103",
+      "sources": []
+    },
+    {
+      "channelId": "sat104",
+      "sources": []
+    },
+    {
+      "channelId": "sat105",
+      "sources": []
+    },
+    {
+      "channelId": "sat106",
+      "sources": []
+    },
+    {
+      "channelId": "sat107",
+      "sources": []
+    },
+    {
+      "channelId": "sat108",
+      "sources": []
+    },
+    {
+      "channelId": "sat109",
+      "sources": []
+    },
+    {
+      "channelId": "sat110",
+      "sources": []
+    },
+    {
+      "channelId": "sat111",
+      "sources": []
+    },
+    {
+      "channelId": "sat112",
+      "sources": []
+    },
+    {
+      "channelId": "sat113",
+      "sources": []
+    },
+    {
+      "channelId": "sat114",
+      "sources": []
+    },
+    {
+      "channelId": "sat115",
+      "sources": []
+    },
+    {
+      "channelId": "sat116",
+      "sources": []
+    },
+    {
+      "channelId": "sat117",
+      "sources": []
+    },
+    {
+      "channelId": "sat118",
+      "sources": []
+    },
+    {
+      "channelId": "sat119",
+      "sources": []
+    },
+    {
+      "channelId": "sat120",
+      "sources": []
+    },
+    {
+      "channelId": "sat121",
+      "sources": []
+    },
+    {
+      "channelId": "sat122",
+      "sources": []
+    },
+    {
+      "channelId": "sat123",
+      "sources": []
+    },
+    {
+      "channelId": "sat124",
+      "sources": []
+    },
+    {
+      "channelId": "sat125",
+      "sources": []
+    },
+    {
+      "channelId": "sat126",
+      "sources": []
+    },
+    {
+      "channelId": "sat127",
+      "sources": []
+    },
+    {
+      "channelId": "sat128",
+      "sources": []
+    },
+    {
+      "channelId": "sat129",
+      "sources": []
+    },
+    {
+      "channelId": "sat130",
+      "sources": []
+    },
+    {
+      "channelId": "sat131",
+      "sources": []
+    },
+    {
+      "channelId": "sat132",
+      "sources": []
+    },
+    {
+      "channelId": "sat133",
+      "sources": []
+    },
+    {
+      "channelId": "sat134",
+      "sources": []
+    },
+    {
+      "channelId": "sat135",
+      "sources": []
+    },
+    {
+      "channelId": "sat136",
+      "sources": []
+    },
+    {
+      "channelId": "sat137",
+      "sources": []
+    }
+  ]
+}

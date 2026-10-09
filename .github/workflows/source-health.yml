@@ -1,0 +1,57 @@
+name: Source health and publish
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: source-health-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate config and run unit tests
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/validate_config.py --inputs-only
+      - name: Stage the stable channel catalog
+        run: python scripts/publish_catalog.py
+      - name: Probe manifests and first media segments
+        run: python scripts/check_sources.py
+      - name: Promote healthy sources with mass-failure protection
+        id: promote
+        continue-on-error: true
+        run: python scripts/promote_sources.py
+      - name: Build version manifest and validate final files
+        run: |
+          python scripts/build_manifest.py
+          python scripts/validate_config.py
+      - name: Commit health state and published configuration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add health/latest.json public releases
+          if git diff --cached --quiet; then
+            echo "No config changes to publish."
+          else
+            git commit -m "Update source health and published config"
+            git push
+          fi
+      - name: Report a refused source promotion
+        if: steps.promote.outcome == 'failure'
+        run: |
+          echo "::error::Source promotion was refused. Health counters were saved; the previous public sources file was preserved."
+          exit 1

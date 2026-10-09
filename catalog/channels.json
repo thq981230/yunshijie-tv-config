@@ -1,0 +1,1375 @@
+{
+  "version": 1,
+  "categories": [
+    {
+      "id": "all",
+      "name": "全部",
+      "sort": 0,
+      "enabled": true
+    },
+    {
+      "id": "cctv",
+      "name": "央视",
+      "sort": 1,
+      "enabled": true
+    },
+    {
+      "id": "satellite",
+      "name": "卫视",
+      "sort": 2,
+      "enabled": true
+    },
+    {
+      "id": "news",
+      "name": "新闻",
+      "sort": 3,
+      "enabled": true
+    },
+    {
+      "id": "sports",
+      "name": "体育",
+      "sort": 4,
+      "enabled": true
+    },
+    {
+      "id": "movie",
+      "name": "电影",
+      "sort": 5,
+      "enabled": true
+    },
+    {
+      "id": "tv_series",
+      "name": "电视剧",
+      "sort": 6,
+      "enabled": true
+    },
+    {
+      "id": "documentary",
+      "name": "纪录",
+      "sort": 7,
+      "enabled": true
+    },
+    {
+      "id": "education",
+      "name": "科教",
+      "sort": 8,
+      "enabled": true
+    },
+    {
+      "id": "kids",
+      "name": "少儿",
+      "sort": 9,
+      "enabled": true
+    },
+    {
+      "id": "music",
+      "name": "音乐",
+      "sort": 10,
+      "enabled": true
+    },
+    {
+      "id": "local",
+      "name": "地方",
+      "sort": 11,
+      "enabled": true
+    },
+    {
+      "id": "international",
+      "name": "国际",
+      "sort": 12,
+      "enabled": true
+    },
+    {
+      "id": "favorites",
+      "name": "收藏",
+      "sort": 98,
+      "enabled": true
+    },
+    {
+      "id": "recent",
+      "name": "最近观看",
+      "sort": 99,
+      "enabled": true
+    }
+  ],
+  "channels": [
+    {
+      "id": "cctv1",
+      "number": "001",
+      "logicalNumber": "001",
+      "name": "CCTV-1 综合",
+      "shortName": "CCTV-1",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 1,
+      "timeshift": false,
+      "epgId": "cctv1",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv2",
+      "number": "002",
+      "logicalNumber": "002",
+      "name": "CCTV-2 财经",
+      "shortName": "CCTV-2",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 2,
+      "timeshift": false,
+      "epgId": "cctv2",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv3",
+      "number": "003",
+      "logicalNumber": "003",
+      "name": "CCTV-3 综艺",
+      "shortName": "CCTV-3",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 3,
+      "timeshift": false,
+      "epgId": "cctv3",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv4",
+      "number": "004",
+      "logicalNumber": "004",
+      "name": "CCTV-4 中文国际",
+      "shortName": "CCTV-4",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 4,
+      "timeshift": false,
+      "epgId": "cctv4",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv5",
+      "number": "005",
+      "logicalNumber": "005",
+      "name": "CCTV-5 体育",
+      "shortName": "CCTV-5",
+      "categoryIds": [
+        "cctv",
+        "sports"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 5,
+      "timeshift": false,
+      "epgId": "cctv5",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv6",
+      "number": "006",
+      "logicalNumber": "006",
+      "name": "CCTV-6 电影",
+      "shortName": "CCTV-6",
+      "categoryIds": [
+        "cctv",
+        "movie"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 6,
+      "timeshift": false,
+      "epgId": "cctv6",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv7",
+      "number": "007",
+      "logicalNumber": "007",
+      "name": "CCTV-7 国防军事",
+      "shortName": "CCTV-7",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 7,
+      "timeshift": false,
+      "epgId": "cctv7",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv8",
+      "number": "008",
+      "logicalNumber": "008",
+      "name": "CCTV-8 电视剧",
+      "shortName": "CCTV-8",
+      "categoryIds": [
+        "cctv",
+        "tv_series"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 8,
+      "timeshift": false,
+      "epgId": "cctv8",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv9",
+      "number": "009",
+      "logicalNumber": "009",
+      "name": "CCTV-9 纪录",
+      "shortName": "CCTV-9",
+      "categoryIds": [
+        "cctv",
+        "documentary"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 9,
+      "timeshift": false,
+      "epgId": "cctv9",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv10",
+      "number": "010",
+      "logicalNumber": "010",
+      "name": "CCTV-10 科教",
+      "shortName": "CCTV-10",
+      "categoryIds": [
+        "cctv",
+        "education"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 10,
+      "timeshift": false,
+      "epgId": "cctv10",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv11",
+      "number": "011",
+      "logicalNumber": "011",
+      "name": "CCTV-11 戏曲",
+      "shortName": "CCTV-11",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 11,
+      "timeshift": false,
+      "epgId": "cctv11",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv12",
+      "number": "012",
+      "logicalNumber": "012",
+      "name": "CCTV-12 社会与法",
+      "shortName": "CCTV-12",
+      "categoryIds": [
+        "cctv",
+        "news"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 12,
+      "timeshift": false,
+      "epgId": "cctv12",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv13",
+      "number": "013",
+      "logicalNumber": "013",
+      "name": "CCTV-13 新闻",
+      "shortName": "CCTV-13",
+      "categoryIds": [
+        "cctv",
+        "news"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 13,
+      "timeshift": false,
+      "epgId": "cctv13",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv14",
+      "number": "014",
+      "logicalNumber": "014",
+      "name": "CCTV-14 少儿",
+      "shortName": "CCTV-14",
+      "categoryIds": [
+        "cctv",
+        "kids"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 14,
+      "timeshift": false,
+      "epgId": "cctv14",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv15",
+      "number": "015",
+      "logicalNumber": "015",
+      "name": "CCTV-15 音乐",
+      "shortName": "CCTV-15",
+      "categoryIds": [
+        "cctv",
+        "music"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 15,
+      "timeshift": false,
+      "epgId": "cctv15",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv16",
+      "number": "016",
+      "logicalNumber": "016",
+      "name": "CCTV-16 奥林匹克",
+      "shortName": "CCTV-16",
+      "categoryIds": [
+        "cctv",
+        "sports"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 16,
+      "timeshift": false,
+      "epgId": "cctv16",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv17",
+      "number": "017",
+      "logicalNumber": "017",
+      "name": "CCTV-17 农业农村",
+      "shortName": "CCTV-17",
+      "categoryIds": [
+        "cctv",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 17,
+      "timeshift": false,
+      "epgId": "cctv17",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv18",
+      "number": "018",
+      "logicalNumber": "018",
+      "name": "CCTV-4K 超高清",
+      "shortName": "CCTV-4K",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 18,
+      "timeshift": false,
+      "epgId": "cctv18",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "cctv19",
+      "number": "019",
+      "logicalNumber": "019",
+      "name": "CCTV-8K 超高清",
+      "shortName": "CCTV-8K",
+      "categoryIds": [
+        "cctv"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 19,
+      "timeshift": false,
+      "epgId": "cctv19",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat101",
+      "number": "101",
+      "logicalNumber": "101",
+      "name": "北京卫视",
+      "shortName": "北京卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 101,
+      "timeshift": false,
+      "epgId": "sat101",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat102",
+      "number": "102",
+      "logicalNumber": "102",
+      "name": "天津卫视",
+      "shortName": "天津卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 102,
+      "timeshift": false,
+      "epgId": "sat102",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat103",
+      "number": "103",
+      "logicalNumber": "103",
+      "name": "河北卫视",
+      "shortName": "河北卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 103,
+      "timeshift": false,
+      "epgId": "sat103",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat104",
+      "number": "104",
+      "logicalNumber": "104",
+      "name": "山西卫视",
+      "shortName": "山西卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 104,
+      "timeshift": false,
+      "epgId": "sat104",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat105",
+      "number": "105",
+      "logicalNumber": "105",
+      "name": "内蒙古卫视",
+      "shortName": "内蒙古卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 105,
+      "timeshift": false,
+      "epgId": "sat105",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat106",
+      "number": "106",
+      "logicalNumber": "106",
+      "name": "辽宁卫视",
+      "shortName": "辽宁卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 106,
+      "timeshift": false,
+      "epgId": "sat106",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat107",
+      "number": "107",
+      "logicalNumber": "107",
+      "name": "吉林卫视",
+      "shortName": "吉林卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 107,
+      "timeshift": false,
+      "epgId": "sat107",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat108",
+      "number": "108",
+      "logicalNumber": "108",
+      "name": "黑龙江卫视",
+      "shortName": "黑龙江卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 108,
+      "timeshift": false,
+      "epgId": "sat108",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat109",
+      "number": "109",
+      "logicalNumber": "109",
+      "name": "东方卫视",
+      "shortName": "东方卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 109,
+      "timeshift": false,
+      "epgId": "sat109",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat110",
+      "number": "110",
+      "logicalNumber": "110",
+      "name": "江苏卫视",
+      "shortName": "江苏卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 110,
+      "timeshift": false,
+      "epgId": "sat110",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat111",
+      "number": "111",
+      "logicalNumber": "111",
+      "name": "浙江卫视",
+      "shortName": "浙江卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 111,
+      "timeshift": false,
+      "epgId": "sat111",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat112",
+      "number": "112",
+      "logicalNumber": "112",
+      "name": "安徽卫视",
+      "shortName": "安徽卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 112,
+      "timeshift": false,
+      "epgId": "sat112",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat113",
+      "number": "113",
+      "logicalNumber": "113",
+      "name": "东南卫视",
+      "shortName": "东南卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 113,
+      "timeshift": false,
+      "epgId": "sat113",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat114",
+      "number": "114",
+      "logicalNumber": "114",
+      "name": "江西卫视",
+      "shortName": "江西卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 114,
+      "timeshift": false,
+      "epgId": "sat114",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat115",
+      "number": "115",
+      "logicalNumber": "115",
+      "name": "山东卫视",
+      "shortName": "山东卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 115,
+      "timeshift": false,
+      "epgId": "sat115",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat116",
+      "number": "116",
+      "logicalNumber": "116",
+      "name": "河南卫视",
+      "shortName": "河南卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 116,
+      "timeshift": false,
+      "epgId": "sat116",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat117",
+      "number": "117",
+      "logicalNumber": "117",
+      "name": "湖北卫视",
+      "shortName": "湖北卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 117,
+      "timeshift": false,
+      "epgId": "sat117",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat118",
+      "number": "118",
+      "logicalNumber": "118",
+      "name": "湖南卫视",
+      "shortName": "湖南卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 118,
+      "timeshift": false,
+      "epgId": "sat118",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat119",
+      "number": "119",
+      "logicalNumber": "119",
+      "name": "广东卫视",
+      "shortName": "广东卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 119,
+      "timeshift": false,
+      "epgId": "sat119",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat120",
+      "number": "120",
+      "logicalNumber": "120",
+      "name": "广西卫视",
+      "shortName": "广西卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 120,
+      "timeshift": false,
+      "epgId": "sat120",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat121",
+      "number": "121",
+      "logicalNumber": "121",
+      "name": "海南卫视",
+      "shortName": "海南卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 121,
+      "timeshift": false,
+      "epgId": "sat121",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat122",
+      "number": "122",
+      "logicalNumber": "122",
+      "name": "重庆卫视",
+      "shortName": "重庆卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 122,
+      "timeshift": false,
+      "epgId": "sat122",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat123",
+      "number": "123",
+      "logicalNumber": "123",
+      "name": "四川卫视",
+      "shortName": "四川卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 123,
+      "timeshift": false,
+      "epgId": "sat123",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat124",
+      "number": "124",
+      "logicalNumber": "124",
+      "name": "贵州卫视",
+      "shortName": "贵州卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 124,
+      "timeshift": false,
+      "epgId": "sat124",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat125",
+      "number": "125",
+      "logicalNumber": "125",
+      "name": "云南卫视",
+      "shortName": "云南卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 125,
+      "timeshift": false,
+      "epgId": "sat125",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat126",
+      "number": "126",
+      "logicalNumber": "126",
+      "name": "西藏卫视",
+      "shortName": "西藏卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 126,
+      "timeshift": false,
+      "epgId": "sat126",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat127",
+      "number": "127",
+      "logicalNumber": "127",
+      "name": "陕西卫视",
+      "shortName": "陕西卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 127,
+      "timeshift": false,
+      "epgId": "sat127",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat128",
+      "number": "128",
+      "logicalNumber": "128",
+      "name": "甘肃卫视",
+      "shortName": "甘肃卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 128,
+      "timeshift": false,
+      "epgId": "sat128",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat129",
+      "number": "129",
+      "logicalNumber": "129",
+      "name": "青海卫视",
+      "shortName": "青海卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 129,
+      "timeshift": false,
+      "epgId": "sat129",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat130",
+      "number": "130",
+      "logicalNumber": "130",
+      "name": "宁夏卫视",
+      "shortName": "宁夏卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 130,
+      "timeshift": false,
+      "epgId": "sat130",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat131",
+      "number": "131",
+      "logicalNumber": "131",
+      "name": "新疆卫视",
+      "shortName": "新疆卫视",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 131,
+      "timeshift": false,
+      "epgId": "sat131",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat132",
+      "number": "132",
+      "logicalNumber": "132",
+      "name": "深圳卫视",
+      "shortName": "深圳",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 132,
+      "timeshift": false,
+      "epgId": "sat132",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat133",
+      "number": "133",
+      "logicalNumber": "133",
+      "name": "兵团卫视",
+      "shortName": "兵团",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 133,
+      "timeshift": false,
+      "epgId": "sat133",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat134",
+      "number": "134",
+      "logicalNumber": "134",
+      "name": "厦门卫视",
+      "shortName": "厦门",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 134,
+      "timeshift": false,
+      "epgId": "sat134",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat135",
+      "number": "135",
+      "logicalNumber": "135",
+      "name": "延边卫视",
+      "shortName": "延边",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 135,
+      "timeshift": false,
+      "epgId": "sat135",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat136",
+      "number": "136",
+      "logicalNumber": "136",
+      "name": "康巴卫视",
+      "shortName": "康巴",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 136,
+      "timeshift": false,
+      "epgId": "sat136",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "sat137",
+      "number": "137",
+      "logicalNumber": "137",
+      "name": "三沙卫视",
+      "shortName": "三沙",
+      "categoryIds": [
+        "satellite",
+        "local"
+      ],
+      "logo": null,
+      "country": "CN",
+      "language": "zh-CN",
+      "enabled": true,
+      "sort": 137,
+      "timeshift": false,
+      "epgId": "sat137",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world301",
+      "number": "301",
+      "logicalNumber": "301",
+      "name": "NHK WORLD-JAPAN",
+      "shortName": "NHK WORLD-JAPAN",
+      "categoryIds": [
+        "international",
+        "news"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 301,
+      "timeshift": false,
+      "epgId": "world301",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world302",
+      "number": "302",
+      "logicalNumber": "302",
+      "name": "DW",
+      "shortName": "DW",
+      "categoryIds": [
+        "international",
+        "news"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 302,
+      "timeshift": false,
+      "epgId": "world302",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world303",
+      "number": "303",
+      "logicalNumber": "303",
+      "name": "France 24",
+      "shortName": "France 24",
+      "categoryIds": [
+        "international",
+        "news"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 303,
+      "timeshift": false,
+      "epgId": "world303",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world304",
+      "number": "304",
+      "logicalNumber": "304",
+      "name": "Al Jazeera English",
+      "shortName": "Al Jazeera English",
+      "categoryIds": [
+        "international",
+        "news"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 304,
+      "timeshift": false,
+      "epgId": "world304",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world305",
+      "number": "305",
+      "logicalNumber": "305",
+      "name": "CNA",
+      "shortName": "CNA",
+      "categoryIds": [
+        "international",
+        "news"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 305,
+      "timeshift": false,
+      "epgId": "world305",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world306",
+      "number": "306",
+      "logicalNumber": "306",
+      "name": "Arirang TV",
+      "shortName": "Arirang TV",
+      "categoryIds": [
+        "international"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 306,
+      "timeshift": false,
+      "epgId": "world306",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world307",
+      "number": "307",
+      "logicalNumber": "307",
+      "name": "TRT World",
+      "shortName": "TRT World",
+      "categoryIds": [
+        "international",
+        "news"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 307,
+      "timeshift": false,
+      "epgId": "world307",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world308",
+      "number": "308",
+      "logicalNumber": "308",
+      "name": "CGTN English",
+      "shortName": "CGTN English",
+      "categoryIds": [
+        "international"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 308,
+      "timeshift": false,
+      "epgId": "world308",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world309",
+      "number": "309",
+      "logicalNumber": "309",
+      "name": "CGTN Documentary",
+      "shortName": "CGTN Documentary",
+      "categoryIds": [
+        "international"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "en",
+      "enabled": true,
+      "sort": 309,
+      "timeshift": false,
+      "epgId": "world309",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world310",
+      "number": "310",
+      "logicalNumber": "310",
+      "name": "CGTN Français",
+      "shortName": "CGTN Français",
+      "categoryIds": [
+        "international"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "fr",
+      "enabled": true,
+      "sort": 310,
+      "timeshift": false,
+      "epgId": "world310",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world311",
+      "number": "311",
+      "logicalNumber": "311",
+      "name": "CGTN Español",
+      "shortName": "CGTN Español",
+      "categoryIds": [
+        "international"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "es",
+      "enabled": true,
+      "sort": 311,
+      "timeshift": false,
+      "epgId": "world311",
+      "defaultQuality": "AUTO"
+    },
+    {
+      "id": "world312",
+      "number": "312",
+      "logicalNumber": "312",
+      "name": "CGTN Русский",
+      "shortName": "CGTN Русский",
+      "categoryIds": [
+        "international"
+      ],
+      "logo": null,
+      "country": "INTL",
+      "language": "ru",
+      "enabled": true,
+      "sort": 312,
+      "timeshift": false,
+      "epgId": "world312",
+      "defaultQuality": "AUTO"
+    }
+  ]
+}
