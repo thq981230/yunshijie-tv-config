@@ -217,4 +217,3 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
     def health_check(self, source: Mapping[str, object]) -> dict:
         from check_sources import probe
         return probe(dict(source))
-

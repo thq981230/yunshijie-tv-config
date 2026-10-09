@@ -1,6 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { webcrypto } from "node:crypto";
 import worker from "./index.js";
+
+globalThis.crypto ??= webcrypto;
 
 const env = { GITHUB_TOKEN: "test-worker-token", GITHUB_OWNER: "thq981230", GITHUB_REPO: "yunshijie-tv-config",
   GITHUB_WORKFLOW_FILE: "source-health.yml", GITHUB_REF: "main",
@@ -8,6 +11,38 @@ const env = { GITHUB_TOKEN: "test-worker-token", GITHUB_OWNER: "thq981230", GITH
 
 function jsonResponse(payload, status = 200) {
   return new Response(JSON.stringify(payload), { status, headers: { "content-type": "application/json" } });
+}
+
+const githubOidcKeyPair = await crypto.subtle.generateKey({
+  name: "RSASSA-PKCS1-v1_5", modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256"
+}, true, ["sign", "verify"]);
+const githubOidcPublicJwk = { ...(await crypto.subtle.exportKey("jwk", githubOidcKeyPair.publicKey)),
+  kid: "test-github-oidc-key", alg: "RS256", use: "sig" };
+
+function base64Url(value) {
+  return Buffer.from(value).toString("base64url");
+}
+
+async function signedGithubOidcToken(overrides = {}) {
+  const now = Math.floor(Date.now() / 1000);
+  const header = base64Url(JSON.stringify({ alg: "RS256", typ: "JWT", kid: githubOidcPublicJwk.kid }));
+  const claims = base64Url(JSON.stringify({
+    iss: "https://token.actions.githubusercontent.com",
+    aud: "api://yunshijie-tv-subscriptions",
+    repository: "thq981230/yunshijie-tv-config",
+    repository_id: "1411311167",
+    repository_owner_id: "95538235",
+    ref: "refs/heads/main",
+    workflow_ref: "thq981230/yunshijie-tv-config/.github/workflows/source-health.yml@refs/heads/main",
+    event_name: "workflow_dispatch",
+    iat: now,
+    exp: now + 300,
+    ...overrides
+  }));
+  const signingInput = `${header}.${claims}`;
+  const signature = await crypto.subtle.sign("RSASSA-PKCS1-v1_5", githubOidcKeyPair.privateKey,
+    new TextEncoder().encode(signingInput));
+  return `${signingInput}.${base64Url(signature)}`;
 }
 
 test("health reports configuration state without exposing GitHub credentials", async () => {
@@ -24,6 +59,39 @@ test("health reports configuration state without exposing GitHub credentials", a
     status: "ok", service: "yunshijie-tv-refresh-api", githubConfigured: false
   });
   assert.equal(JSON.stringify(payload).includes(env.GITHUB_TOKEN), false);
+});
+
+test("subscription configuration is returned only to the allow-listed GitHub Actions identity", async () => {
+  const originalFetch = globalThis.fetch;
+  const protectedFeeds = [{ providerId: "partner-a", url: "https://feed.example/list.m3u", redistributable: true,
+    authorization: "permission-ref-001" }];
+  globalThis.fetch = async input => {
+    assert.equal(String(input), "https://token.actions.githubusercontent.com/.well-known/jwks");
+    return jsonResponse({ keys: [githubOidcPublicJwk] });
+  };
+  try {
+    const validToken = await signedGithubOidcToken();
+    const valid = await worker.fetch(new Request("https://worker.test/internal/v1/subscriptions", {
+      headers: { authorization: `Bearer ${validToken}` }
+    }), { ...env, YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: JSON.stringify(protectedFeeds) });
+    assert.equal(valid.status, 200);
+    assert.deepEqual(await valid.json(), { configured: true, feeds: protectedFeeds });
+
+    const wrongRepoToken = await signedGithubOidcToken({ repository: "attacker/fork" });
+    const rejectedIdentity = await worker.fetch(new Request("https://worker.test/internal/v1/subscriptions", {
+      headers: { authorization: `Bearer ${wrongRepoToken}` }
+    }), { ...env, YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: JSON.stringify(protectedFeeds) });
+    assert.equal(rejectedIdentity.status, 403);
+    assert.deepEqual(await rejectedIdentity.json(), { error: "OIDC_IDENTITY_REJECTED" });
+
+    const missing = await worker.fetch(new Request("https://worker.test/internal/v1/subscriptions"), {
+      ...env, YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: JSON.stringify(protectedFeeds)
+    });
+    assert.equal(missing.status, 401);
+    assert.deepEqual(await missing.json(), { error: "OIDC_TOKEN_REQUIRED" });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("refresh dispatch returns the actual Actions run id and keeps token server side", async () => {
@@ -177,4 +245,3 @@ test("playback resolver refuses unsafe or expiring stream URLs", async () => {
     globalThis.fetch = originalFetch;
   }
 });
-

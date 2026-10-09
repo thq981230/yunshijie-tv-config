@@ -35,6 +35,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write
 
 concurrency:
   group: source-health-${{ github.ref }}
@@ -52,8 +53,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate source catalog and run unit tests
-        env:
-          YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: ${{ secrets.YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON }}
         run: |
           python -m unittest discover -s tests -v
           python scripts/validate_config.py --inputs-only
@@ -92,4 +91,3 @@ jobs:
         run: |
           echo "::error::Source promotion was refused. Health counters were saved; the previous public sources file was preserved."
           exit 1
-

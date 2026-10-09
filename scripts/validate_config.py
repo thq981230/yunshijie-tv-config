@@ -157,4 +157,3 @@ def validate_repository(include_published: bool = True) -> None:
 if __name__ == "__main__":
     validate_repository(include_published="--inputs-only" not in sys.argv)
     print("config valid")
-

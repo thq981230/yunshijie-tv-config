@@ -137,4 +137,3 @@ class OfficialProviderRegistry:
         if provider is None:
             raise ValueError(f"unknown provider {selected_id!r}")
         return provider.health_check(source)
-

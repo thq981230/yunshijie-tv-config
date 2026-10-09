@@ -1,6 +1,15 @@
 const API_ROOT = "https://api.github.com";
 const API_VERSION = "2026-03-10";
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" };
+const GITHUB_OIDC_ISSUER = "https://token.actions.githubusercontent.com";
+const GITHUB_OIDC_JWKS_URL = `${GITHUB_OIDC_ISSUER}/.well-known/jwks`;
+const SUBSCRIPTION_OIDC_AUDIENCE = "api://yunshijie-tv-subscriptions";
+const ALLOWED_GITHUB_REPOSITORY = "thq981230/yunshijie-tv-config";
+const ALLOWED_GITHUB_REPOSITORY_ID = "1411311167";
+const ALLOWED_GITHUB_OWNER_ID = "95538235";
+const ALLOWED_GITHUB_WORKFLOW = `${ALLOWED_GITHUB_REPOSITORY}/.github/workflows/source-health.yml@refs/heads/main`;
+let cachedGithubJwks = null;
+let githubJwksCachedAt = 0;
 
 const STAGES = [
   ["Validate source catalog", 8, "正在校验频道和候选线路"],
@@ -24,6 +33,9 @@ export default {
           githubConfigured: Boolean(env.GITHUB_TOKEN)
         }, 200);
       }
+      if (url.pathname === "/internal/v1/subscriptions" && request.method === "GET") {
+        return await subscriptionFeedConfig(request, env);
+      }
       if (url.pathname === "/api/v1/channels/refresh" && request.method === "POST") {
         return await startRefresh(request, env);
       }
@@ -42,6 +54,85 @@ export default {
     }
   }
 };
+
+async function subscriptionFeedConfig(request, env) {
+  const authorization = request.headers.get("authorization") ?? "";
+  const token = authorization.match(/^Bearer\s+(.+)$/i)?.[1] ?? "";
+  if (!token || token.length > 32768) return json({ error: "OIDC_TOKEN_REQUIRED" }, 401);
+  if (!await verifyGithubActionsOidcToken(token)) return json({ error: "OIDC_IDENTITY_REJECTED" }, 403);
+  const raw = String(env.YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON ?? "");
+  if (!raw.trim()) return json({ configured: false, feeds: [] }, 200);
+  if (raw.length > 65536) return json({ error: "SUBSCRIPTION_CONFIG_TOO_LARGE" }, 503);
+  let feeds;
+  try {
+    feeds = JSON.parse(raw);
+  } catch {
+    return json({ error: "SUBSCRIPTION_CONFIG_INVALID" }, 503);
+  }
+  if (!Array.isArray(feeds) || feeds.length > 20 || feeds.some(feed => !feed || typeof feed !== "object" || Array.isArray(feed))) {
+    return json({ error: "SUBSCRIPTION_CONFIG_INVALID" }, 503);
+  }
+  return json({ configured: true, feeds }, 200);
+}
+
+async function verifyGithubActionsOidcToken(token) {
+  try {
+    const parts = token.split(".");
+    if (parts.length !== 3) return false;
+    const header = decodeJwtPart(parts[0]);
+    if (header.alg !== "RS256" || typeof header.kid !== "string") return false;
+    const claims = decodeJwtPart(parts[1]);
+    const now = Math.floor(Date.now() / 1000);
+    const audiences = Array.isArray(claims.aud) ? claims.aud : [claims.aud];
+    if (claims.iss !== GITHUB_OIDC_ISSUER || !audiences.includes(SUBSCRIPTION_OIDC_AUDIENCE) ||
+      claims.repository !== ALLOWED_GITHUB_REPOSITORY || claims.ref !== "refs/heads/main" ||
+      String(claims.repository_id) !== ALLOWED_GITHUB_REPOSITORY_ID ||
+      String(claims.repository_owner_id) !== ALLOWED_GITHUB_OWNER_ID ||
+      claims.workflow_ref !== ALLOWED_GITHUB_WORKFLOW ||
+      !["push", "workflow_dispatch", "schedule"].includes(claims.event_name) ||
+      !Number.isFinite(claims.exp) || claims.exp <= now ||
+      (Number.isFinite(claims.nbf) && claims.nbf > now + 60) ||
+      (Number.isFinite(claims.iat) && claims.iat > now + 60)) return false;
+
+    let keys = await githubJwks();
+    let jwk = keys.find(key => key.kid === header.kid && key.kty === "RSA" && key.use !== "enc");
+    if (!jwk && Date.now() - githubJwksCachedAt < 15 * 60 * 1000) {
+      keys = await githubJwks(true);
+      jwk = keys.find(key => key.kid === header.kid && key.kty === "RSA" && key.use !== "enc");
+    }
+    if (!jwk) return false;
+    const key = await crypto.subtle.importKey("jwk", jwk,
+      { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
+    const data = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
+    return await crypto.subtle.verify({ name: "RSASSA-PKCS1-v1_5" }, key, decodeBase64Url(parts[2]), data);
+  } catch {
+    return false;
+  }
+}
+
+async function githubJwks(force = false) {
+  if (!force && cachedGithubJwks && Date.now() - githubJwksCachedAt < 15 * 60 * 1000) return cachedGithubJwks;
+  const response = await fetch(GITHUB_OIDC_JWKS_URL, {
+    headers: { "accept": "application/json", "user-agent": "YunshijieTV-RefreshWorker/1.0" },
+    signal: AbortSignal.timeout(8000)
+  });
+  if (!response.ok) throw new Error("GitHub OIDC keys unavailable");
+  const payload = await response.json();
+  if (!Array.isArray(payload.keys)) throw new Error("GitHub OIDC key set invalid");
+  cachedGithubJwks = payload.keys;
+  githubJwksCachedAt = Date.now();
+  return cachedGithubJwks;
+}
+
+function decodeJwtPart(value) {
+  return JSON.parse(new TextDecoder().decode(decodeBase64Url(value)));
+}
+
+function decodeBase64Url(value) {
+  const base64 = String(value).replace(/-/g, "+").replace(/_/g, "/").padEnd(Math.ceil(value.length / 4) * 4, "=");
+  const binary = atob(base64);
+  return Uint8Array.from(binary, character => character.charCodeAt(0));
+}
 
 async function resolvePublishedSource(url, channelId, env) {
   const published = await fetchRawJson(env, "public/sources.json");
@@ -262,4 +353,3 @@ function corsHeaders() {
   return { "access-control-allow-origin": "*", "access-control-allow-methods": "GET, POST, OPTIONS",
     "access-control-allow-headers": "content-type", "access-control-max-age": "86400" };
 }
-

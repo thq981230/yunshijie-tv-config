@@ -131,4 +131,3 @@ class ChannelMatcher:
     def _direct_id(self, value: str) -> str | None:
         key = value.casefold()
         return key if key in self.channels else None
-

@@ -3,6 +3,9 @@ from __future__ import annotations
 import json
 import os
 import sys
+import urllib.error
+import urllib.parse
+import urllib.request
 from pathlib import Path
 
 from providers.remote_subscription import RemoteSubscriptionProvider
@@ -10,6 +13,8 @@ from providers.registry import OfficialProviderRegistry
 from validate_config import ROOT, read_json
 
 OUTPUT = ROOT / "candidates" / "subscriptions.generated.json"
+OIDC_AUDIENCE = "api://yunshijie-tv-subscriptions"
+WORKER_SUBSCRIPTION_API = "https://yunshijie-tv-refresh-api.yunshijie-tv.workers.dev/internal/v1/subscriptions"
 
 
 def load_feed_specs(raw: str) -> list[dict]:
@@ -21,6 +26,44 @@ def load_feed_specs(raw: str) -> list[dict]:
     if len(value) > 20:
         raise ValueError("at most 20 subscription feeds are supported")
     return value
+
+
+def github_action_feed_config() -> str:
+    request_url = os.environ.get("ACTIONS_ID_TOKEN_REQUEST_URL", "").strip()
+    request_token = os.environ.get("ACTIONS_ID_TOKEN_REQUEST_TOKEN", "").strip()
+    if not request_url and not request_token:
+        return ""
+    if not request_url or not request_token:
+        raise RuntimeError("GitHub Actions OIDC environment is incomplete")
+    parsed = urllib.parse.urlsplit(request_url)
+    if parsed.scheme != "https" or not parsed.hostname or not parsed.hostname.endswith(".actions.githubusercontent.com"):
+        raise RuntimeError("GitHub Actions OIDC endpoint is not trusted")
+    query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
+    query = [(key, value) for key, value in query if key != "audience"]
+    query.append(("audience", OIDC_AUDIENCE))
+    token_url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path,
+                                         urllib.parse.urlencode(query), parsed.fragment))
+    try:
+        request = urllib.request.Request(token_url, headers={"Authorization": f"Bearer {request_token}",
+                                                              "Accept": "application/json"})
+        with urllib.request.urlopen(request, timeout=10) as response:
+            token_payload = json.loads(response.read(32769))
+        oidc_token = str(token_payload.get("value") or "")
+        if not oidc_token or len(oidc_token) > 32768:
+            raise RuntimeError("GitHub Actions did not return a bounded OIDC token")
+        request = urllib.request.Request(WORKER_SUBSCRIPTION_API,
+            headers={"Authorization": f"Bearer {oidc_token}", "Accept": "application/json"})
+        with urllib.request.urlopen(request, timeout=10) as response:
+            body = response.read(65537)
+        if len(body) > 65536:
+            raise RuntimeError("Worker subscription configuration exceeds 64 KiB")
+        payload = json.loads(body.decode("utf-8"))
+        feeds = payload.get("feeds")
+        if not isinstance(feeds, list):
+            raise RuntimeError("Worker returned invalid subscription configuration")
+        return json.dumps(feeds, ensure_ascii=False, separators=(",", ":"))
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as error:
+        raise RuntimeError("could not retrieve private subscription configuration from Worker") from error
 
 
 def discover(feeds: list[dict], catalog: dict) -> tuple[dict, dict]:
@@ -46,6 +89,8 @@ def discover(feeds: list[dict], catalog: dict) -> tuple[dict, dict]:
 
 def main() -> int:
     raw_feeds = os.environ.get("YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON", "")
+    if not raw_feeds:
+        raw_feeds = github_action_feed_config()
     feeds = load_feed_specs(raw_feeds)
     if not feeds:
         OUTPUT.unlink(missing_ok=True)
@@ -76,4 +121,3 @@ if __name__ == "__main__":
         # Error text from HTTP libraries can contain a URL. Keep workflow logs credential-safe.
         print(f"subscription discovery failed: {type(error).__name__}", file=sys.stderr)
         sys.exit(2)
-
