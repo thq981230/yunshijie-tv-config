@@ -194,7 +194,7 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
                     continue
                 digest = hashlib.sha256(f"{channel_id}\0{url}".encode("utf-8")).hexdigest()[:10]
                 item_priority = entry.get("priority")
-                priority = int(item_priority) if isinstance(item_priority, int) and item_priority > 0 else base_priority + position - 1
+                priority = int(item_priority) if isinstance(item_priority, int) and item_priority > 0 else base_priority
                 source = {
                     "id": f"sub-{feed_id}-{channel_id}-{digest}",
                     "channelId": channel_id,

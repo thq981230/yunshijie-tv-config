@@ -10,6 +10,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from providers.channel_matcher import ChannelMatcher
 from providers.remote_subscription import RemoteSubscriptionProvider, parse_m3u, parse_subscription
 from providers.registry import OfficialProviderRegistry
+from providers.base import DiscoveredSource
+from discover_subscriptions import merge_sources
 
 
 CATALOG = {"channels": [
@@ -52,6 +54,19 @@ class ChannelMatcherTests(unittest.TestCase):
 
 
 class SubscriptionTests(unittest.TestCase):
+    def test_source_merger_keeps_other_feeds_when_one_has_many_lines(self):
+        rows = [DiscoveredSource("cctv1", {"providerId": "chinaiptv", "url": f"https://a.example/{index}.m3u8"},
+                                 "remote-subscription", "feed:chinaiptv") for index in range(6)]
+        rows.extend([
+            DiscoveredSource("cctv1", {"providerId": "fanmingming", "url": "https://b.example/live.m3u8"},
+                             "remote-subscription", "feed:fanmingming"),
+            DiscoveredSource("cctv1", {"providerId": "iptv_org", "url": "https://c.example/live.m3u8"},
+                             "remote-subscription", "feed:iptv_org"),
+        ])
+        merged = merge_sources(rows, ["cctv1"], limit=5)["cctv1"]
+        self.assertEqual(len(merged), 5)
+        self.assertEqual({row["providerId"] for row in merged}, {"chinaiptv", "fanmingming", "iptv_org"})
+
     def test_m3u_parser_retains_channel_metadata(self):
         rows = parse_m3u('#EXTM3U\n#EXTINF:-1 tvg-id="cctv1" tvg-name="CCTV-1 综合" group-title="央视",CCTV1高清\nhttps://cdn.example/cctv1.m3u8\n')
         self.assertEqual(len(rows), 1)
@@ -81,7 +96,7 @@ class SubscriptionTests(unittest.TestCase):
         registry = OfficialProviderRegistry([provider])
         found = registry.discover(CATALOG)
         self.assertEqual([row.channel_id for row in found], ["cctv1", "cctv1"])
-        self.assertEqual([row.source["priority"] for row in found], [100, 101])
+        self.assertEqual([row.source["priority"] for row in found], [100, 100])
         self.assertTrue(all(row.source["authorization"] == feed["authorization"] for row in found))
         self.assertEqual(provider.last_stats["published"], 2)
 

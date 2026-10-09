@@ -9,6 +9,7 @@ import urllib.request
 from pathlib import Path
 
 from providers.remote_subscription import RemoteSubscriptionProvider
+from providers.base import DiscoveredSource
 from providers.registry import OfficialProviderRegistry
 from validate_config import ROOT, read_json
 
@@ -104,20 +105,35 @@ def discover(feeds: list[dict], catalog: dict) -> tuple[dict, dict]:
     registry = OfficialProviderRegistry([provider])
     rows = registry.discover(catalog)
     channel_ids = [row["id"] for row in catalog["channels"]]
-    grouped: dict[str, list[dict]] = {channel_id: [] for channel_id in channel_ids}
-    seen: dict[str, set[str]] = {channel_id: set() for channel_id in channel_ids}
-    for row in rows:
-        channel_id = row.channel_id
-        source = row.source
-        url = source["url"]
-        if url in seen[channel_id] or len(grouped[channel_id]) >= 5:
-            continue
-        seen[channel_id].add(url)
-        grouped[channel_id].append(source)
+    grouped = merge_sources(rows, channel_ids)
     payload = {"schemaVersion": 1, "channels": [
         {"channelId": channel_id, "sources": grouped[channel_id]} for channel_id in channel_ids
     ]}
     return payload, provider.last_stats
+
+
+def merge_sources(rows: list[DiscoveredSource], channel_ids: list[str], limit: int = 5) -> dict[str, list[dict]]:
+    """Reserve a slot for each feed before filling the remaining backup slots."""
+    candidates = {channel_id: [] for channel_id in channel_ids}
+    for row in rows:
+        if row.channel_id in candidates:
+            candidates[row.channel_id].append(row.source)
+    grouped: dict[str, list[dict]] = {channel_id: [] for channel_id in channel_ids}
+    for channel_id in channel_ids:
+        seen_urls: set[str] = set()
+        seen_providers: set[str] = set()
+        for provider_pass in (True, False):
+            for source in candidates[channel_id]:
+                if len(grouped[channel_id]) >= limit:
+                    break
+                provider_id = str(source.get("providerId") or "")
+                url = source["url"]
+                if url in seen_urls or (provider_pass and provider_id in seen_providers):
+                    continue
+                grouped[channel_id].append(source)
+                seen_urls.add(url)
+                seen_providers.add(provider_id)
+    return grouped
 
 
 def main() -> int:
