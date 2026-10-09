@@ -1,10 +1,35 @@
 name: Source health and publish
 
+run-name: Source health refresh ${{ github.event_name == 'workflow_dispatch' && inputs.refresh_id || github.run_id }}
+
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      refresh_id:
+        description: Refresh request correlation id
+        required: false
+        type: string
+        default: manual
+      refresh_scope:
+        description: Channels to probe
+        required: false
+        type: choice
+        options:
+          - ALL
+          - CHANNEL
+          - CATEGORY
+        default: ALL
+      channel_id:
+        description: Channel id when refresh_scope is CHANNEL
+        required: false
+        type: string
+      category_id:
+        description: Category id when refresh_scope is CATEGORY
+        required: false
+        type: string
   schedule:
     - cron: "17 */6 * * *"
 
@@ -26,14 +51,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate config and run unit tests
+      - name: Validate source catalog and run unit tests
         run: |
           python -m unittest discover -s tests -v
           python scripts/validate_config.py --inputs-only
       - name: Stage the stable channel catalog
         run: python scripts/publish_catalog.py
       - name: Probe manifests and first media segments
-        run: python scripts/check_sources.py
+        env:
+          REFRESH_SCOPE: ${{ inputs.refresh_scope || 'ALL' }}
+          REFRESH_CHANNEL_ID: ${{ inputs.channel_id || '' }}
+          REFRESH_CATEGORY_ID: ${{ inputs.category_id || '' }}
+        run: |
+          python scripts/check_sources.py --scope "$REFRESH_SCOPE" \
+            --channel-id "$REFRESH_CHANNEL_ID" --category-id "$REFRESH_CATEGORY_ID"
       - name: Promote healthy sources with mass-failure protection
         id: promote
         continue-on-error: true

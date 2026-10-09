@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "yunshijie-tv-refresh-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-09",
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "vars": {
+    "GITHUB_OWNER": "thq981230",
+    "GITHUB_REPO": "yunshijie-tv-config",
+    "GITHUB_WORKFLOW_FILE": "source-health.yml",
+    "GITHUB_REF": "main",
+    "RAW_CONFIG_BASE_URL": "https://raw.githubusercontent.com/thq981230/yunshijie-tv-config/main/"
+  },
+  "ratelimits": [
+    {
+      "name": "REFRESH_LIMITER",
+      "namespace_id": "918273",
+      "simple": { "limit": 20, "period": 60 }
+    },
+    {
+      "name": "STATUS_LIMITER",
+      "namespace_id": "918274",
+      "simple": { "limit": 60, "period": 60 }
+    }
+  ]
+}

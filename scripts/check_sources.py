@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import ipaddress
+import argparse
 import socket
 import sys
 import time
@@ -186,6 +187,34 @@ def check_all(candidate_groups: dict[str, list[dict]], previous: dict[str, dict]
             "sources": sorted(rows, key=lambda row: (row["channelId"], row["sourceId"]))}
 
 
+def select_groups(catalog: dict, groups: dict[str, list[dict]], scope: str,
+                  channel_id: str | None = None, category_id: str | None = None) -> dict[str, list[dict]]:
+    normalized = scope.upper()
+    channels = {row["id"]: row for row in catalog["channels"]}
+    if normalized == "ALL":
+        return groups
+    if normalized == "CHANNEL":
+        if channel_id not in channels:
+            raise ValueError("CHANNEL refresh requires a known channelId")
+        return {channel_id: groups[channel_id]}
+    if normalized == "CATEGORY":
+        category_ids = {row["id"] for row in catalog.get("categories", [])}
+        if category_id not in category_ids:
+            raise ValueError("CATEGORY refresh requires a known categoryId")
+        return {key: value for key, value in groups.items() if category_id in channels[key].get("categoryIds", [])}
+    raise ValueError(f"Unsupported refresh scope: {scope}")
+
+
+def merge_health_snapshot(current: dict, previous: dict, checked_ids: set[str]) -> dict:
+    """Keep older health rows for sources outside a scoped refresh."""
+    untouched = [row for row in previous.get("sources", []) if row.get("sourceId") not in checked_ids]
+    rows = untouched + current["sources"]
+    current["sources"] = sorted(rows, key=lambda row: (row["channelId"], row["sourceId"]))
+    current["checkedCount"] = len(checked_ids)
+    current["failedCount"] = sum(not row["lastCheckSucceeded"] for row in current["sources"] if row.get("lastCheckTime") == current["checkedAt"])
+    return current
+
+
 def atomic_json(path: Path, payload: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_name(path.name + ".new")
@@ -196,11 +225,22 @@ def atomic_json(path: Path, payload: dict) -> None:
 
 
 def main() -> int:
-    _, groups = load_candidates()
+    parser = argparse.ArgumentParser(description="Probe configured, authorized source candidates")
+    parser.add_argument("--scope", choices=("ALL", "CHANNEL", "CATEGORY"), default="ALL")
+    parser.add_argument("--channel-id")
+    parser.add_argument("--category-id")
+    args = parser.parse_args()
+    catalog, groups = load_candidates()
+    selected = select_groups(catalog, groups, args.scope, args.channel_id, args.category_id)
     previous_path = ROOT / "health" / "latest.json"
     previous_payload = json.loads(previous_path.read_text(encoding="utf-8")) if previous_path.exists() else {}
     previous = {row["sourceId"]: row for row in previous_payload.get("sources", [])}
-    payload = check_all(groups, previous)
+    payload = check_all(selected, previous)
+    checked_ids = {source["id"] for sources in selected.values() for source in sources}
+    if args.scope != "ALL":
+        payload = merge_health_snapshot(payload, previous_payload, checked_ids)
+    payload["scope"] = args.scope
+    payload["scopeTarget"] = args.channel_id if args.scope == "CHANNEL" else args.category_id if args.scope == "CATEGORY" else "ALL"
     atomic_json(previous_path, payload)
     print(f"checked={payload['checkedCount']} failed={payload['failedCount']}")
     for row in payload["sources"]:

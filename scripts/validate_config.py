@@ -5,6 +5,7 @@ import json
 import sys
 from pathlib import Path
 from urllib.parse import urlsplit
+from providers.registry import ProviderRegistry, StaticCandidateProvider
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_PROTOCOLS = {"HLS", "DASH"}
@@ -42,8 +43,8 @@ def load_candidates():
         raise ValueError("catalog/channels.json must contain at least one channel")
     candidate_ids: set[str] = set()
     by_channel: dict[str, list[dict]] = {channel_id: [] for channel_id in channel_ids}
-    for path in sorted((ROOT / "candidates").glob("*.json")):
-        payload = read_json(path)
+    registry = ProviderRegistry([StaticCandidateProvider()])
+    for path, payload in registry.discover(ROOT / "candidates", catalog):
         if payload.get("schemaVersion") != 1 or not isinstance(payload.get("channels"), list):
             raise ValueError(f"{path.relative_to(ROOT)}: schemaVersion=1 and channels[] are required")
         seen_channels: set[str] = set()

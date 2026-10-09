@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from check_sources import check_all, probe_hls, update_health
+from check_sources import check_all, merge_health_snapshot, probe_hls, select_groups, update_health
 from promote_sources import promote
 from validate_config import validate_sources_payload
 
@@ -67,6 +67,29 @@ class HealthTests(unittest.TestCase):
         self.assertEqual(payload["checkedCount"], 2)
         self.assertEqual(payload["failedCount"], 1)
         self.assertEqual(payload["sources"][1]["status"], "HEALTHY")
+
+    def test_scoped_selection_targets_channel_or_category(self):
+        catalog = {"channels": [
+            {"id": "c1", "categoryIds": ["news"]},
+            {"id": "c2", "categoryIds": ["sports"]},
+        ], "categories": [{"id": "news"}, {"id": "sports"}]}
+        groups = {"c1": [self.source("a", "c1")], "c2": [self.source("b", "c2")]}
+        self.assertEqual(set(select_groups(catalog, groups, "CHANNEL", channel_id="c1")), {"c1"})
+        self.assertEqual(set(select_groups(catalog, groups, "CATEGORY", category_id="sports")), {"c2"})
+        with self.assertRaisesRegex(ValueError, "known channelId"):
+            select_groups(catalog, groups, "CHANNEL", channel_id="missing")
+
+    def test_scoped_refresh_preserves_unchecked_health_rows(self):
+        current = {"checkedAt": "now", "checkedCount": 1, "failedCount": 0,
+                   "sources": [{"sourceId": "a", "channelId": "c1", "lastCheckTime": "now", "lastCheckSucceeded": True}]}
+        previous = {"sources": [
+            {"sourceId": "a", "channelId": "c1", "lastCheckTime": "old", "lastCheckSucceeded": False},
+            {"sourceId": "b", "channelId": "c2", "lastCheckTime": "yesterday", "lastCheckSucceeded": True},
+        ]}
+        merged = merge_health_snapshot(current, previous, {"a"})
+        self.assertEqual([row["sourceId"] for row in merged["sources"]], ["a", "b"])
+        self.assertEqual(merged["sources"][1]["lastCheckTime"], "yesterday")
+        self.assertEqual(merged["checkedCount"], 1)
 
 
 class PromotionTests(unittest.TestCase):
