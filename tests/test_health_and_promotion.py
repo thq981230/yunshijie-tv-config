@@ -7,26 +7,50 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from check_sources import check_all, merge_health_snapshot, probe_hls, select_groups, update_health
+from check_sources import check_all, merge_health_snapshot, mpeg_ts_has_video, probe_hls, select_groups, update_health
 from promote_sources import promote
 from validate_config import validate_sources_payload
 
 
 class HealthTests(unittest.TestCase):
+    @staticmethod
+    def ts_segment(stream_type: int) -> bytes:
+        def packet(pid: int, section: bytes) -> bytes:
+            header = bytes((0x47, 0x40 | (pid >> 8), pid & 0xFF, 0x10, 0))
+            return (header + section).ljust(188, b"\xff")
+        pat = bytes.fromhex("00b00d0001c100000001e10000000000")
+        pmt = bytes.fromhex("02b0120001c10000e101f000") + bytes((stream_type,)) + bytes.fromhex("e101f00000000000")
+        return packet(0, pat) + packet(0x100, pmt)
+
     def source(self, source_id="a", channel_id="c1"):
         return {"id": source_id, "channelId": channel_id, "protocol": "HLS", "type": "STATIC",
                 "url": "https://media.example/live.m3u8", "priority": 1, "authorization": "license:open"}
 
     def test_hls_probe_requires_first_segment(self):
         responses = [
-            (200, b"#EXTM3U\n#EXTINF:4,\nseg-1.ts\n", "https://media.example/live.m3u8", 10),
-            (206, b"segment-bytes", "https://media.example/seg-1.ts", 20),
+            (200, b"#EXTM3U\n#EXT-X-TARGETDURATION:4\n#EXTINF:4,\nseg-1.ts\n", "https://media.example/live.m3u8", 10),
+            (206, self.ts_segment(0x1B), "https://media.example/seg-1.ts", 20),
         ]
         with patch("check_sources.fetch", side_effect=responses) as fetch:
             result = probe_hls("https://media.example/live.m3u8")
         self.assertEqual(result["httpCode"], 206)
         self.assertEqual(result["latencyMs"], 30)
         self.assertEqual(fetch.call_count, 2)
+
+    def test_audio_only_hls_segment_is_not_healthy(self):
+        self.assertTrue(mpeg_ts_has_video(self.ts_segment(0x1B)))
+        self.assertFalse(mpeg_ts_has_video(self.ts_segment(0x0F)))
+        responses = [(200, b"#EXTM3U\n#EXT-X-TARGETDURATION:4\n#EXTINF:4,\nseg-1.ts\n", "https://media.example/live.m3u8", 10),
+                     (206, self.ts_segment(0x0F), "https://media.example/seg-1.ts", 20)]
+        with patch("check_sources.fetch", side_effect=responses):
+            with self.assertRaisesRegex(RuntimeError, "HLS_VIDEO_TRACK_MISSING"):
+                probe_hls("https://media.example/live.m3u8")
+
+    def test_an_m3u_channel_list_is_not_an_hls_media_playlist(self):
+        body = b"#EXTM3U\n#EXTINF:-1,Channel\nhttps://media.example/live.m3u8\n"
+        with patch("check_sources.fetch", return_value=(200, body, "https://media.example/list.m3u8", 5)):
+            with self.assertRaisesRegex(RuntimeError, "HLS_MANIFEST_INVALID"):
+                probe_hls("https://media.example/list.m3u8")
 
     def test_empty_or_invalid_playlist_is_not_healthy(self):
         with patch("check_sources.fetch", return_value=(200, b"<html>not hls</html>", "https://media.example/live.m3u8", 5)):

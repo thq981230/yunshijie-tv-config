@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import ipaddress
 import argparse
+import re
 import socket
 import sys
 import time
@@ -64,6 +65,58 @@ def fetch(url: str, byte_limit: int = MAX_MANIFEST_BYTES) -> tuple[int, bytes, s
         return error.code, error.read(8192), error.geturl(), round((time.monotonic() - started) * 1000)
 
 
+def mpeg_ts_has_video(segment: bytes) -> bool:
+    """Find a video elementary stream in the first PAT/PMT of a TS segment."""
+    video_types = {0x01, 0x02, 0x10, 0x1B, 0x24, 0x27, 0x42}
+
+    def section(pid: int) -> bytes | None:
+        collected = bytearray()
+        for offset in range(0, len(segment) - 187, 188):
+            packet = segment[offset:offset + 188]
+            if packet[0] != 0x47 or ((packet[1] & 0x1F) << 8 | packet[2]) != pid:
+                continue
+            control = (packet[3] >> 4) & 0x03
+            if control not in (1, 3):
+                continue
+            cursor = 4 + (1 + packet[4] if control == 3 else 0)
+            if cursor >= 188:
+                continue
+            if packet[1] & 0x40:
+                cursor += 1 + packet[cursor]
+                collected.clear()
+            if cursor < 188:
+                collected.extend(packet[cursor:])
+            if len(collected) >= 3:
+                length = 3 + ((collected[1] & 0x0F) << 8 | collected[2])
+                if 3 <= length <= len(collected):
+                    return bytes(collected[:length])
+        return None
+
+    pat = section(0)
+    if not pat or pat[0] != 0 or len(pat) < 16:
+        return False
+    pmt_pid = next((((pat[pos + 2] & 0x1F) << 8) | pat[pos + 3]
+                    for pos in range(8, len(pat) - 7, 4)
+                    if (pat[pos] << 8 | pat[pos + 1]) != 0), None)
+    if pmt_pid is None:
+        return False
+    pmt = section(pmt_pid)
+    if not pmt or pmt[0] != 2 or len(pmt) < 16:
+        return False
+    pos = 12 + ((pmt[10] & 0x0F) << 8 | pmt[11])
+    end = len(pmt) - 4
+    while pos + 5 <= end:
+        if pmt[pos] in video_types:
+            return True
+        pos += 5 + ((pmt[pos + 3] & 0x0F) << 8 | pmt[pos + 4])
+    return False
+
+
+def mp4_init_has_video(payload: bytes) -> bool:
+    return any(payload[index + 12:index + 16] == b"vide"
+               for index in range(len(payload) - 16) if payload[index:index + 4] == b"hdlr")
+
+
 def probe_hls(url: str) -> dict:
     total_latency = 0
     response_code = None
@@ -77,6 +130,16 @@ def probe_hls(url: str) -> dict:
         lines = [line.strip() for line in text.splitlines() if line.strip()]
         if not lines or lines[0] != "#EXTM3U":
             raise RuntimeError("HLS_MANIFEST_INVALID")
+        if not any(line.startswith(("#EXT-X-STREAM-INF:", "#EXT-X-TARGETDURATION:")) for line in lines):
+            raise RuntimeError("HLS_MANIFEST_INVALID")
+        for line in lines:
+            if line.startswith("#EXTINF:"):
+                try:
+                    duration = float(line.partition(":")[2].split(",", 1)[0])
+                except ValueError as error:
+                    raise RuntimeError("HLS_DURATION_INVALID") from error
+                if duration <= 0:
+                    raise RuntimeError("HLS_DURATION_INVALID")
         variant_pending = False
         media_uri = None
         playlist_uri = None
@@ -96,11 +159,23 @@ def probe_hls(url: str) -> dict:
             continue
         if not media_uri:
             raise RuntimeError("HLS_HAS_NO_MEDIA_SEGMENT")
-        segment_code, segment, _, segment_latency = fetch(media_uri, 4096)
+        segment_code, segment, _, segment_latency = fetch(media_uri, 32768)
         total_latency += segment_latency
         if segment_code not in (200, 206) or not segment:
             raise RuntimeError(f"FIRST_SEGMENT_HTTP_{segment_code}")
-        return {"httpCode": segment_code, "latencyMs": total_latency, "detail": "manifest_and_first_segment_ok"}
+        if segment[0] == 0x47:
+            video_found = mpeg_ts_has_video(segment)
+        else:
+            init = re.search(r'#EXT-X-MAP:[^\n]*URI="([^"]+)"', text)
+            if not init:
+                raise RuntimeError("VIDEO_TRACK_UNVERIFIED")
+            init_url = urllib.parse.urljoin(current, init.group(1))
+            init_code, init_bytes, _, init_latency = fetch(init_url, 32768)
+            total_latency += init_latency
+            video_found = init_code in (200, 206) and mp4_init_has_video(init_bytes)
+        if not video_found:
+            raise RuntimeError("HLS_VIDEO_TRACK_MISSING")
+        return {"httpCode": segment_code, "latencyMs": total_latency, "detail": "manifest_first_segment_and_video_ok"}
     raise RuntimeError("HLS_VARIANT_DEPTH_EXCEEDED")
 
 
