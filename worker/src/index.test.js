@@ -245,3 +245,17 @@ test("playback resolver refuses unsafe or expiring stream URLs", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("playback resolver accepts public HTTP and preserves its harmless query string", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => jsonResponse({ channels: { cctv1: { status: "AVAILABLE", sources: [
+    { id: "http-public", type: "STATIC", protocol: "HLS", url: "http://cdn.example/live.m3u8?profile=hd", health: "HEALTHY", priority: 1 }
+  ] } } });
+  try {
+    const response = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1"), env);
+    assert.equal(response.status, 200);
+    assert.equal((await response.json()).url, "http://cdn.example/live.m3u8?profile=hd");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

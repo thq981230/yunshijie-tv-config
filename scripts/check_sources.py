@@ -7,6 +7,7 @@ import re
 import socket
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -14,15 +15,15 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
-from validate_config import ROOT, load_candidates, require_https_public_url
+from validate_config import ROOT, load_candidates, require_public_playback_url
 
 TIMEOUT_SECONDS = 12
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 USER_AGENT = "YunshijieTV-SourceHealth/1.0 (+https://github.com/)"
 
 
-def assert_public_dns(host: str) -> None:
-    addresses = socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)
+def assert_public_dns(host: str, port: int = 443) -> None:
+    addresses = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)
     if not addresses:
         raise OSError("DNS returned no address")
     for address in addresses:
@@ -31,13 +32,14 @@ def assert_public_dns(host: str) -> None:
             raise OSError("DNS resolved to a non-public address")
 
 
-class SafeHttpsRedirectHandler(urllib.request.HTTPRedirectHandler):
+class SafePublicRedirectHandler(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, request, response, code, message, headers, new_url):
-        require_https_public_url(new_url, "redirect URL")
-        host = urllib.parse.urlsplit(new_url).hostname
+        require_public_playback_url(new_url, "redirect URL")
+        parsed = urllib.parse.urlsplit(new_url)
+        host = parsed.hostname
         if not host:
             raise OSError("redirect URL has no host")
-        assert_public_dns(host)
+        assert_public_dns(host, parsed.port or (443 if parsed.scheme == "https" else 80))
         return super().redirect_request(request, response, code, message, headers, new_url)
 
 
@@ -45,21 +47,24 @@ def utc_now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
 
 
-def fetch(url: str, byte_limit: int = MAX_MANIFEST_BYTES) -> tuple[int, bytes, str, int]:
-    require_https_public_url(url, "probe URL")
-    host = urllib.parse.urlsplit(url).hostname
+def fetch(url: str, byte_limit: int = MAX_MANIFEST_BYTES, headers: dict[str, str] | None = None) -> tuple[int, bytes, str, int]:
+    require_public_playback_url(url, "probe URL")
+    parsed = urllib.parse.urlsplit(url)
+    host = parsed.hostname
     assert host
-    assert_public_dns(host)
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Range": "bytes=0-2097151"})
+    assert_public_dns(host, parsed.port or (443 if parsed.scheme == "https" else 80))
+    request_headers = {"User-Agent": USER_AGENT, "Range": "bytes=0-2097151"}
+    request_headers.update(headers or {})
+    request = urllib.request.Request(url, headers=request_headers)
     started = time.monotonic()
     try:
-        opener = urllib.request.build_opener(SafeHttpsRedirectHandler)
+        opener = urllib.request.build_opener(SafePublicRedirectHandler)
         with opener.open(request, timeout=TIMEOUT_SECONDS) as response:
             body = response.read(byte_limit + 1)
             if len(body) > byte_limit:
                 body = body[:byte_limit]
             final_url = response.geturl()
-            require_https_public_url(final_url, "redirected URL")
+            require_public_playback_url(final_url, "redirected URL")
             return response.status, body, final_url, round((time.monotonic() - started) * 1000)
     except urllib.error.HTTPError as error:
         return error.code, error.read(8192), error.geturl(), round((time.monotonic() - started) * 1000)
@@ -117,12 +122,13 @@ def mp4_init_has_video(payload: bytes) -> bool:
                for index in range(len(payload) - 16) if payload[index:index + 4] == b"hdlr")
 
 
-def probe_hls(url: str) -> dict:
+def probe_hls(url: str, headers: dict[str, str] | None = None) -> dict:
     total_latency = 0
     response_code = None
     current = url
+    first_segment_latency = None
     for _ in range(4):
-        response_code, body, current, latency = fetch(current)
+        response_code, body, current, latency = fetch(current, headers=headers)
         total_latency += latency
         if response_code not in (200, 206):
             raise RuntimeError(f"HTTP_{response_code}")
@@ -159,8 +165,9 @@ def probe_hls(url: str) -> dict:
             continue
         if not media_uri:
             raise RuntimeError("HLS_HAS_NO_MEDIA_SEGMENT")
-        segment_code, segment, _, segment_latency = fetch(media_uri, 32768)
+        segment_code, segment, _, segment_latency = fetch(media_uri, 32768, headers)
         total_latency += segment_latency
+        first_segment_latency = segment_latency
         if segment_code not in (200, 206) or not segment:
             raise RuntimeError(f"FIRST_SEGMENT_HTTP_{segment_code}")
         if segment[0] == 0x47:
@@ -170,17 +177,18 @@ def probe_hls(url: str) -> dict:
             if not init:
                 raise RuntimeError("VIDEO_TRACK_UNVERIFIED")
             init_url = urllib.parse.urljoin(current, init.group(1))
-            init_code, init_bytes, _, init_latency = fetch(init_url, 32768)
+            init_code, init_bytes, _, init_latency = fetch(init_url, 32768, headers)
             total_latency += init_latency
             video_found = init_code in (200, 206) and mp4_init_has_video(init_bytes)
         if not video_found:
             raise RuntimeError("HLS_VIDEO_TRACK_MISSING")
-        return {"httpCode": segment_code, "latencyMs": total_latency, "detail": "manifest_first_segment_and_video_ok"}
+        return {"httpCode": segment_code, "latencyMs": total_latency, "firstSegmentMs": first_segment_latency,
+                "detail": "manifest_first_segment_and_video_ok"}
     raise RuntimeError("HLS_VARIANT_DEPTH_EXCEEDED")
 
 
-def probe_dash(url: str) -> dict:
-    status, body, final_url, latency = fetch(url)
+def probe_dash(url: str, headers: dict[str, str] | None = None) -> dict:
+    status, body, final_url, latency = fetch(url, headers=headers)
     if status not in (200, 206):
         raise RuntimeError(f"HTTP_{status}")
     try:
@@ -192,17 +200,19 @@ def probe_dash(url: str) -> dict:
     base_url = next((element.text.strip() for element in root.iter() if element.tag.lower().endswith("baseurl") and element.text and element.text.strip()), None)
     if base_url:
         media_url = urllib.parse.urljoin(final_url, base_url)
-        code, payload, _, media_latency = fetch(media_url, 4096)
+        code, payload, _, media_latency = fetch(media_url, 4096, headers)
         if code not in (200, 206) or not payload:
             raise RuntimeError(f"FIRST_SEGMENT_HTTP_{code}")
-        return {"httpCode": code, "latencyMs": latency + media_latency, "detail": "manifest_and_first_segment_ok"}
+        return {"httpCode": code, "latencyMs": latency + media_latency, "firstSegmentMs": media_latency,
+                "detail": "manifest_and_first_segment_ok"}
     segment = next((element.attrib.get("media") for element in root.iter() if element.tag.lower().endswith("segmenturl") and element.attrib.get("media")), None)
     if not segment:
         raise RuntimeError("DASH_FIRST_SEGMENT_NOT_RESOLVABLE")
-    code, payload, _, media_latency = fetch(urllib.parse.urljoin(final_url, segment), 4096)
+    code, payload, _, media_latency = fetch(urllib.parse.urljoin(final_url, segment), 4096, headers)
     if code not in (200, 206) or not payload:
         raise RuntimeError(f"FIRST_SEGMENT_HTTP_{code}")
-    return {"httpCode": code, "latencyMs": latency + media_latency, "detail": "manifest_and_first_segment_ok"}
+    return {"httpCode": code, "latencyMs": latency + media_latency, "firstSegmentMs": media_latency,
+            "detail": "manifest_and_first_segment_ok"}
 
 
 def probe(candidate: dict) -> dict:
@@ -210,9 +220,9 @@ def probe(candidate: dict) -> dict:
         raise RuntimeError("DYNAMIC_SOURCE_NEEDS_RESOLVER")
     protocol = str(candidate.get("protocol", "")).upper()
     if protocol == "HLS":
-        return probe_hls(candidate["url"])
+        return probe_hls(candidate["url"], candidate.get("headers") or {})
     if protocol == "DASH":
-        return probe_dash(candidate["url"])
+        return probe_dash(candidate["url"], candidate.get("headers") or {})
     raise RuntimeError(f"UNSUPPORTED_PROTOCOL_{protocol}")
 
 
@@ -221,6 +231,8 @@ def update_health(candidate: dict, previous: dict | None, result: dict | None, c
     ok = result is not None
     failures = 0 if ok else int(prev.get("failCount", 0)) + 1
     successes = int(prev.get("successCount", 0)) + 1 if ok else int(prev.get("successCount", 0))
+    consecutive_failures = 0 if ok else int(prev.get("consecutiveFailureCount", 0)) + 1
+    consecutive_successes = int(prev.get("consecutiveSuccessCount", 0)) + 1 if ok else 0
     if ok:
         status = "HEALTHY"
     elif failures == 1 and prev.get("status") in {"HEALTHY", "DEGRADED"}:
@@ -235,27 +247,35 @@ def update_health(candidate: dict, previous: dict | None, result: dict | None, c
         "status": status,
         "lastCheckSucceeded": ok,
         "latencyMs": result.get("latencyMs") if ok else None,
+        "firstSegmentMs": result.get("firstSegmentMs") if ok else prev.get("firstSegmentMs"),
         "httpCode": result.get("httpCode") if ok else previous.get("httpCode") if previous else None,
         "detail": result.get("detail") if ok else (result or {}).get("error", "probe_failed"),
         "lastCheckTime": checked_at,
         "failCount": failures,
         "successCount": successes,
+        "consecutiveFailureCount": consecutive_failures,
+        "consecutiveSuccessCount": consecutive_successes,
     }
     return row
 
 
 def check_all(candidate_groups: dict[str, list[dict]], previous: dict[str, dict], checker=probe, checked_at: str | None = None):
     checked_at = checked_at or utc_now()
-    rows = []
-    for channel_id, sources in candidate_groups.items():
-        for source in sources:
-            try:
-                result = checker(source)
-            except Exception as error:  # Individual source failures are health data, not job failures.
-                result = {"error": f"{type(error).__name__}:{error}"}
-            rows.append(update_health(source, previous.get(source["id"]), result if "error" not in result else None, checked_at))
-            if "error" in result:
-                rows[-1]["detail"] = result["error"][:300]
+    tasks = [(channel_id, source) for channel_id, sources in candidate_groups.items() for source in sources]
+
+    def one(item):
+        channel_id, source = item
+        try:
+            result = checker(source)
+        except Exception as error:  # Individual source failures are health data, not job failures.
+            result = {"error": f"{type(error).__name__}:{error}"}
+        row = update_health(source, previous.get(source["id"]), result if "error" not in result else None, checked_at)
+        if "error" in result:
+            row["detail"] = result["error"][:300]
+        return row
+
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        rows = list(executor.map(one, tasks))
     total = len(rows)
     failed = sum(not row["lastCheckSucceeded"] for row in rows)
     return {"schemaVersion": 1, "checkedAt": checked_at, "checkedCount": total, "failedCount": failed,

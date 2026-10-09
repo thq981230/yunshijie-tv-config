@@ -16,7 +16,11 @@ from providers.registry import SubscriptionProviderAdapter
 
 MAX_FEED_BYTES = 8 * 1024 * 1024
 MAX_ENTRIES = 20_000
-SENSITIVE_QUERY_KEYS = {"token", "auth", "authorization", "signature", "sig", "expires", "expire", "key"}
+SENSITIVE_QUERY_KEYS = {
+    "token", "access_token", "auth", "authorization", "signature", "sig", "sign", "expires", "expire",
+    "key", "auth_key", "txsecret", "tx_secret", "wstime", "wssecret", "ws_secret", "hdnts", "policy",
+    "jwt", "secret", "accesskey", "access_key", "credential", "credentials",
+}
 
 
 def validate_subscription_endpoint(url: str, *, resolve_dns: bool = False) -> None:
@@ -40,8 +44,8 @@ def validate_subscription_endpoint(url: str, *, resolve_dns: bool = False) -> No
 
 def validate_publishable_stream_url(url: str) -> None:
     parsed = urllib.parse.urlsplit(url)
-    if parsed.scheme.lower() != "https" or not parsed.hostname or parsed.username or parsed.password:
-        raise ValueError("stream URL must be public HTTPS without embedded credentials")
+    if parsed.scheme.lower() not in {"https", "http"} or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError("stream URL must be public HTTP(S) without embedded credentials")
     host = parsed.hostname.rstrip(".").lower()
     if host == "localhost" or host.endswith((".localhost", ".local")):
         raise ValueError("stream URL host must be public")
@@ -51,9 +55,40 @@ def validate_publishable_stream_url(url: str) -> None:
         address = None
     if address is not None and not address.is_global:
         raise ValueError("stream URL host must be public")
-    query_keys = {part.split("=", 1)[0].lower() for part in parsed.query.split("&") if part}
+    query_keys = {urllib.parse.unquote_plus(part.split("=", 1)[0]).casefold() for part in parsed.query.split("&") if part}
     if query_keys & SENSITIVE_QUERY_KEYS:
         raise ValueError("stream URL contains an expiring/authenticated query; it cannot be published")
+    if parsed.fragment:
+        raise ValueError("stream URL fragment cannot be published")
+
+
+def _safe_entry_headers(entry: dict) -> dict[str, str]:
+    result: dict[str, str] = {}
+    values = entry.get("headers")
+    if isinstance(values, dict):
+        for key, value in values.items():
+            name = str(key).strip().casefold()
+            if name in {"user-agent", "referer", "referrer"} and value is not None:
+                result["Referer" if name in {"referer", "referrer"} else "User-Agent"] = str(value).strip()
+    for key, header in (("http-user-agent", "User-Agent"), ("http-referrer", "Referer"),
+                        ("http-referer", "Referer")):
+        if entry.get(key):
+            result[header] = str(entry[key]).strip()
+    for key, value in result.items():
+        if not value or "\r" in value or "\n" in value:
+            raise ValueError("stream headers are invalid")
+        if key == "User-Agent" and any(marker in value.casefold() for marker in
+                                       ("bearer ", "authorization:", "cookie:", "token=", "auth=")):
+            raise ValueError("credential-bearing User-Agent cannot be published")
+        if key == "Referer":
+            try:
+                validate_publishable_stream_url(value)
+            except ValueError as error:
+                raise ValueError("stream referrer is not a public, credential-free URL") from error
+    forbidden = {str(key).casefold() for key in (values or {})} & {"authorization", "cookie", "proxy-authorization"}
+    if forbidden:
+        raise ValueError("credential headers cannot be published")
+    return result
 
 
 class _SafeFeedRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -86,6 +121,7 @@ def parse_m3u(text: str) -> list[dict]:
     rows: list[dict] = []
     attributes: dict[str, str] = {}
     display_name = ""
+    headers: dict[str, str] = {}
     pending = False
     for raw in text.replace("\ufeff", "").splitlines():
         line = raw.strip()
@@ -98,12 +134,18 @@ def parse_m3u(text: str) -> list[dict]:
             for match in re.finditer(r'([\w-]+)=(?:"([^"]*)"|([^,\s]+))', head):
                 attributes[match.group(1).casefold()] = match.group(2) if match.group(2) is not None else match.group(3)
             display_name = title.strip() if comma else ""
+            headers = {}
             pending = True
+        elif pending and line.upper().startswith("#EXTVLCOPT:"):
+            key, separator, value = line.partition(":")[2].partition("=")
+            if separator and key.casefold() in {"http-user-agent", "http-referrer", "http-referer"}:
+                headers[key.casefold()] = value.strip().strip('"')
         elif line.startswith("#"):
             continue
         elif pending:
-            rows.append({**attributes, "name": display_name, "url": line})
+            rows.append({**attributes, **headers, "headers": headers.copy(), "name": display_name, "url": line})
             attributes = {}
+            headers = {}
             display_name = ""
             pending = False
             if len(rows) > MAX_ENTRIES:
@@ -137,18 +179,25 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
 
     provider_id = "remote-subscription"
 
-    def __init__(self, feeds: list[dict], fetcher: Callable[[str], bytes] = fetch_subscription):
+    def __init__(self, feeds: list[dict], fetcher: Callable[[str], bytes] = fetch_subscription,
+                 cached_sources: Mapping[str, list[dict]] | None = None):
         self.feeds = feeds
         self.fetcher = fetcher
-        self.last_stats = {"feeds": 0, "entries": 0, "matched": 0, "published": 0, "rejected": 0,
-                           "withoutPublicationPermission": 0}
+        self.cached_sources = {key: list(value) for key, value in (cached_sources or {}).items()}
+        self.last_stats = {"feeds": 0, "feedSuccess": 0, "feedFailed": 0, "fallbackFeeds": 0,
+                           "entries": 0, "matched": 0, "published": 0, "rejected": 0,
+                           "localMulticast": 0, "withoutPublicationPermission": 0}
         self._discovered: list[DiscoveredSource] = []
+        self.last_unmatched: list[dict] = []
+        self.feed_reports: list[dict] = []
 
-    def discover(self, catalog: dict) -> list[DiscoveredSource]:
+    def discover(self, catalog: dict, channel_ids: set[str] | None = None) -> list[DiscoveredSource]:
         matcher = ChannelMatcher(catalog)
         found: list[DiscoveredSource] = []
         stats = {key: 0 for key in self.last_stats}
         matched_channels: set[str] = set()
+        unmatched: dict[tuple[str, str, str], dict] = {}
+        reports: list[dict] = []
         for feed_index, feed in enumerate(self.feeds):
             stats["feeds"] += 1
             feed_id = re.sub(r"[^a-zA-Z0-9_-]+", "-", str(feed.get("providerId") or f"subscription-{feed_index + 1}"))[:48].strip("-").lower()
@@ -159,26 +208,57 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
             if not community_test and (feed.get("redistributable") is not True or len(authorization) < 8):
                 stats["withoutPublicationPermission"] += 1
                 continue
-            feed_url = str(feed.get("url") or "").strip()
-            validate_subscription_endpoint(feed_url)
-            entries = parse_subscription(self.fetcher(feed_url))
+            try:
+                feed_url = str(feed.get("url") or "").strip()
+                validate_subscription_endpoint(feed_url)
+                entries = parse_subscription(self.fetcher(feed_url))
+                if not entries:
+                    raise ValueError("feed returned no entries")
+                stats["feedSuccess"] += 1
+            except Exception as error:
+                stats["feedFailed"] += 1
+                cached = self._cached_for_feed(feed_id)
+                found.extend(cached)
+                if cached:
+                    stats["fallbackFeeds"] += 1
+                reports.append({"providerId": feed_id, "status": "PROVIDER_DEGRADED", "parsedEntries": 0,
+                                "candidateSources": len(cached), "cacheUsed": bool(cached),
+                                "error": type(error).__name__})
+                continue
             stats["entries"] += len(entries)
             seen_urls: set[tuple[str, str]] = set()
+            feed_found: list[DiscoveredSource] = []
+            feed_matched = 0
             base_priority = int(feed.get("priority", 100))
             if base_priority < 1:
                 raise ValueError("subscription priority must be positive")
             for position, entry in enumerate(entries, start=1):
                 match = matcher.match(entry)
                 if match is None:
+                    if entry.get("name") or entry.get("tvg-id") or entry.get("tvg-name"):
+                        key = (feed_id, str(entry.get("tvg-id") or ""), str(entry.get("name") or entry.get("tvg-name") or ""))
+                        unmatched.setdefault(key, {"providerId": feed_id, "tvgId": key[1], "name": key[2]})
+                    continue
+                if channel_ids is not None and match.channel_id not in channel_ids:
                     continue
                 stats["matched"] += 1
+                feed_matched += 1
                 channel_id = match.channel_id
                 matched_channels.add(channel_id)
                 url = str(entry.get("url") or entry.get("streamUrl") or entry.get("stream_url") or entry.get("uri") or "").strip()
+                parsed_url = urllib.parse.urlsplit(url)
+                host = parsed_url.hostname or ""
+                try:
+                    address = ipaddress.ip_address(host.strip("[]"))
+                except ValueError:
+                    address = None
+                if parsed_url.scheme.casefold() in {"rtp", "udp"} and (address is None or address.is_multicast):
+                    stats["localMulticast"] += 1
+                    stats["rejected"] += 1
+                    continue
                 try:
                     validate_publishable_stream_url(url)
-                    if community_test and urllib.parse.urlsplit(url).query:
-                        raise ValueError("community stream URL must not contain query credentials")
+                    headers = _safe_entry_headers(entry)
                 except ValueError:
                     stats["rejected"] += 1
                     continue
@@ -206,18 +286,54 @@ class RemoteSubscriptionProvider(SubscriptionProviderAdapter):
                     "enabled": True,
                     "sourceClass": "COMMUNITY_SOURCE" if community_test else "AUTHORIZED",
                     "providerId": feed_id,
+                    "sourceProviders": [feed_id],
                     "matchMethod": match.method,
+                    "matchConfidence": match.confidence,
+                    "headers": headers,
                 }
                 if not community_test:
                     source["authorization"] = authorization
-                found.append(DiscoveredSource(channel_id, source, self.provider_id, f"feed:{feed_id}"))
+                feed_found.append(DiscoveredSource(channel_id, source, self.provider_id, f"feed:{feed_id}"))
                 stats["published"] += 1
+            if feed_found:
+                found.extend(feed_found)
+                reports.append({"providerId": feed_id, "status": "SUCCESS", "parsedEntries": len(entries),
+                                "matchedEntries": feed_matched, "candidateSources": len(feed_found), "cacheUsed": False})
+            else:
+                cached = self._cached_for_feed(feed_id)
+                found.extend(cached)
+                if cached:
+                    stats["fallbackFeeds"] += 1
+                reports.append({"providerId": feed_id, "status": "PROVIDER_DEGRADED" if cached else "EMPTY",
+                                "parsedEntries": len(entries), "matchedEntries": feed_matched,
+                                "candidateSources": len(cached), "cacheUsed": bool(cached),
+                                "error": "NO_PUBLISHABLE_MATCH"})
         stats["matchedChannels"] = len(matched_channels)
         stats["candidateChannels"] = len({row.channel_id for row in found})
         self.last_stats = stats
+        self.last_unmatched = sorted(unmatched.values(), key=lambda row: (row["providerId"], row["tvgId"], row["name"]))[:20000]
+        self.feed_reports = reports
         # Preserve priority from feed ordering, with stable source-id tie breaking.
         self._discovered = sorted(found, key=lambda row: (row.channel_id, row.source["priority"], row.source["id"]))
         return list(self._discovered)
+
+    def _cached_for_feed(self, feed_id: str) -> list[DiscoveredSource]:
+        rows = []
+        for source in self.cached_sources.get(feed_id, []):
+            try:
+                if source.get("sourceClass") != "COMMUNITY_SOURCE" or source.get("providerId") != feed_id:
+                    continue
+                validate_publishable_stream_url(str(source.get("url") or ""))
+                headers = _safe_entry_headers(source)
+                if source.get("headers") != headers:
+                    source = {**source, "headers": headers}
+                channel_id = str(source.get("channelId") or "")
+                if not channel_id:
+                    continue
+                rows.append(DiscoveredSource(channel_id, dict(source), self.provider_id, f"cache:{feed_id}"))
+            except ValueError:
+                continue
+        return rows
 
     def resolve(self, channel_id: str, catalog: dict) -> list[DiscoveredSource]:
         if self._discovered:

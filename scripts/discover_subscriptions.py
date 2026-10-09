@@ -6,11 +6,12 @@ import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 from providers.remote_subscription import RemoteSubscriptionProvider
 from providers.base import DiscoveredSource
-from providers.registry import OfficialProviderRegistry
+from providers.source_deduplicator import SourceDeduplicator, canonical_source_key
 from validate_config import ROOT, read_json
 
 OUTPUT = ROOT / "candidates" / "subscriptions.generated.json"
@@ -100,39 +101,57 @@ def github_action_feed_config() -> str:
     return json.dumps(feeds, ensure_ascii=False, separators=(",", ":"))
 
 
-def discover(feeds: list[dict], catalog: dict) -> tuple[dict, dict]:
-    provider = RemoteSubscriptionProvider(feeds)
-    registry = OfficialProviderRegistry([provider])
-    rows = registry.discover(catalog)
-    channel_ids = [row["id"] for row in catalog["channels"]]
-    grouped = merge_sources(rows, channel_ids)
+def discover(feeds: list[dict], catalog: dict, cached_payload: dict | None = None,
+             channel_ids: set[str] | None = None) -> tuple[dict, dict, list[dict], list[dict]]:
+    cached_by_provider: dict[str, list[dict]] = {}
+    for channel in (cached_payload or {}).get("channels", []):
+        for source in channel.get("sources", []):
+            provider_id = str(source.get("providerId") or "")
+            if provider_id:
+                cached_by_provider.setdefault(provider_id, []).append(source)
+    provider = RemoteSubscriptionProvider(feeds, cached_sources=cached_by_provider)
+    rows = provider.discover(catalog, channel_ids=channel_ids)
+    known_channel_ids = [row["id"] for row in catalog["channels"]]
+    grouped = merge_sources(rows, known_channel_ids)
     payload = {"schemaVersion": 1, "channels": [
-        {"channelId": channel_id, "sources": grouped[channel_id]} for channel_id in channel_ids
+        {"channelId": channel_id, "sources": grouped[channel_id]} for channel_id in known_channel_ids
     ]}
-    return payload, provider.last_stats
+    return payload, provider.last_stats, provider.feed_reports, provider.last_unmatched
 
 
-def merge_sources(rows: list[DiscoveredSource], channel_ids: list[str], limit: int = 5) -> dict[str, list[dict]]:
-    """Reserve a slot for each feed before filling the remaining backup slots."""
+def merge_sources(rows: list[DiscoveredSource], channel_ids: list[str], limit: int | None = None) -> dict[str, list[dict]]:
+    """Deduplicate URLs while preserving provider diversity and the full candidate pool."""
     candidates = {channel_id: [] for channel_id in channel_ids}
     for row in rows:
         if row.channel_id in candidates:
             candidates[row.channel_id].append(row.source)
     grouped: dict[str, list[dict]] = {channel_id: [] for channel_id in channel_ids}
     for channel_id in channel_ids:
-        seen_urls: set[str] = set()
-        seen_providers: set[str] = set()
-        for provider_pass in (True, False):
-            for source in candidates[channel_id]:
-                if len(grouped[channel_id]) >= limit:
+        deduped = SourceDeduplicator().merge(
+            DiscoveredSource(channel_id, source, "remote-subscription", str(source.get("providerId") or ""))
+            for source in candidates[channel_id]
+        )
+        pool = [row.source for row in sorted(deduped, key=lambda row: (
+            int(row.source.get("priority", 100)), str(row.source.get("providerId") or ""), row.source.get("id", "")
+        ))]
+        if limit is None:
+            grouped[channel_id] = pool
+            continue
+        # Keep at least one URL from each provider before filling the explicit limit.
+        selected: list[dict] = []
+        selected_keys: set[tuple] = set()
+        for distinct_provider_pass in (True, False):
+            for source in pool:
+                if len(selected) >= limit:
                     break
+                key = canonical_source_key(source)
                 provider_id = str(source.get("providerId") or "")
-                url = source["url"]
-                if url in seen_urls or (provider_pass and provider_id in seen_providers):
+                providers = source.get("sourceProviders") or [provider_id]
+                if key in selected_keys or (distinct_provider_pass and any(value in {row.get("providerId") for row in selected} for value in providers)):
                     continue
-                grouped[channel_id].append(source)
-                seen_urls.add(url)
-                seen_providers.add(provider_id)
+                selected.append(source)
+                selected_keys.add(key)
+        grouped[channel_id] = selected
     return grouped
 
 
@@ -142,12 +161,31 @@ def main() -> int:
         raw_feeds = github_action_feed_config()
     feeds = load_feed_specs(raw_feeds)
     if not feeds:
-        OUTPUT.unlink(missing_ok=True)
-        print("subscription feeds configured=0; keeping reviewed candidate files only")
+        print("subscription feeds configured=0; keeping the previous provider cache")
         return 0
 
     catalog = read_json(ROOT / "catalog" / "channels.json")
-    payload, stats = discover(feeds, catalog)
+    previous = read_json(OUTPUT) if OUTPUT.exists() else None
+    scope = os.environ.get("REFRESH_SCOPE", "ALL").upper()
+    channel_id = os.environ.get("REFRESH_CHANNEL_ID", "").strip()
+    category_id = os.environ.get("REFRESH_CATEGORY_ID", "").strip()
+    by_id = {row["id"]: row for row in catalog["channels"]}
+    if scope == "CHANNEL":
+        if channel_id not in by_id:
+            raise ValueError("CHANNEL refresh requires a known channelId")
+        target_ids = {channel_id}
+    elif scope == "CATEGORY":
+        target_ids = {row["id"] for row in catalog["channels"] if category_id in row.get("categoryIds", [])}
+        if not target_ids:
+            raise ValueError("CATEGORY refresh requires a known categoryId")
+    else:
+        target_ids = None
+    payload, stats, reports, unmatched = discover(feeds, catalog, previous, target_ids)
+    if target_ids is not None and previous:
+        old = {row["channelId"]: row.get("sources", []) for row in previous.get("channels", [])}
+        for row in payload["channels"]:
+            if row["channelId"] not in target_ids:
+                row["sources"] = old.get(row["channelId"], [])
     source_count = sum(len(row["sources"]) for row in payload["channels"])
     if source_count:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -155,11 +193,16 @@ def main() -> int:
         temp.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         json.loads(temp.read_text(encoding="utf-8"))
         temp.replace(OUTPUT)
-    else:
-        OUTPUT.unlink(missing_ok=True)
     # Feed URLs and stream URLs are intentionally omitted from logs.
     print("subscription discovery: " + " ".join(f"{key}={value}" for key, value in stats.items()))
-    print(f"generated eligible candidates={source_count} channels={sum(bool(row['sources']) for row in payload['channels'])}")
+    print(f"provider status: {json.dumps(reports, ensure_ascii=False, separators=(',', ':'))}")
+    print(f"generated candidate pool={source_count} channels={sum(bool(row['sources']) for row in payload['channels'])}")
+    unmatched_path = ROOT / "unmatched_channels.json"
+    temp_unmatched = unmatched_path.with_name("unmatched_channels.new.json")
+    temp_unmatched.write_text(json.dumps({"generatedAt": datetime.now(timezone.utc).isoformat(),
+                                           "items": unmatched}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    json.loads(temp_unmatched.read_text(encoding="utf-8"))
+    temp_unmatched.replace(unmatched_path)
     return 0
 
 

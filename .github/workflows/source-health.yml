@@ -31,7 +31,7 @@ on:
         required: false
         type: string
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 */3 * * *"
 
 permissions:
   contents: write
@@ -53,6 +53,10 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate source catalog and run unit tests
+        env:
+          REFRESH_SCOPE: ${{ inputs.refresh_scope || 'ALL' }}
+          REFRESH_CHANNEL_ID: ${{ inputs.channel_id || '' }}
+          REFRESH_CATEGORY_ID: ${{ inputs.category_id || '' }}
         run: |
           python -m unittest discover -s tests -v
           python scripts/validate_config.py --inputs-only
@@ -79,7 +83,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add health/latest.json public releases
+          git add health/latest.json public releases candidates/subscriptions.generated.json unmatched_channels.json
           if git diff --cached --quiet; then
             echo "No config changes to publish."
           else

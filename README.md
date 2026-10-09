@@ -18,7 +18,7 @@
 - `scripts/providers/` 提供 `OfficialProviderRegistry`、`StaticProviderAdapter`、`DynamicProviderAdapter`、`SubscriptionProviderAdapter` 和 `RemoteSubscriptionProvider`。
 - `RemoteSubscriptionProvider` 读取 M3U/M3U8 或 JSON。`ChannelMatcher` 依次使用 `tvg-id`、标准频道 ID、规范化名称、别名和保守模糊匹配；内置 CCTV、湖南、东方、江苏、浙江等别名。
 - Actions 使用 GitHub OIDC 向 Cloudflare Worker 的 `/internal/v1/subscriptions` 读取私有订阅配置。Worker 只接受本仓库 `main` 分支的 `source-health.yml` 工作流身份，并从 Worker Secret `YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON` 读取配置；订阅 URL 不放进 GitHub Secret、工作流参数、日志或 Git 提交。配置格式为 JSON 数组，例如 `[{"providerId":"partner-a","url":"https://feed.example/playlist.m3u","redistributable":true,"authorization":"agreement-ref-123","priority":1}]`。
-- `redistributable=true` 且带许可引用的合作方源标为 `AUTHORIZED`。为个人验证明确设置 `communityTest=true` 的 Feed 标为 `COMMUNITY_SOURCE`，只接收无凭据 HTTPS HLS/DASH；HTTP、RTP 多播、带 token、登录凭据和私网 URL 不进入候选。社区列表不能证明电视台授予商业播放或再分发许可。
+- `redistributable=true` 且带许可引用的合作方源标为 `AUTHORIZED`。为个人验证明确设置 `communityTest=true` 的 Feed 标为 `COMMUNITY_SOURCE`，只接收无凭据公网 HTTP(S) HLS/DASH；RTP/UDP 多播、带 token、登录凭据和私网 URL 不进入候选。社区列表不能证明电视台授予商业播放或再分发许可。
 - “一键更新”继续调用既有 Actions；工作流会先从 Worker 读取并刷新授权订阅、匹配频道，再探活和发布。没有配置订阅时，只会处理人工审核的 `candidates/*.json`。
 
 ## 文件
@@ -30,7 +30,7 @@
 - `releases/`：历次 sources 配置快照，便于回滚。
 - `scripts/`：验证、HLS 探活、提升和原子发布程序。
 - `scripts/providers/`：官方/静态/动态/订阅 Provider 接口、订阅解析器和频道匹配器。不抓取播放器内部线路，也不猜测直播地址。
-- `.github/workflows/source-health.yml`：每 6 小时自动探活，也支持手动执行。
+- `.github/workflows/source-health.yml`：每 3 小时自动探活，也支持手动执行。
 - `worker/`：Cloudflare Worker 刷新 API；GitHub Token 只保存在 Worker Secret 中。
 
 设置 GitHub Actions workflow 权限 `contents: write`。应用构建时将 `tvGithubManifestUrl` 指向仓库公开 Raw 或 Pages 的 `public/manifest.json`。Manifest URL 一次性配置后，改线路只需更新 GitHub 仓库，不用更新 APK。

@@ -150,7 +150,7 @@ async function resolvePublishedSource(url, channelId, env) {
   const candidates = (Array.isArray(channel.sources) ? channel.sources : [])
     .filter(source => source && source.enabled !== false && source.type === "STATIC" &&
       ["HLS", "DASH"].includes(String(source.protocol).toUpperCase()) &&
-      ["HEALTHY", "DEGRADED"].includes(source.health) && isPublicHttpsStream(source.url))
+      ["HEALTHY", "DEGRADED"].includes(source.health) && isPublicHttpStream(source.url))
     .sort((left, right) => sourceOrder(left, right));
   if (candidates.length === 0) {
     return json({ error: channel.status === "OFFLINE" ? "ALL_SOURCES_OFFLINE" : "NO_SOURCE", channelId },
@@ -182,20 +182,39 @@ function sourceOrder(left, right) {
     quality(right.quality) - quality(left.quality) || String(left.id).localeCompare(String(right.id));
 }
 
-function isPublicHttpsStream(value) {
+function isPublicHttpStream(value) {
   try {
     const parsed = new URL(String(value));
     const host = parsed.hostname.toLowerCase().replace(/\.$/, "");
-    if (parsed.protocol !== "https:" || parsed.username || parsed.password || !host ||
+    if (!(parsed.protocol === "https:" || parsed.protocol === "http:") || parsed.username || parsed.password || !host ||
       host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local")) return false;
-    if (/^(?:0|10|127|169\.254|192\.168)\./.test(host) || /^172\.(?:1[6-9]|2\d|3[01])\./.test(host) ||
-      host === "::1" || host.startsWith("fc") || host.startsWith("fd") || host.startsWith("fe80:")) return false;
+    if (isNonPublicIpLiteral(host)) return false;
     const queryKeys = new Set(parsed.searchParams.keys());
-    return !["token", "auth", "authorization", "signature", "sig", "expires", "expire", "key"]
+    if (parsed.hash) return false;
+    return !["token", "access_token", "auth", "authorization", "signature", "sig", "sign", "expires", "expire",
+      "key", "auth_key", "txsecret", "tx_secret", "wstime", "wssecret", "ws_secret", "hdnts", "policy",
+      "jwt", "secret", "accesskey", "access_key", "credential", "credentials"]
       .some(key => queryKeys.has(key));
   } catch {
     return false;
   }
+}
+
+function isNonPublicIpLiteral(host) {
+  const octets = host.split(".");
+  if (octets.length === 4 && octets.every(part => /^\d{1,3}$/.test(part) && Number(part) <= 255)) {
+    const [a, b, c] = octets.map(Number);
+    return a === 0 || a === 10 || a === 127 || a >= 224 ||
+      (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) ||
+      (a === 192 && (b === 168 || (b === 0 && [0, 2].includes(c)) || (b === 88 && c === 99) || (b === 0 && c === 0))) ||
+      (a === 100 && b >= 64 && b <= 127) || (a === 198 && ([18, 19].includes(b) || (b === 51 && c === 100))) ||
+      (a === 203 && b === 0 && c === 113) || a === 255;
+  }
+  if (host.includes(":")) {
+    // Permit global-unicast IPv6 only; reject local, multicast, mapped, and documentation ranges.
+    return !/^[23]/.test(host) || host.startsWith("2001:db8:");
+  }
+  return false;
 }
 
 async function startRefresh(request, env) {

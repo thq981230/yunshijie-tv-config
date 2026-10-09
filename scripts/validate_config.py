@@ -4,13 +4,17 @@ import ipaddress
 import json
 import sys
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote_plus, urlsplit
 from providers.registry import ProviderRegistry, StaticCandidateProvider
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_PROTOCOLS = {"HLS", "DASH"}
 ALLOWED_TYPES = {"STATIC", "DYNAMIC"}
-SENSITIVE_QUERY_KEYS = {"token", "auth", "authorization", "signature", "sig", "expires", "expire", "key"}
+SENSITIVE_QUERY_KEYS = {
+    "token", "access_token", "auth", "authorization", "signature", "sig", "sign", "expires", "expire",
+    "key", "auth_key", "txsecret", "tx_secret", "wstime", "wssecret", "ws_secret", "hdnts", "policy",
+    "jwt", "secret", "accesskey", "access_key", "credential", "credentials",
+}
 
 
 def read_json(path: Path):
@@ -31,9 +35,47 @@ def require_https_public_url(value: str, label: str) -> None:
         address = None
     if address is not None and (not address.is_global or address.is_multicast):
         raise ValueError(f"{label}: private or non-public IP is not allowed")
-    keys = {part.split("=", 1)[0].lower() for part in parsed.query.split("&") if part}
+    keys = {unquote_plus(part.split("=", 1)[0]).casefold() for part in parsed.query.split("&") if part}
     if keys & SENSITIVE_QUERY_KEYS:
         raise ValueError(f"{label}: expiring/authenticated URL query parameters are not allowed; use a Resolver")
+
+
+def require_public_playback_url(value: str, label: str) -> None:
+    parsed = urlsplit(value)
+    if parsed.scheme.lower() not in {"https", "http"} or not parsed.hostname or parsed.username or parsed.password:
+        raise ValueError(f"{label}: expected a public HTTP(S) URL without credentials")
+    host = parsed.hostname.rstrip(".").lower()
+    if host == "localhost" or host.endswith((".localhost", ".local")):
+        raise ValueError(f"{label}: local host is not allowed")
+    try:
+        address = ipaddress.ip_address(host.strip("[]"))
+    except ValueError:
+        address = None
+    if address is not None and (not address.is_global or address.is_multicast):
+        raise ValueError(f"{label}: private or non-public IP is not allowed")
+    keys = {unquote_plus(part.split("=", 1)[0]).casefold() for part in parsed.query.split("&") if part}
+    if keys & SENSITIVE_QUERY_KEYS:
+        raise ValueError(f"{label}: expiring/authenticated URL query parameters are not allowed")
+    if parsed.fragment:
+        raise ValueError(f"{label}: URL fragment is not allowed")
+
+
+def validate_public_headers(headers: object, label: str) -> None:
+    if not isinstance(headers, dict):
+        raise ValueError(f"{label}: headers must be an object")
+    for key, value in headers.items():
+        name = str(key).casefold()
+        if name not in {"user-agent", "referer"} or not isinstance(value, str) or not value or "\r" in value or "\n" in value:
+            raise ValueError(f"{label}: only credential-free User-Agent and Referer headers are allowed")
+        if name == "user-agent" and any(marker in value.casefold() for marker in
+                                         ("bearer ", "authorization:", "cookie:", "token=", "auth=")):
+            raise ValueError(f"{label}: User-Agent must not contain credentials")
+        if name == "referer":
+            referer = urlsplit(value)
+            query_keys = {unquote_plus(part.split("=", 1)[0]).casefold() for part in referer.query.split("&") if part}
+            if (referer.scheme.lower() not in {"https", "http"} or not referer.hostname or referer.username or
+                    referer.password or query_keys & SENSITIVE_QUERY_KEYS or referer.fragment):
+                raise ValueError(f"{label}: Referer must be a public URL without credentials")
 
 
 def load_candidates():
@@ -56,8 +98,9 @@ def load_candidates():
                 raise ValueError(f"{path.relative_to(ROOT)}: duplicate channelId {channel_id}")
             seen_channels.add(channel_id)
             sources = channel.get("sources", [])
-            if not isinstance(sources, list) or (sources and len(sources) not in range(1, 6)):
-                raise ValueError(f"{path.relative_to(ROOT)}: {channel_id} must have 0 or 1-5 candidate sources")
+            max_candidates = 100
+            if not isinstance(sources, list) or (sources and len(sources) not in range(1, max_candidates + 1)):
+                raise ValueError(f"{path.relative_to(ROOT)}: {channel_id} must have 0-{max_candidates} candidate sources")
             for source in sources:
                 source_id = source.get("id", "")
                 if not source_id or source_id in candidate_ids:
@@ -77,9 +120,8 @@ def load_candidates():
                 if protocol not in ALLOWED_PROTOCOLS or source_type not in ALLOWED_TYPES:
                     raise ValueError(f"{source_id}: unsupported protocol/type")
                 if source_type == "STATIC":
-                    require_https_public_url(source.get("url", ""), source_id)
-                    if source.get("sourceClass") == "COMMUNITY_SOURCE" and urlsplit(source["url"]).query:
-                        raise ValueError(f"{source_id}: community URL must not contain query credentials")
+                    require_public_playback_url(source.get("url", ""), source_id)
+                    validate_public_headers(source.get("headers", {}), source_id)
                 if not isinstance(source.get("priority", 0), int) or source.get("priority", 0) < 1:
                     raise ValueError(f"{source_id}: priority must be a positive integer")
                 if not isinstance(source.get("quality", "AUTO"), str):
@@ -114,9 +156,8 @@ def validate_sources_payload(payload: dict, known_channel_ids: set[str]) -> None
                 raise ValueError(f"{source_id}: published channelId mismatch")
             if source.get("type") != "STATIC":
                 raise ValueError(f"{source_id}: DYNAMIC sources cannot be published in phase 1")
-            require_https_public_url(source.get("url", ""), source_id)
-            if source.get("sourceClass") == "COMMUNITY_SOURCE" and urlsplit(source["url"]).query:
-                raise ValueError(f"{source_id}: community URL must not contain query credentials")
+            require_public_playback_url(source.get("url", ""), source_id)
+            validate_public_headers(source.get("headers", {}), source_id)
             if source.get("protocol") not in ALLOWED_PROTOCOLS:
                 raise ValueError(f"{source_id}: unsupported protocol")
             if source.get("sourceClass") == "COMMUNITY_SOURCE" and not source.get("providerId"):

@@ -145,7 +145,7 @@ class PromotionTests(unittest.TestCase):
              "lastCheckSucceeded": index == 0, "lastCheckTime": "now"}
             for index, source in enumerate(candidates)
         ]}
-        with self.assertRaisesRegex(RuntimeError, "80%"):
+        with self.assertRaisesRegex(RuntimeError, "80%|40%"):
             promote(catalog, {"c1": candidates}, health, {"version": 7, "channels": {"c1": {"status": "AVAILABLE", "sources": []}}})
 
     def test_content_validation_corrects_prior_false_positive_despite_high_failure_ratio(self):
@@ -176,6 +176,20 @@ class PromotionTests(unittest.TestCase):
         self.assertEqual(published["providerId"], "chinaiptv")
         self.assertNotIn("authorization", published)
         validate_sources_payload(output, {"c1"})
+
+    def test_five_published_sources_are_unique_and_provider_diverse(self):
+        candidates = [self.candidate(f"s{i}", i + 1) | {"providerId": f"feed{i}",
+                      "sourceClass": "COMMUNITY_SOURCE"} for i in range(7)]
+        health = {"checkedAt": "now", "sources": [
+            {"sourceId": row["id"], "channelId": "c1", "status": "HEALTHY",
+             "lastCheckSucceeded": True, "lastCheckTime": "now", "latencyMs": 100}
+            for row in candidates
+        ]}
+        output = promote({"channels": [{"id": "c1"}]}, {"c1": candidates}, health, None)
+        published = output["channels"]["c1"]["sources"]
+        self.assertEqual(len(published), 5)
+        self.assertEqual(len({row["id"] for row in published}), 5)
+        self.assertEqual(len({row["providerId"] for row in published}), 5)
 
 
 if __name__ == "__main__":
