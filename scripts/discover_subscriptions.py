@@ -17,6 +17,10 @@ OIDC_AUDIENCE = "api://yunshijie-tv-subscriptions"
 WORKER_SUBSCRIPTION_API = "https://yunshijie-tv-refresh-api.yunshijie-tv.workers.dev/internal/v1/subscriptions"
 
 
+class SafeSubscriptionConfigError(RuntimeError):
+    """An allow-listed diagnostic that never contains request URLs or credentials."""
+
+
 def load_feed_specs(raw: str) -> list[dict]:
     if not raw.strip():
         return []
@@ -34,36 +38,63 @@ def github_action_feed_config() -> str:
     if not request_url and not request_token:
         return ""
     if not request_url or not request_token:
-        raise RuntimeError("GitHub Actions OIDC environment is incomplete")
+        raise SafeSubscriptionConfigError("GitHub Actions OIDC environment is incomplete")
     parsed = urllib.parse.urlsplit(request_url)
     if parsed.scheme != "https" or not parsed.hostname or not parsed.hostname.endswith(".actions.githubusercontent.com"):
-        raise RuntimeError("GitHub Actions OIDC endpoint is not trusted")
+        raise SafeSubscriptionConfigError("GitHub Actions OIDC endpoint is not trusted")
     query = urllib.parse.parse_qsl(parsed.query, keep_blank_values=True)
     query = [(key, value) for key, value in query if key != "audience"]
     query.append(("audience", OIDC_AUDIENCE))
     token_url = urllib.parse.urlunsplit((parsed.scheme, parsed.netloc, parsed.path,
                                          urllib.parse.urlencode(query), parsed.fragment))
+    request = urllib.request.Request(token_url, headers={"Authorization": f"Bearer {request_token}",
+                                                          "Accept": "application/json"})
     try:
-        request = urllib.request.Request(token_url, headers={"Authorization": f"Bearer {request_token}",
-                                                              "Accept": "application/json"})
         with urllib.request.urlopen(request, timeout=10) as response:
             token_payload = json.loads(response.read(32769))
-        oidc_token = str(token_payload.get("value") or "")
-        if not oidc_token or len(oidc_token) > 32768:
-            raise RuntimeError("GitHub Actions did not return a bounded OIDC token")
-        request = urllib.request.Request(WORKER_SUBSCRIPTION_API,
-            headers={"Authorization": f"Bearer {oidc_token}", "Accept": "application/json"})
+    except urllib.error.HTTPError as error:
+        raise SafeSubscriptionConfigError(f"GitHub OIDC token request returned HTTP {error.code}") from error
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as error:
+        raise SafeSubscriptionConfigError("GitHub OIDC token request failed") from error
+    oidc_token = str(token_payload.get("value") or "")
+    if not oidc_token or len(oidc_token) > 32768:
+        raise SafeSubscriptionConfigError("GitHub Actions did not return a bounded OIDC token")
+
+    request = urllib.request.Request(WORKER_SUBSCRIPTION_API,
+        headers={"Authorization": f"Bearer {oidc_token}", "Accept": "application/json"})
+    try:
         with urllib.request.urlopen(request, timeout=10) as response:
             body = response.read(65537)
-        if len(body) > 65536:
-            raise RuntimeError("Worker subscription configuration exceeds 64 KiB")
+    except urllib.error.HTTPError as error:
+        response_body = error.read(1024)
+        code = ""
+        try:
+            error_payload = json.loads(response_body.decode("utf-8"))
+            candidate = error_payload.get("error", "")
+            reason = error_payload.get("reason", "")
+            if candidate in {"OIDC_TOKEN_REQUIRED", "OIDC_IDENTITY_REJECTED", "SERVICE_UNAVAILABLE"}:
+                code = candidate
+            if reason in {"CLAIM_ISSUER", "CLAIM_AUDIENCE", "CLAIM_REPOSITORY", "CLAIM_REF",
+                          "CLAIM_REPOSITORY_ID", "CLAIM_OWNER_ID", "CLAIM_WORKFLOW_REF", "CLAIM_EVENT",
+                          "CLAIM_TIME", "SIGNING_KEY_NOT_FOUND", "SIGNATURE_INVALID", "TOKEN_INVALID",
+                          "TOKEN_FORMAT", "TOKEN_HEADER"}:
+                code = f"{code}:{reason}" if code else reason
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            pass
+        suffix = f" ({code})" if code else ""
+        raise SafeSubscriptionConfigError(f"Worker subscription request returned HTTP {error.code}{suffix}") from error
+    except (urllib.error.URLError, TimeoutError) as error:
+        raise SafeSubscriptionConfigError("Worker subscription request failed") from error
+    if len(body) > 65536:
+        raise SafeSubscriptionConfigError("Worker subscription configuration exceeds 64 KiB")
+    try:
         payload = json.loads(body.decode("utf-8"))
-        feeds = payload.get("feeds")
-        if not isinstance(feeds, list):
-            raise RuntimeError("Worker returned invalid subscription configuration")
-        return json.dumps(feeds, ensure_ascii=False, separators=(",", ":"))
-    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError) as error:
-        raise RuntimeError("could not retrieve private subscription configuration from Worker") from error
+    except (json.JSONDecodeError, UnicodeDecodeError) as error:
+        raise SafeSubscriptionConfigError("Worker returned invalid subscription JSON") from error
+    feeds = payload.get("feeds")
+    if not isinstance(feeds, list):
+        raise SafeSubscriptionConfigError("Worker returned invalid subscription configuration")
+    return json.dumps(feeds, ensure_ascii=False, separators=(",", ":"))
 
 
 def discover(feeds: list[dict], catalog: dict) -> tuple[dict, dict]:
@@ -117,6 +148,9 @@ def main() -> int:
 if __name__ == "__main__":
     try:
         sys.exit(main())
+    except SafeSubscriptionConfigError as error:
+        print(f"subscription discovery failed: {error}", file=sys.stderr)
+        sys.exit(2)
     except Exception as error:
         # Error text from HTTP libraries can contain a URL. Keep workflow logs credential-safe.
         print(f"subscription discovery failed: {type(error).__name__}", file=sys.stderr)

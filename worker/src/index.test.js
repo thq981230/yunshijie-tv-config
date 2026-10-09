@@ -82,7 +82,7 @@ test("subscription configuration is returned only to the allow-listed GitHub Act
       headers: { authorization: `Bearer ${wrongRepoToken}` }
     }), { ...env, YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: JSON.stringify(protectedFeeds) });
     assert.equal(rejectedIdentity.status, 403);
-    assert.deepEqual(await rejectedIdentity.json(), { error: "OIDC_IDENTITY_REJECTED" });
+    assert.deepEqual(await rejectedIdentity.json(), { error: "OIDC_IDENTITY_REJECTED", reason: "CLAIM_REPOSITORY" });
 
     const missing = await worker.fetch(new Request("https://worker.test/internal/v1/subscriptions"), {
       ...env, YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON: JSON.stringify(protectedFeeds)

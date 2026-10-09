@@ -59,7 +59,8 @@ async function subscriptionFeedConfig(request, env) {
   const authorization = request.headers.get("authorization") ?? "";
   const token = authorization.match(/^Bearer\s+(.+)$/i)?.[1] ?? "";
   if (!token || token.length > 32768) return json({ error: "OIDC_TOKEN_REQUIRED" }, 401);
-  if (!await verifyGithubActionsOidcToken(token)) return json({ error: "OIDC_IDENTITY_REJECTED" }, 403);
+  const rejection = await verifyGithubActionsOidcToken(token);
+  if (rejection) return json({ error: "OIDC_IDENTITY_REJECTED", reason: rejection }, 403);
   const raw = String(env.YUNSHIJIE_SUBSCRIPTION_FEEDS_JSON ?? "");
   if (!raw.trim()) return json({ configured: false, feeds: [] }, 200);
   if (raw.length > 65536) return json({ error: "SUBSCRIPTION_CONFIG_TOO_LARGE" }, 503);
@@ -78,21 +79,23 @@ async function subscriptionFeedConfig(request, env) {
 async function verifyGithubActionsOidcToken(token) {
   try {
     const parts = token.split(".");
-    if (parts.length !== 3) return false;
+    if (parts.length !== 3) return "TOKEN_FORMAT";
     const header = decodeJwtPart(parts[0]);
-    if (header.alg !== "RS256" || typeof header.kid !== "string") return false;
+    if (header.alg !== "RS256" || typeof header.kid !== "string") return "TOKEN_HEADER";
     const claims = decodeJwtPart(parts[1]);
     const now = Math.floor(Date.now() / 1000);
     const audiences = Array.isArray(claims.aud) ? claims.aud : [claims.aud];
-    if (claims.iss !== GITHUB_OIDC_ISSUER || !audiences.includes(SUBSCRIPTION_OIDC_AUDIENCE) ||
-      claims.repository !== ALLOWED_GITHUB_REPOSITORY || claims.ref !== "refs/heads/main" ||
-      String(claims.repository_id) !== ALLOWED_GITHUB_REPOSITORY_ID ||
-      String(claims.repository_owner_id) !== ALLOWED_GITHUB_OWNER_ID ||
-      claims.workflow_ref !== ALLOWED_GITHUB_WORKFLOW ||
-      !["push", "workflow_dispatch", "schedule"].includes(claims.event_name) ||
-      !Number.isFinite(claims.exp) || claims.exp <= now ||
+    if (claims.iss !== GITHUB_OIDC_ISSUER) return "CLAIM_ISSUER";
+    if (!audiences.includes(SUBSCRIPTION_OIDC_AUDIENCE)) return "CLAIM_AUDIENCE";
+    if (claims.repository !== ALLOWED_GITHUB_REPOSITORY) return "CLAIM_REPOSITORY";
+    if (claims.ref !== "refs/heads/main") return "CLAIM_REF";
+    if (String(claims.repository_id) !== ALLOWED_GITHUB_REPOSITORY_ID) return "CLAIM_REPOSITORY_ID";
+    if (String(claims.repository_owner_id) !== ALLOWED_GITHUB_OWNER_ID) return "CLAIM_OWNER_ID";
+    if (claims.workflow_ref !== ALLOWED_GITHUB_WORKFLOW) return "CLAIM_WORKFLOW_REF";
+    if (!["push", "workflow_dispatch", "schedule"].includes(claims.event_name)) return "CLAIM_EVENT";
+    if (!Number.isFinite(claims.exp) || claims.exp <= now ||
       (Number.isFinite(claims.nbf) && claims.nbf > now + 60) ||
-      (Number.isFinite(claims.iat) && claims.iat > now + 60)) return false;
+      (Number.isFinite(claims.iat) && claims.iat > now + 60)) return "CLAIM_TIME";
 
     let keys = await githubJwks();
     let jwk = keys.find(key => key.kid === header.kid && key.kty === "RSA" && key.use !== "enc");
@@ -100,13 +103,14 @@ async function verifyGithubActionsOidcToken(token) {
       keys = await githubJwks(true);
       jwk = keys.find(key => key.kid === header.kid && key.kty === "RSA" && key.use !== "enc");
     }
-    if (!jwk) return false;
+    if (!jwk) return "SIGNING_KEY_NOT_FOUND";
     const key = await crypto.subtle.importKey("jwk", jwk,
       { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["verify"]);
     const data = new TextEncoder().encode(`${parts[0]}.${parts[1]}`);
-    return await crypto.subtle.verify({ name: "RSASSA-PKCS1-v1_5" }, key, decodeBase64Url(parts[2]), data);
+    return await crypto.subtle.verify({ name: "RSASSA-PKCS1-v1_5" }, key, decodeBase64Url(parts[2]), data)
+      ? null : "SIGNATURE_INVALID";
   } catch {
-    return false;
+    return "TOKEN_INVALID";
   }
 }
 
