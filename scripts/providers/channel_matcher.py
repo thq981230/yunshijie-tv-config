@@ -44,9 +44,14 @@ QUALITY_SUFFIXES = ("超高清", "高清晰", "高清", "超清", "标清", "流
 def normalize_name(value: object) -> str:
     text = unicodedata.normalize("NFKC", str(value or "")).casefold().strip()
     # Remove common feed quality suffixes while preserving channel identifiers such as CCTV-4K.
-    for suffix in QUALITY_SUFFIXES:
-        if text.endswith(suffix):
-            text = text[:-len(suffix)].strip()
+    changed = True
+    while changed:
+        changed = False
+        for suffix in QUALITY_SUFFIXES:
+            if text.endswith(suffix):
+                text = text[:-len(suffix)].strip()
+                changed = True
+                break
     return re.sub(r"[^\w\u3400-\u9fff]+", "", text, flags=re.UNICODE)
 
 
@@ -80,15 +85,11 @@ class ChannelMatcher:
                     self._alias_ids.setdefault(normalized, channel_id)
 
     def match(self, entry: dict) -> ChannelMatch | None:
-        for key in ("tvg-id", "tvgId", "tvg_id", "tvgid"):
-            value = str(entry.get(key) or "").strip()
-            if value:
-                direct = self._direct_id(value)
-                if direct:
-                    return ChannelMatch(direct, "tvg-id", 1.0)
-                alias_id = self._alias_ids.get(normalize_name(value))
-                if alias_id:
-                    return ChannelMatch(alias_id, "tvg-id-alias", 0.99)
+        tvg_ids = [str(entry.get(key) or "").strip() for key in ("tvg-id", "tvgId", "tvg_id", "tvgid")]
+        for value in tvg_ids:
+            direct = self._direct_id(value)
+            if direct:
+                return ChannelMatch(direct, "tvg-id", 1.0)
 
         for key in ("channelId", "channel_id", "standardChannelId", "standard_channel_id", "id"):
             value = str(entry.get(key) or "").strip()
@@ -101,13 +102,16 @@ class ChannelMatcher:
         for normalized in normalized_names:
             if normalized in self._canonical_names:
                 return ChannelMatch(self._canonical_names[normalized], "normalized-name", 1.0)
+        for value in tvg_ids:
+            alias_id = self._alias_ids.get(normalize_name(value))
+            if alias_id:
+                return ChannelMatch(alias_id, "alias", 0.98)
         for normalized in normalized_names:
             if normalized in self._alias_ids:
                 return ChannelMatch(self._alias_ids[normalized], "alias", 0.98)
 
         # Fuzzy matching is deliberately conservative: automatic matching must not cross channel numbers.
-        best: tuple[float, str] | None = None
-        runner_up = 0.0
+        scores_by_id: dict[str, float] = {}
         aliases_by_id: dict[str, set[str]] = {}
         for channel_id, row in self.channels.items():
             aliases_by_id[channel_id] = {normalize_name(row.get("name")), normalize_name(row.get("shortName"))}
@@ -118,14 +122,10 @@ class ChannelMatcher:
                     if not candidate:
                         continue
                     score = SequenceMatcher(None, normalized, candidate).ratio()
-                    if best is None or score > best[0]:
-                        if best and best[1] != channel_id:
-                            runner_up = max(runner_up, best[0])
-                        best = (score, channel_id)
-                    elif channel_id != best[1]:
-                        runner_up = max(runner_up, score)
-        if best and best[0] >= 0.94 and best[0] - runner_up >= 0.06:
-            return ChannelMatch(best[1], "fuzzy-name", best[0])
+                    scores_by_id[channel_id] = max(scores_by_id.get(channel_id, 0.0), score)
+        ranked = sorted(scores_by_id.items(), key=lambda row: row[1], reverse=True)
+        if ranked and ranked[0][1] >= 0.94 and ranked[0][1] - (ranked[1][1] if len(ranked) > 1 else 0.0) >= 0.06:
+            return ChannelMatch(ranked[0][0], "fuzzy-name", ranked[0][1])
         return None
 
     def _direct_id(self, value: str) -> str | None:

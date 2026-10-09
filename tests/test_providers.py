@@ -30,6 +30,10 @@ class ChannelMatcherTests(unittest.TestCase):
         result = self.matcher.match({"channelId": "cctv1", "name": "湖南卫视"})
         self.assertEqual((result.channel_id, result.method), ("cctv1", "standard-id"))
 
+    def test_standard_id_is_not_overridden_by_a_noncanonical_tvg_alias(self):
+        result = self.matcher.match({"tvg-id": "Hunan TV", "channelId": "cctv1"})
+        self.assertEqual((result.channel_id, result.method), ("cctv1", "standard-id"))
+
     def test_normalized_cctv_names_and_hunan_alias(self):
         cases = [
             ({"name": "CCTV1"}, "cctv1"),
