@@ -61,7 +61,8 @@ def github_action_feed_config() -> str:
         raise SafeSubscriptionConfigError("GitHub Actions did not return a bounded OIDC token")
 
     request = urllib.request.Request(WORKER_SUBSCRIPTION_API,
-        headers={"Authorization": f"Bearer {oidc_token}", "Accept": "application/json"})
+        headers={"Authorization": f"Bearer {oidc_token}", "Accept": "application/json",
+                 "User-Agent": "YunshijieTV-SourceHealth/1.0 (+https://github.com/thq981230/yunshijie-tv-config)"})
     try:
         with urllib.request.urlopen(request, timeout=10) as response:
             body = response.read(65537)
