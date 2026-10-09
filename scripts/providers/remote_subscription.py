@@ -20,7 +20,35 @@ SENSITIVE_QUERY_KEYS = {
     "token", "access_token", "auth", "authorization", "signature", "sig", "sign", "expires", "expire",
     "key", "auth_key", "txsecret", "tx_secret", "wstime", "wssecret", "ws_secret", "hdnts", "policy",
     "jwt", "secret", "accesskey", "access_key", "credential", "credentials",
+    # Provider feeds sometimes disguise a device-bound authorization as metadata.
+    "authinfo", "mac", "macaddress", "stb", "stbid", "device", "deviceid", "clientid",
+    "userid", "user", "session", "sessionid", "sid", "uid", "serial", "serialnumber",
+    "password", "passwd", "pwd", "cookie", "account", "clientmac",
 }
+
+_SENSITIVE_QUERY_MARKERS = (
+    "auth", "token", "secret", "credential", "password", "passwd", "cookie", "signature",
+    "accesskey", "mac", "device", "stb", "session", "serial", "user",
+)
+
+
+def query_has_sensitive_key(query: str) -> bool:
+    """Reject credential and device-bound query names, including encoded spellings."""
+    for part in query.split("&"):
+        if not part:
+            continue
+        raw_key = part.split("=", 1)[0]
+        decoded = raw_key
+        for _ in range(3):
+            next_decoded = urllib.parse.unquote_plus(decoded)
+            if next_decoded == decoded:
+                break
+            decoded = next_decoded
+        key = re.sub(r"[^a-z0-9]", "", decoded.casefold())
+        if (key in SENSITIVE_QUERY_KEYS or key.endswith("key") or key.startswith("key") or
+                any(marker in key for marker in _SENSITIVE_QUERY_MARKERS)):
+            return True
+    return False
 
 
 def validate_subscription_endpoint(url: str, *, resolve_dns: bool = False) -> None:
@@ -55,8 +83,7 @@ def validate_publishable_stream_url(url: str) -> None:
         address = None
     if address is not None and not address.is_global:
         raise ValueError("stream URL host must be public")
-    query_keys = {urllib.parse.unquote_plus(part.split("=", 1)[0]).casefold() for part in parsed.query.split("&") if part}
-    if query_keys & SENSITIVE_QUERY_KEYS:
+    if query_has_sensitive_key(parsed.query):
         raise ValueError("stream URL contains an expiring/authenticated query; it cannot be published")
     if parsed.fragment:
         raise ValueError("stream URL fragment cannot be published")

@@ -23,42 +23,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv1-2230a97e39",
-          "channelId": "cctv1",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-1-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHZMxCRWp3HWsIw2YA4WN0gZ4ZwGH0TEaahnmJ3AUk9g%2B&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv1-6539422ea2",
-          "channelId": "cctv1",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV1HD/index.m3u8?gMac=unknown&livodToken=bb800ae03c2a2601e027d128dbd1b82006eadafaf3c87df367dfbc39b38e217c_1720507748_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv1-2485720384",
           "channelId": "cctv1",
           "protocol": "HLS",
@@ -410,24 +374,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv2-e3709ea979",
-          "channelId": "cctv2",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-2-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHYpSLOWx8KnbAEA%2FNlMdpMt4ZwGH0TEaahnmJ3AUk9g%2B&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv2-29c6e57f2d",
           "channelId": "cctv2",
           "protocol": "HLS",
@@ -723,42 +669,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv3-43a5e33308",
-          "channelId": "cctv3",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-3-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHTZfkz7RIpdfIwJsxT6gQaB4ZwGH0TEaahnmJ3AUk9g%2B&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv3-ed2da9256c",
-          "channelId": "cctv3",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV3_HD/index.m3u8?gMac=unknown&livodToken=5c5d27dfa6b308e64237c7af856d43276f42c5fa0da49c14c8f267c3f853f277_1720507841_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv3-003804486a",
           "channelId": "cctv3",
           "protocol": "HLS",
@@ -1013,42 +923,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv4-2f59ce6dee",
-          "channelId": "cctv4",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV4HD/index.m3u8?gMac=unknown&livodToken=a2076a91d4ab3e3a8d96df561854b17563ddc027aec6e893eac3be4e11830fb7_1720507863_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv4-de8422cd2b",
-          "channelId": "cctv4",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-4-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHe5MfrWrjPe5q06p5LAS8TUtN86kueV3HZoMvTL28BOV&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "tvg-id",
           "matchConfidence": 1.0,
@@ -1346,60 +1220,6 @@
             "burningc4"
           ],
           "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv5-2663cb6f68",
-          "channelId": "cctv5",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-5-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHfjI6wzwX5YlP5VGDtCFYEotN86kueV3HZoMvTL28BOV&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv5-a2af7495c2",
-          "channelId": "cctv5",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV5_HD/index.m3u8?gMac=unknown&livodToken=0a8daf617d4530fe59311611a96dcccfd6a7c054c880e8d1cef242c8da5f0a32_1720507885_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv5-bff7696b5f",
-          "channelId": "cctv5",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-5PLUS-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHYdR%2FXUke9cnQAha7YFSVSdY6KJ0YlTSaKwh%2FkUorJB0&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {}
         },
@@ -1901,24 +1721,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv6-490f6652c0",
-          "channelId": "cctv6",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-6-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHaquAvgVGCBNc5yICXxWYNYtN86kueV3HZoMvTL28BOV&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-fanmingming-cctv6-90bc5cf777",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -2191,24 +1993,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv7-b70b885072",
-          "channelId": "cctv7",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-7-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHWhwnULjlEBfSKy1l8wbijAtN86kueV3HZoMvTL28BOV&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "tvg-id",
           "matchConfidence": 1.0,
@@ -2528,42 +2312,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv8-977e58ef65",
-          "channelId": "cctv8",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV8_HD/index.m3u8?gMac=unknown&livodToken=a262d6f91c91f1b3b9970ca0005377026a37645dbb4150a3131badc4e3a5ad2f_1720508010_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv8-c28d7a5fc7",
-          "channelId": "cctv8",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-8-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHW6PrfWRPRPmGe%2BdNGyl5jItN86kueV3HZoMvTL28BOV&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-zwc_alive-cctv8-38cce04ebd",
           "channelId": "cctv8",
           "protocol": "HLS",
@@ -2806,24 +2554,6 @@
       "channelId": "cctv9",
       "sources": [
         {
-          "id": "sub-chinaiptv-cctv9-714dc6f8ca",
-          "channelId": "cctv9",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=eac8ef44103bdda066e5c6d5a92f4b23",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-cctv9-5b7382eb78",
           "channelId": "cctv9",
           "protocol": "HLS",
@@ -2838,42 +2568,6 @@
             "burningc4"
           ],
           "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv9-72dd21135a",
-          "channelId": "cctv9",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV9HD/index.m3u8?gMac=unknown&livodToken=827790a3c97b2ec4d8db29f865f4a76f6ee666e7dd6f7d8d79c95ff19569c406_1720508034_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv9-9a9d70d6d7",
-          "channelId": "cctv9",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-9-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHXltvbyel90%2BujQX9sEOc7AtN86kueV3HZoMvTL28BOV&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
           "matchConfidence": 1.0,
           "headers": {}
         },
@@ -3155,42 +2849,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv10-10fe6c648d",
-          "channelId": "cctv10",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV10HD/index.m3u8?gMac=unknown&livodToken=3372eeac7f52075d36d0edd66eab703b95c8eb3ddf8502186f235a1d890717d9_1720508080_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv10-9b76a8a8ce",
-          "channelId": "cctv10",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-10-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHUsd9mij0JyOcibqYTdmWtKVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv10-1b5d18e9b6",
           "channelId": "cctv10",
           "protocol": "HLS",
@@ -3451,42 +3109,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv11-dc5114613f",
-          "channelId": "cctv11",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV11HD/index.m3u8?gMac=unknown&livodToken=b7b4308467a66538e5a370fdfe90b3be8c54fa72c5cb958e5f43f4f56e036d2e_1720508128_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv11-e7dce54a93",
-          "channelId": "cctv11",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-11-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHQtjk7PDi4fkN2nvO2gK27uVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv11-3ae2d73487",
           "channelId": "cctv11",
           "protocol": "HLS",
@@ -3704,42 +3326,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv12-7d78f35b4c",
-          "channelId": "cctv12",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV12HD/index.m3u8?gMac=unknown&livodToken=580c20b986086596a03afb85524d28a7b1255fd045cc29e549830abd92eab828_1720508158_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv12-eb2e34fc14",
-          "channelId": "cctv12",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-12-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHRtFGgShYCQQqFHAFhzmleqVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "tvg-id",
           "matchConfidence": 1.0,
@@ -3967,42 +3553,6 @@
             "burningc4"
           ],
           "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv13-879a9828e9",
-          "channelId": "cctv13",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-13-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHeUi4Thb7vkXG9wotcNmK%2FSVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv13-ed64102fac",
-          "channelId": "cctv13",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV13HD/index.m3u8?gMac=unknown&livodToken=f4be577234c226bfecf00f96b626bcca106a9d4eaeeaae331b860678bd3f60e7_1720508191_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {}
         },
@@ -4266,42 +3816,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv14-1f7ac2568b",
-          "channelId": "cctv14",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV14HD/index.m3u8?gMac=unknown&livodToken=c1f72c79ee7857898e80e822b3768418b14d710294fb16dc503997f9bce0adda_1720508238_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv14-5e054c783f",
-          "channelId": "cctv14",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-14-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHc44kHEGXWPeTdip0KbSgbeVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv14-0f1a1ab9b4",
           "channelId": "cctv14",
           "protocol": "HLS",
@@ -4538,42 +4052,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv15-5fbc90a7f3",
-          "channelId": "cctv15",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/CCTV15/index.m3u8?gMac=unknown&livodToken=bde6e809b30a2e9d5be77b50b95f7634e4524e2a06f94bbcec4356d0f5b54ae3_1720508275_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-cctv15-a36a6b4733",
-          "channelId": "cctv15",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-15-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHYyPYgkCWBSIT3aCcBdsAjuVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "tvg-id",
           "matchConfidence": 1.0,
@@ -4821,24 +4299,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv16-b3d0879d3e",
-          "channelId": "cctv16",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-16-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHVSIaGkZ%2BPhCYgvTlbbof9eVHtMQrYKMhXfF9Bgs%2FQgY&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv16-6270980a93",
           "channelId": "cctv16",
           "protocol": "HLS",
@@ -5026,42 +4486,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-cctv17-c9d286c8c2",
-          "channelId": "cctv17",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CCTV-17-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHflsNSUvoRXJq9Dxabd45ukMgMwyeTsEM4M617I3YR8P&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-cctv17-36d55445d3",
-          "channelId": "cctv17",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/cctv17?streamid=348c8c0c04a6d2b900e5a3bcb4af8ce1&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-cctv17-c11014f19a",
           "channelId": "cctv17",
           "protocol": "HLS",
@@ -5085,24 +4509,6 @@
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://74.91.26.218:82/live/cctv17hd.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-cctv17-eb8472be01",
-          "channelId": "cctv17",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/cctv17?streamid=f9c36f1e95b5b35eac89cc89583e7c0a&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -5344,42 +4750,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat101-3b6fac4e1a",
-          "channelId": "sat101",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/BEIJHD/index.m3u8?gMac=unknown&livodToken=43dbb4a601652fcaea2ddbd73cd2f2f488aff86faee350276951eadd10dfb441_1720508364_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat101-5f4dc11104",
-          "channelId": "sat101",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_BEIJING-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHX6pFJlsKFX2elUkY7G9WuYMgMwyeTsEM4M617I3YR8P&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -5630,42 +5000,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat102-5d16578f5d",
-          "channelId": "sat102",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_TIANJIN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHaessbbY33u5MnZnHCFZZTIMgMwyeTsEM4M617I3YR8P&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat102-b855b05cfb",
-          "channelId": "sat102",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/TIANJHD/index.m3u8?gMac=unknown&livodToken=4d4c86675dc5e31f25de3766d077588bdbab6a5c7b52057ab88712a1cac4df7b_1720508477_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat102-256ea8633e",
           "channelId": "sat102",
           "protocol": "HLS",
@@ -5865,42 +5199,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat103-7fe2b5d885",
-          "channelId": "sat103",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/HAIBHD/index.m3u8?gMac=unknown&livodToken=e80bcd155eabf8e0dbe4c1fa52d05d048c86c1398334b5085f6c985eb88548ca_1720508762_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat103-919720add2",
-          "channelId": "sat103",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_HEBEI-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHQcq7ejyAAXuDG88sZCpS0RSM%2B19aM2hw2IMIRHBBV72&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -6184,47 +5482,11 @@
           "headers": {}
         },
         {
-          "id": "sub-guovin-sat104-78d7aa6677",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/shanxiweishi?streamid=69e002ac7467d661ff7ad0671ed43f16&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat104-8e798b6480",
           "channelId": "sat104",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=sxwshd",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat104-d82d5f9849",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/shanxiweishi?streamid=eeb7d60ca6e0db131ea7a092a3cd28d2&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -6365,60 +5627,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat105-08aac43b4b",
-          "channelId": "sat105",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/NMGWS/index.m3u8?gMac=unknown&livodToken=a09588cc53538af6402a57be79ed9490f6cdcdaef12f38888e5a3365a7a4d7c1_1720508643_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat105-30dfbfcafb",
-          "channelId": "sat105",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/neimengguweishi?streamid=3e7340acf8869ac1c7dad1bb836dcd35&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat105-6f95081cec",
-          "channelId": "sat105",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/neimengguweishi?streamid=81a015dbecf3031d7d847b7a9b059f67&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -6590,42 +5798,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat106-509639fab1",
-          "channelId": "sat106",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_LIAONING-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHURqeVO49Tnq6K%2BWCd0TWOt4NHMHVaPey3ntJx7niV8g&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat106-c64a875b0a",
-          "channelId": "sat106",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/LIAONHD/index.m3u8?gMac=unknown&livodToken=33bd64ae442debde91e9f2e25fd1087a9924ad3708258c548faf04b8a757b0d4_1720508620_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -6873,42 +6045,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat107-995e99a508",
-          "channelId": "sat107",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/JILHD/index.m3u8?gMac=unknown&livodToken=aef69bf8c1b273132c0131c77a30e70de412ec16260723968deb9a2b8a769e5a_1720508592_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat107-f23e8ccef5",
-          "channelId": "sat107",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_JILIN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHSKeM%2FnJizcqZgRu5kTtQyRSM%2B19aM2hw2IMIRHBBV72&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat107-33811def1b",
           "channelId": "sat107",
           "protocol": "HLS",
@@ -7054,42 +6190,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat108-004d57393f",
-          "channelId": "sat108",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_HEILONGJIANG-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHYGO4sBlEXR27vS0rpENy%2BBCfQjfKrVAhZ7nyqv5N0cI&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat108-7f7df1e2c9",
-          "channelId": "sat108",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/HEILJHD/index.m3u8?gMac=unknown&livodToken=64cde00fa51eb520daec6aa6c1e3e90225906560d67b2607381a34d4431ebcc6_1720508553_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -7314,42 +6414,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat109-15587c7b45",
-          "channelId": "sat109",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_DONGFANG-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHfFI8ayEeoekFD8P08%2F7EXF4NHMHVaPey3ntJx7niV8g&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat109-8af140725d",
-          "channelId": "sat109",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/DONGFHD/index.m3u8?gMac=unknown&livodToken=4cb7770cf7195c2891acab71a8b5139c0f4abf80546956b07e6b8dd94b49e4e8_1720508420_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -7620,42 +6684,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat110-975c148fe3",
-          "channelId": "sat110",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_JIANGSU-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHe%2BuH8HDFS0PtokY11nWnf4MgMwyeTsEM4M617I3YR8P&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat110-e726f6e543",
-          "channelId": "sat110",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/JIANGSHD/index.m3u8?gMac=unknown&livodToken=aca1430fdaf3c8056ece793a65c2fefdc1f59e648c06bf6e63572e4994caa97c_1720509054_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat110-683e1fec65",
           "channelId": "sat110",
           "protocol": "HLS",
@@ -7897,24 +6925,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat111-0023baecd5",
-          "channelId": "sat111",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_ZHEJIANG-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHdr3tmmw%2BL49D6e6Yw0TfYx4NHMHVaPey3ntJx7niV8g&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8223,42 +7233,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat112-2337ad3819",
-          "channelId": "sat112",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_ANHUI-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHfKoKW8pLH0L%2FBk2FrKutcNTsBzPp9x%2Bi0NFonroQm9c&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat112-a4f3abb8f1",
-          "channelId": "sat112",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/ANHUIHD/index.m3u8?gMac=unknown&livodToken=02a806c27a6d5b383b7e327402a6c5d9be864ee6bda1277c84b8bc14c914a579_1720508862_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat112-0535a0204b",
           "channelId": "sat112",
           "protocol": "HLS",
@@ -8478,42 +7452,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat113-7a10f9eb74",
-          "channelId": "sat113",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_DONGNAN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHQ3sVbVN1ZTQKUpnK8xcf7yRQN%2BYLDq5f9pmexwERDLi&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat113-91e3e78878",
-          "channelId": "sat113",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/DONGNHD/index.m3u8?gMac=unknown&livodToken=5fc20660dbcb940d20412d743ece597d91c8b06af193d6a9b81ad2781b1b8a54_1720509176_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8761,65 +7699,11 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat114-232280c873",
-          "channelId": "sat114",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_JIANGXI-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHSFtNLUdun4aiq6hb34UOKeRQN%2BYLDq5f9pmexwERDLi&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat114-b9227b2089",
-          "channelId": "sat114",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/JXWSHD/index.m3u8?gMac=unknown&livodToken=84e38030fc4f1248603777a24ade5ab82ef30103522330bb3444634a1b66307f_1720509019_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat114-1d5d9aa5e4",
           "channelId": "sat114",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jxwshd",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat114-2217a9584d",
-          "channelId": "sat114",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/jiangxiweishi?streamid=555198f31caa33506ac6abb70d788959&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -9008,24 +7892,6 @@
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://lives.jnnews.tv/video/s10001-SDTV/index.m3u8",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat115-31f118f8e5",
-          "channelId": "sat115",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_SHANDONG-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHY%2BfIJoJ9xhIZtB7lTaNNRJ4NHMHVaPey3ntJx7niV8g&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
           "priority": 20,
           "quality": "AUTO",
           "enabled": true,
@@ -9301,42 +8167,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat116-1f85aa919b",
-          "channelId": "sat116",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/HENHD/index.m3u8?gMac=unknown&livodToken=c7713f989c35d7b798afec34071e72743fa784617458f4679369d1842cd422ac_1720508889_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat116-246144c7ef",
-          "channelId": "sat116",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_HENAN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHWZ%2Fm7n7CVTCrcobp4nZ6sZSM%2B19aM2hw2IMIRHBBV72&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat116-27c31c0e6e",
           "channelId": "sat116",
           "protocol": "HLS",
@@ -9536,42 +8366,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat117-c03a4c1691",
-          "channelId": "sat117",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_HUBEI-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHc%2FzOJ%2F44TR7mqGS1%2Bw8V7hSM%2B19aM2hw2IMIRHBBV72&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat117-e99ee04a2f",
-          "channelId": "sat117",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/HUBEIHD/index.m3u8?gMac=unknown&livodToken=b8f876f4b394029039b5d1733070c8731bc880530b0fb975397a5eeb37ca0cec_1720508906_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -9796,42 +8590,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat118-ac7ef9c1f1",
-          "channelId": "sat118",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_HUNAN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHRo9Db0sT8QFSkrF29I7qMlTsBzPp9x%2Bi0NFonroQm9c&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat118-f3bac7ab07",
-          "channelId": "sat118",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/HUNANHD/index.m3u8?gMac=unknown&livodToken=d70b57aaeb691e28be8f737e9f9efa413979b27dfc97da8bc6b321c828e47010_1720508965_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -10120,42 +8878,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat119-44ecbc8cd0",
-          "channelId": "sat119",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/GUANGDHD/index.m3u8?gMac=unknown&livodToken=59fd71bc9ab8ccb098e20dba7502351a73b4a120648316b836686754ebd7dbd2_1720509211_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat119-8e48b0a330",
-          "channelId": "sat119",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_GUANGDONG-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHfgbSbSCTYnboG1IAsnN%2B8QE6B7fY0qM5PCisIiFJCnl&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat119-457ba108c1",
           "channelId": "sat119",
           "protocol": "HLS",
@@ -10420,42 +9142,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat120-4abcd99fb3",
-          "channelId": "sat120",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_GUANGXI-HQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHUIecLjXoLUiOhb4XqRrxOuRQN%2BYLDq5f9pmexwERDLi&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat120-bce7b17eb5",
-          "channelId": "sat120",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/GUANGXHD/index.m3u8?gMac=unknown&livodToken=a71e93bbbb5e737e3ca6045ab8958d7b1f6b03b2cfcc398439f6b9111e29a053_1720509270_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat120-2370655da3",
           "channelId": "sat120",
           "protocol": "HLS",
@@ -10641,42 +9327,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat121-c8cfb90a54",
-          "channelId": "sat121",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_HAINAN-HQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHTh7JGAu1YMGJ6XT%2FnqLPsRZEJK%2BpW4Fs700noHhVlGc&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat121-d69d3902dc",
-          "channelId": "sat121",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/HAINHD/index.m3u8?gMac=unknown&livodToken=337c9e24645beaea9e1dc2761e5d0e44cdce5dc90c3fedafcce5f9bde7faac9a_1720509432_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat121-4dee5715b0",
           "channelId": "sat121",
           "protocol": "HLS",
@@ -10805,24 +9455,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat122-f4ece5e9dc",
-          "channelId": "sat122",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_CHONGQING-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHS5XA1hsd3RREgysPiqqJeTFDuOvLs1zu4981Mqid2sx&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -11034,83 +9666,11 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat123-34cc5e92c7",
-          "channelId": "sat123",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_SICHUAN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHShysHnFVsdNiy%2FnVMuA%2F2ui53pLIt5xLZYRaSNohMBM&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat123-979223a1cc",
-          "channelId": "sat123",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/SICHD/index.m3u8?gMac=unknown&livodToken=539d7323a2cbb4240388051e285321f2684e79db2a7c484168b386d99dc393b3_1720509350_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat123-19f4835b6e",
-          "channelId": "sat123",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/sichuanweishi4k?streamid=401bf692a1a8b91298f26077d53316d6&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat123-1b3553d510",
           "channelId": "sat123",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=scwshd",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat123-3827d5e064",
-          "channelId": "sat123",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/sichuanweishi4k?streamid=21be5901ee81559c827dc84e46f26452&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -11291,60 +9851,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat124-9a69407f58",
-          "channelId": "sat124",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_GUIZHOU-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHWs5lc8HFQLTI9VPV%2F62TTuRQN%2BYLDq5f9pmexwERDLi&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat124-dde87508ae",
-          "channelId": "sat124",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/GUIZHD/index.m3u8?gMac=unknown&livodToken=c2389ebe3248f5e8bb2be6ba564202250815c1ffce8bf911a01e5e09705f6576_1720509315_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat124-9e090a6a56",
-          "channelId": "sat124",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/guizhouweishi?streamid=091bd59ea031989839c23459bb8cc9d4&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -11532,42 +10038,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat125-0032838a5e",
-          "channelId": "sat125",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_YUNNAN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHcpOXbCYIiVElKHA3dFAzTD1BWtWU81eWqPvN0PhI2pD&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat125-a436cd5a71",
-          "channelId": "sat125",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/YUNNHD/index.m3u8?gMac=unknown&livodToken=bd74183e409c86a54debf6f2452fcadd940a4b90a2e1f981832970d2f916a945_1720509300_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -11777,24 +10247,6 @@
           "headers": {}
         },
         {
-          "id": "sub-guovin-sat126-da02cae3b8",
-          "channelId": "sat126",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/xizangweishi?streamid=4b4e8ea919f1cfd5e43deed1d1675251&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-suxuang-sat126-1f98018293",
           "channelId": "sat126",
           "protocol": "HLS",
@@ -11893,42 +10345,6 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat127-17b0d0405b",
-          "channelId": "sat127",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/SXTV/index.m3u8?gMac=unknown&livodToken=c553bb820ba0fceee866c695e3e7ca27fc9cd874769c2d9c16cadad386c4a71e_1720508744_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat127-954a195a09",
-          "channelId": "sat127",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_SHANXI-HQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHe8cMCaTgpWWUaOfH%2BZI9az1BWtWU81eWqPvN0PhI2pD&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat127-2aa47c7487",
           "channelId": "sat127",
           "protocol": "HLS",
@@ -11941,25 +10357,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat127-5f4dd4da17",
-          "channelId": "sat127",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/shaanxiweishi?streamid=9dc887dba8ecb4e4143baf4f2373800c&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin",
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -12076,42 +10473,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat128-086155f5d6",
-          "channelId": "sat128",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/GSWS/index.m3u8?gMac=unknown&livodToken=171a8342304b3c81ad3c96545782987d838c6b9fb512cc6905270159a52113c2_1720508692_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat128-3a1181eaed",
-          "channelId": "sat128",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_GANSU-HQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHQqvE61CmV4kFMWXpFeskG1SM%2B19aM2hw2IMIRHBBV72&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -12263,24 +10624,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat129-26b83d24a7",
-          "channelId": "sat129",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/QHWS/index.m3u8?gMac=unknown&livodToken=495e44fa15aa6f066ed03ad059c8141856fd0591fd05036b71f202d50d2ee91f_1720508709_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -12510,47 +10853,11 @@
           "headers": {}
         },
         {
-          "id": "sub-guovin-sat130-36357db2e7",
-          "channelId": "sat130",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/ningxiaweishi?streamid=1b2952717a920173e66d4a348f9dcb5c&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat130-423fe6acd2",
           "channelId": "sat130",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://107.150.60.122/live/nxws.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat130-e4b1b73e28",
-          "channelId": "sat130",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/ningxiaweishi?streamid=551474d02bee1c160e1692e22c45ddba&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -12576,25 +10883,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat130-fef81c4e03",
-          "channelId": "sat130",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/ningxiaweishi?streamid=e1236348f815c36a0429357e5b5c5f10&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin",
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -12660,47 +10948,11 @@
           "headers": {}
         },
         {
-          "id": "sub-fanmingming-sat131-6fe3fdbc02",
-          "channelId": "sat131",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/XJWS/index.m3u8?gMac=unknown&livodToken=3b0868c32bc314dfdd41bf46f20a8179d1494db60d9ce810bb8e7be0ca092c84_1720509373_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-guovin-sat131-2f2208bb97",
           "channelId": "sat131",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "http://107.150.60.122/live/xjws.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "guovin",
-          "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-guovin-sat131-3de6729aee",
-          "channelId": "sat131",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://live.264788.xyz/channel/xinjiangweishi?streamid=4f481f56ae39ce5d24203471de9df635&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -12842,42 +11094,6 @@
           "providerId": "burningc4",
           "sourceProviders": [
             "burningc4"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat132-0555da24dd",
-          "channelId": "sat132",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://jxcbn.ws-cdn.gitv.tv/hls/SHENZHD/index.m3u8?gMac=unknown&livodToken=6b52c18155b74d913b2a3060db6d74f2a29dd8a824d70f648a9882dca63fd962_1720509238_604800&fromCDN=ws",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat132-43be40427a",
-          "channelId": "sat132",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_SHENZHEN-CQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHdBPUZJQRNJB5bOiIhhUc3d4NHMHVaPey3ntJx7niV8g&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -13489,24 +11705,6 @@
           "providerId": "chinaiptv",
           "sourceProviders": [
             "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-fanmingming-sat137-b478a384f6",
-          "channelId": "sat137",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://58.248.112.205:8006/GD_CUCC/G_SANSHA-HQ.m3u8?Authinfo=3iRp8RZG1d3hGsaPmj%2FtHVaHhm7EfB24tSDTA%2B4ZUJz1BWtWU81eWqPvN0PhI2pD&p=GITV&area=GD_CUCC&mac=d4:38:44:a5:72:8b",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "fanmingming",
-          "sourceProviders": [
-            "fanmingming"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,

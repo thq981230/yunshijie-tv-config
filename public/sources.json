@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": 7,
-  "generatedAt": "2026-10-09T09:31:27Z",
+  "version": 8,
+  "generatedAt": "2026-10-09T09:39:08Z",
   "channels": {
     "cctv1": {
       "status": "AVAILABLE",
@@ -993,31 +993,6 @@
       "status": "AVAILABLE",
       "sources": [
         {
-          "id": "sub-chinaiptv-cctv9-714dc6f8ca",
-          "channelId": "cctv9",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://v4-702cae17a28d6e4f0c0002bba021d934.livehwc4.com/play.kankanlive.com/live/1698423397390920.m3u8?sub_m3u8=true&edge_slice=true&user_session_id=eac8ef44103bdda066e5c6d5a92f4b23",
-          "quality": "AUTO",
-          "priority": 10,
-          "enabled": true,
-          "health": "HEALTHY",
-          "headers": {},
-          "latencyMs": 2381,
-          "httpCode": 200,
-          "lastCheckTime": "2026-10-09T09:24:23Z",
-          "failCount": 0,
-          "successCount": 1,
-          "consecutiveFailureCount": 0,
-          "consecutiveSuccessCount": 1,
-          "firstSegmentMs": 1070,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ]
-        },
-        {
           "id": "sub-guovin-cctv9-0cd6a2cb12",
           "channelId": "cctv9",
           "protocol": "HLS",
@@ -1113,6 +1088,31 @@
           "consecutiveFailureCount": 0,
           "consecutiveSuccessCount": 1,
           "firstSegmentMs": 122,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "guovin",
+          "sourceProviders": [
+            "guovin"
+          ]
+        },
+        {
+          "id": "sub-guovin-cctv9-f14c385e05",
+          "channelId": "cctv9",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv9hd",
+          "quality": "AUTO",
+          "priority": 25,
+          "enabled": true,
+          "health": "HEALTHY",
+          "headers": {},
+          "latencyMs": 265,
+          "httpCode": 206,
+          "lastCheckTime": "2026-10-09T09:24:23Z",
+          "failCount": 0,
+          "successCount": 1,
+          "consecutiveFailureCount": 0,
+          "consecutiveSuccessCount": 1,
+          "firstSegmentMs": 89,
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [

@@ -4,8 +4,9 @@ import ipaddress
 import json
 import sys
 from pathlib import Path
-from urllib.parse import unquote_plus, urlsplit
+from urllib.parse import urlsplit
 from providers.registry import ProviderRegistry, StaticCandidateProvider
+from providers.remote_subscription import query_has_sensitive_key
 
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_PROTOCOLS = {"HLS", "DASH"}
@@ -35,8 +36,7 @@ def require_https_public_url(value: str, label: str) -> None:
         address = None
     if address is not None and (not address.is_global or address.is_multicast):
         raise ValueError(f"{label}: private or non-public IP is not allowed")
-    keys = {unquote_plus(part.split("=", 1)[0]).casefold() for part in parsed.query.split("&") if part}
-    if keys & SENSITIVE_QUERY_KEYS:
+    if query_has_sensitive_key(parsed.query):
         raise ValueError(f"{label}: expiring/authenticated URL query parameters are not allowed; use a Resolver")
 
 
@@ -53,8 +53,7 @@ def require_public_playback_url(value: str, label: str) -> None:
         address = None
     if address is not None and (not address.is_global or address.is_multicast):
         raise ValueError(f"{label}: private or non-public IP is not allowed")
-    keys = {unquote_plus(part.split("=", 1)[0]).casefold() for part in parsed.query.split("&") if part}
-    if keys & SENSITIVE_QUERY_KEYS:
+    if query_has_sensitive_key(parsed.query):
         raise ValueError(f"{label}: expiring/authenticated URL query parameters are not allowed")
     if parsed.fragment:
         raise ValueError(f"{label}: URL fragment is not allowed")
@@ -72,9 +71,8 @@ def validate_public_headers(headers: object, label: str) -> None:
             raise ValueError(f"{label}: User-Agent must not contain credentials")
         if name == "referer":
             referer = urlsplit(value)
-            query_keys = {unquote_plus(part.split("=", 1)[0]).casefold() for part in referer.query.split("&") if part}
             if (referer.scheme.lower() not in {"https", "http"} or not referer.hostname or referer.username or
-                    referer.password or query_keys & SENSITIVE_QUERY_KEYS or referer.fragment):
+                    referer.password or query_has_sensitive_key(referer.query) or referer.fragment):
                 raise ValueError(f"{label}: Referer must be a public URL without credentials")
 
 

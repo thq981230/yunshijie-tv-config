@@ -189,15 +189,35 @@ function isPublicHttpStream(value) {
     if (!(parsed.protocol === "https:" || parsed.protocol === "http:") || parsed.username || parsed.password || !host ||
       host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local")) return false;
     if (isNonPublicIpLiteral(host)) return false;
-    const queryKeys = new Set(parsed.searchParams.keys());
     if (parsed.hash) return false;
-    return !["token", "access_token", "auth", "authorization", "signature", "sig", "sign", "expires", "expire",
-      "key", "auth_key", "txsecret", "tx_secret", "wstime", "wssecret", "ws_secret", "hdnts", "policy",
-      "jwt", "secret", "accesskey", "access_key", "credential", "credentials"]
-      .some(key => queryKeys.has(key));
+    return ![...parsed.searchParams.keys()].some(isSensitiveQueryKey);
   } catch {
     return false;
   }
+}
+
+function isSensitiveQueryKey(value) {
+  let decoded = String(value).replace(/\+/g, " ");
+  for (let i = 0; i < 3; i += 1) {
+    try {
+      const next = decodeURIComponent(decoded);
+      if (next === decoded) break;
+      decoded = next;
+    } catch {
+      break;
+    }
+  }
+  const key = decoded.normalize("NFKC").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const exact = new Set([
+    "token", "accesstoken", "auth", "authorization", "signature", "sig", "sign", "expires", "expire",
+    "key", "authkey", "txsecret", "wstime", "wssecret", "hdnts", "policy", "jwt", "secret",
+    "accesskey", "credential", "credentials", "authinfo", "mac", "macaddress", "stb", "stbid",
+    "device", "deviceid", "clientid", "userid", "user", "session", "sessionid", "sid", "uid",
+    "serial", "serialnumber", "password", "passwd", "pwd", "cookie", "account", "clientmac"
+  ]);
+  const markers = ["auth", "token", "secret", "credential", "password", "passwd", "cookie", "signature",
+    "accesskey", "mac", "device", "stb", "session", "serial", "user"];
+  return exact.has(key) || key.startsWith("key") || key.endsWith("key") || markers.some(marker => key.includes(marker));
 }
 
 function isNonPublicIpLiteral(host) {

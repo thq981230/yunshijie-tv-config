@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": 7,
-  "generatedAt": "2026-10-09T09:31:27Z",
+  "version": 8,
+  "generatedAt": "2026-10-09T09:38:29Z",
   "channels": {
     "cctv1": {
       "status": "AVAILABLE",
@@ -1088,6 +1088,31 @@
           "consecutiveFailureCount": 0,
           "consecutiveSuccessCount": 1,
           "firstSegmentMs": 122,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "guovin",
+          "sourceProviders": [
+            "guovin"
+          ]
+        },
+        {
+          "id": "sub-guovin-cctv9-f14c385e05",
+          "channelId": "cctv9",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv9hd",
+          "quality": "AUTO",
+          "priority": 25,
+          "enabled": true,
+          "health": "HEALTHY",
+          "headers": {},
+          "latencyMs": 265,
+          "httpCode": 206,
+          "lastCheckTime": "2026-10-09T09:24:23Z",
+          "failCount": 0,
+          "successCount": 1,
+          "consecutiveFailureCount": 0,
+          "consecutiveSuccessCount": 1,
+          "firstSegmentMs": 89,
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [

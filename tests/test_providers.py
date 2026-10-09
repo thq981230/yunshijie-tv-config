@@ -154,6 +154,33 @@ class SubscriptionTests(unittest.TestCase):
         self.assertEqual(provider.discover(CATALOG), [])
         self.assertEqual(provider.last_stats["rejected"], 1)
 
+    def test_device_bound_authinfo_and_mac_queries_are_never_published(self):
+        feed = {"providerId": "community", "url": "https://subscription.example/list.json", "communityTest": True}
+        body = json.dumps({"channels": [
+            {"tvg-id": "cctv1", "url": "http://cdn.example/live.m3u8?Authinfo=redacted&MAC=redacted"},
+            {"tvg-id": "cctv1", "url": "http://cdn.example/live2.m3u8?%2561uthinfo=redacted"},
+            {"tvg-id": "cctv1", "url": "https://cdn.example/public.m3u8?profile=hd"},
+        ]}).encode()
+        provider = RemoteSubscriptionProvider([feed], fetcher=lambda _: body)
+        rows = provider.discover(CATALOG)
+        self.assertEqual(len(rows), 1)
+        self.assertIn("profile=hd", rows[0].source["url"])
+        self.assertEqual(provider.last_stats["rejected"], 2)
+
+    def test_embedded_device_and_token_markers_are_never_published(self):
+        feed = {"providerId": "community", "url": "https://subscription.example/list.json", "communityTest": True}
+        body = json.dumps({"channels": [
+            {"tvg-id": "cctv1", "url": "https://cdn.example/live.m3u8?gmac=x&livodtoken=y"},
+            {"tvg-id": "cctv1", "url": "https://cdn.example/live2.m3u8?user_session_id=x"},
+            {"tvg-id": "cctv1", "url": "https://cdn.example/live3.m3u8?livekey=x"},
+            {"tvg-id": "cctv1", "url": "https://cdn.example/public.m3u8?profile=hd"},
+        ]}).encode()
+        provider = RemoteSubscriptionProvider([feed], fetcher=lambda _: body)
+        rows = provider.discover(CATALOG)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].source["url"], "https://cdn.example/public.m3u8?profile=hd")
+        self.assertEqual(provider.last_stats["rejected"], 3)
+
     def test_community_test_feed_keeps_provenance_and_rejects_multicast(self):
         feeds = [
             {"providerId": "chinaiptv", "url": "https://feed.example/one.m3u", "communityTest": True},

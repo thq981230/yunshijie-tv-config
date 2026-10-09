@@ -259,3 +259,46 @@ test("playback resolver accepts public HTTP and preserves its harmless query str
     globalThis.fetch = originalFetch;
   }
 });
+
+test("playback resolver rejects device-bound Authinfo and MAC query parameters", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => jsonResponse({ channels: { cctv1: { status: "AVAILABLE", sources: [
+    { id: "device-bound", type: "STATIC", protocol: "HLS", url: "https://cdn.example/live.m3u8?Authinfo=x&MAC=y", health: "HEALTHY", priority: 1 }
+  ] } } });
+  try {
+    const response = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1"), env);
+    assert.equal(response.status, 404);
+    assert.equal((await response.json()).error, "NO_SOURCE");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("playback resolver rejects embedded device, token, and user session query markers", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => jsonResponse({ channels: { cctv1: { status: "AVAILABLE", sources: [
+    { id: "device-bound", type: "STATIC", protocol: "HLS", url: "https://cdn.example/live.m3u8?gmac=x&livodtoken=y", health: "HEALTHY", priority: 1 },
+    { id: "user-session", type: "STATIC", protocol: "HLS", url: "https://cdn.example/live2.m3u8?user_session_id=x", health: "HEALTHY", priority: 2 }
+  ] } } });
+  try {
+    const response = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1"), env);
+    assert.equal(response.status, 404);
+    assert.equal((await response.json()).error, "NO_SOURCE");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("playback resolver rejects repeatedly encoded credential query keys", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => jsonResponse({ channels: { cctv1: { status: "AVAILABLE", sources: [
+    { id: "encoded-auth", type: "STATIC", protocol: "HLS", url: "https://cdn.example/live.m3u8?%2561uthinfo=x", health: "HEALTHY", priority: 1 }
+  ] } } });
+  try {
+    const response = await worker.fetch(new Request("https://worker.test/api/v1/playback/resolve?channelId=cctv1"), env);
+    assert.equal(response.status, 404);
+    assert.equal((await response.json()).error, "NO_SOURCE");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
