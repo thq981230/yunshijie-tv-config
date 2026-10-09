@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "catalogVersion": 1,
-  "sourceVersion": 2,
-  "generatedAt": "2026-10-09T07:53:49Z",
+  "sourceVersion": 3,
+  "generatedAt": "2026-10-09T08:02:58Z",
   "channelUrl": "https://raw.githubusercontent.com/thq981230/yunshijie-tv-config/main/public/channels.json",
   "sourceUrl": "https://raw.githubusercontent.com/thq981230/yunshijie-tv-config/main/public/sources.json"
 }
