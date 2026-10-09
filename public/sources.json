@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "version": 1,
-  "generatedAt": "2026-10-09T06:44:57Z",
+  "generatedAt": "2026-10-09T07:06:36Z",
   "channels": {
     "cctv1": {
       "status": "NO_SOURCE",
