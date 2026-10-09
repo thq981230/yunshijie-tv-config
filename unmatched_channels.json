@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T15:17:26.184457+00:00",
+  "generatedAt": "2026-10-09T16:18:41.994328+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -353,6 +353,16 @@
     },
     {
       "providerId": "chinaiptv",
+      "tvgId": "CGTN",
+      "name": "CGNT 记录频道"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "CGTN-News",
+      "name": "CGNT 新闻频道"
+    },
+    {
+      "providerId": "chinaiptv",
       "tvgId": "CTi News",
       "name": "CTi News"
     },
@@ -575,11 +585,6 @@
       "providerId": "chinaiptv",
       "tvgId": "金鹰卡通",
       "name": "金鹰卡通"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "金鹰纪实频道",
-      "name": "金鹰纪实频道"
     },
     {
       "providerId": "chinaiptv",
