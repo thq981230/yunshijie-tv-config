@@ -19,10 +19,27 @@ def promote(catalog: dict, groups: dict[str, list[dict]], health: dict, previous
     rows = {row["sourceId"]: row for row in health.get("sources", [])}
     checked = [row for row in rows.values() if row.get("lastCheckTime") == health.get("checkedAt")]
     failed = sum(not row.get("lastCheckSucceeded", False) for row in checked)
-    if checked and failed / len(checked) >= 0.8:
-        raise RuntimeError(f"refusing promotion: {failed}/{len(checked)} candidates failed (>=80%); keep Last Known Good config")
-
     previous_channels = (previous or {}).get("channels", {})
+    previous_healthy_ids = {
+        source.get("id")
+        for channel in previous_channels.values()
+        for source in channel.get("sources", [])
+        if source.get("health") == "HEALTHY"
+    }
+    failed_previous = [row for row in checked
+                       if row.get("sourceId") in previous_healthy_ids and not row.get("lastCheckSucceeded", False)]
+    invalid_previous_content = bool(failed_previous) and all(
+        any(marker in str(row.get("detail", "")) for marker in
+            ("HLS_MANIFEST_INVALID", "HLS_VIDEO_TRACK_MISSING", "VIDEO_TRACK_UNVERIFIED"))
+        for row in failed_previous
+    )
+    # A stricter content check may invalidate an earlier false positive. Publish that
+    # correction if another source is still proven healthy; retain the outage guard
+    # for network-wide failures and for runs with no playable source at all.
+    if checked and failed / len(checked) >= 0.8 and not (
+        invalid_previous_content and any(row.get("lastCheckSucceeded", False) for row in checked)
+    ):
+        raise RuntimeError(f"refusing promotion: {failed}/{len(checked)} candidates failed (>=80%); keep Last Known Good config")
     channels: dict[str, dict] = {}
     for channel in catalog["channels"]:
         channel_id = channel["id"]

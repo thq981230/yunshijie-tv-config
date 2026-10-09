@@ -148,6 +148,22 @@ class PromotionTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "80%"):
             promote(catalog, {"c1": candidates}, health, {"version": 7, "channels": {"c1": {"status": "AVAILABLE", "sources": []}}})
 
+    def test_content_validation_corrects_prior_false_positive_despite_high_failure_ratio(self):
+        candidates = [self.candidate(f"s{i}", i + 1) for i in range(5)]
+        catalog = {"channels": [{"id": "c1"}]}
+        health = {"checkedAt": "now", "sources": [
+            {"sourceId": source["id"], "channelId": "c1", "status": "HEALTHY" if index < 2 else "OFFLINE",
+             "lastCheckSucceeded": index == 0, "lastCheckTime": "now",
+             "detail": "RuntimeError:HLS_MANIFEST_INVALID" if index == 1 else "RuntimeError:HTTP_403"}
+            for index, source in enumerate(candidates)
+        ]}
+        previous = {"version": 7, "channels": {"c1": {"status": "AVAILABLE", "sources": [
+            {"id": "s0", "health": "HEALTHY"}, {"id": "s1", "health": "HEALTHY"}]}}}
+        output = promote(catalog, {"c1": candidates}, health, previous)
+        self.assertEqual(output["channels"]["c1"]["status"], "AVAILABLE")
+        self.assertEqual(output["channels"]["c1"]["sources"][0]["id"], "s0")
+        self.assertEqual(output["channels"]["c1"]["sources"][1]["health"], "DEGRADED")
+
     def test_community_source_remains_labelled_after_promotion(self):
         candidate = self.candidate("community-a", 1)
         candidate.pop("authorization")
