@@ -1703,6 +1703,24 @@
       "channelId": "cctv6",
       "sources": [
         {
+          "id": "sub-chinaiptv-cctv6-f27197fc19",
+          "channelId": "cctv6",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "alias",
+          "matchConfidence": 0.98,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -6178,6 +6196,24 @@
       "channelId": "sat108",
       "sources": [
         {
+          "id": "sub-chinaiptv-sat108-68d4df4f72",
+          "channelId": "sat108",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://hwzbout.yunshicloud.com/0spq8i/71gv42.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-sat108-efaa58ee72",
           "channelId": "sat108",
           "protocol": "HLS",
@@ -9442,6 +9478,24 @@
     {
       "channelId": "sat122",
       "sources": [
+        {
+          "id": "sub-chinaiptv-sat122-0ce30da93d",
+          "channelId": "sat122",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://hwzbout.yunshicloud.com/0spq8i/71gv42.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
         {
           "id": "sub-burningc4-sat122-0d7382e48b",
           "channelId": "sat122",
