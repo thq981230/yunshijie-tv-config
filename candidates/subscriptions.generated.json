@@ -5169,6 +5169,24 @@
       "channelId": "sat103",
       "sources": [
         {
+          "id": "sub-chinaiptv-sat103-551529d03a",
+          "channelId": "sat103",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://tv.pull.hebtv.com/jishi/nongminpindao.m3u8?t=1791180204&k=b2455a88802f67d9923ef0384ecd7cb5",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-sat103-6b53d24c38",
           "channelId": "sat103",
           "protocol": "HLS",
@@ -5373,6 +5391,24 @@
     {
       "channelId": "sat104",
       "sources": [
+        {
+          "id": "sub-chinaiptv-sat104-db31091449",
+          "channelId": "sat104",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://livehhhttps.sxrtv.com/lsdream/q8RVWgs/1000/v2sh8gV.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
         {
           "id": "sub-burningc4-sat104-17be78d647",
           "channelId": "sat104",
