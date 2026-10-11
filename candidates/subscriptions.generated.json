@@ -9684,24 +9684,6 @@
       "channelId": "sat123",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat123-946adfa9b2",
-          "channelId": "sat123",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/sichuan_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat123-8678950d01",
           "channelId": "sat123",
           "protocol": "HLS",
