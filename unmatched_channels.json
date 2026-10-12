@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T19:35:36.763376+00:00",
+  "generatedAt": "2026-10-12T00:36:54.342557+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -485,11 +485,6 @@
       "providerId": "chinaiptv",
       "tvgId": "Taiwan Plus TV",
       "name": "Taiwan Plus TV"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "dianshiju.hunan",
-      "name": "湖南电视剧"
     },
     {
       "providerId": "chinaiptv",
@@ -13719,7 +13714,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-e1415596]"
+      "name": "[session-8743ca83]"
     },
     {
       "providerId": "zwc_alive",
