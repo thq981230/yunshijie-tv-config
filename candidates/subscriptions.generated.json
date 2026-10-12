@@ -1703,6 +1703,24 @@
       "channelId": "cctv6",
       "sources": [
         {
+          "id": "sub-chinaiptv-cctv6-f27197fc19",
+          "channelId": "cctv6",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "alias",
+          "matchConfidence": 0.98,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -5169,6 +5187,24 @@
       "channelId": "sat103",
       "sources": [
         {
+          "id": "sub-chinaiptv-sat103-16da65df83",
+          "channelId": "sat103",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://tv.pull.hebtv.com/jishi/nongminpindao.m3u8?t=1791785019&k=529e523e4a89d11eef42f73bbabe64bf",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-sat103-6b53d24c38",
           "channelId": "sat103",
           "protocol": "HLS",
@@ -5374,11 +5410,11 @@
       "channelId": "sat104",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat104-db31091449",
+          "id": "sub-chinaiptv-sat104-8ac277734b",
           "channelId": "sat104",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "https://livehhhttps.sxrtv.com/lsdream/q8RVWgs/1000/v2sh8gV.m3u8",
+          "url": "https://livehhhttps.sxrtv.com/lsdream/q8RVWgs/1000/x1sqpR0.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -6160,11 +6196,11 @@
       "channelId": "sat108",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat108-68d4df4f72",
+          "id": "sub-chinaiptv-sat108-a4f91d0c10",
           "channelId": "sat108",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://hwzbout.yunshicloud.com/0spq8i/71gv42.m3u8",
+          "url": "http://huanggang.live.cjyun.org/video/s10120-xwzh.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -9443,11 +9479,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-0ce30da93d",
+          "id": "sub-chinaiptv-sat122-3f110ebb59",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://hwzbout.yunshicloud.com/0spq8i/71gv42.m3u8",
+          "url": "http://huanggang.live.cjyun.org/video/s10120-xwzh.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -9665,6 +9701,24 @@
     {
       "channelId": "sat123",
       "sources": [
+        {
+          "id": "sub-chinaiptv-sat123-946adfa9b2",
+          "channelId": "sat123",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/sichuan_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
         {
           "id": "sub-burningc4-sat123-8678950d01",
           "channelId": "sat123",

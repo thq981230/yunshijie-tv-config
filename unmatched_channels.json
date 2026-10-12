@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T00:36:54.342557+00:00",
+  "generatedAt": "2026-10-12T11:00:05.059387+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -485,6 +485,11 @@
       "providerId": "chinaiptv",
       "tvgId": "Taiwan Plus TV",
       "name": "Taiwan Plus TV"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "dianshiju.hunan",
+      "name": "湖南电视剧"
     },
     {
       "providerId": "chinaiptv",
