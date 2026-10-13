@@ -34,8 +34,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -716,8 +715,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -3631,6 +3629,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-cctv13-ab7fb4484b",
+          "channelId": "cctv13",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://ali-m-l.cztv.com/channels/lantian/channel21/1080p.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "tvg-id",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-cctv13-04d482379a",
           "channelId": "cctv13",
           "protocol": "HLS",
@@ -4114,6 +4130,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-cctv15-302235a3e3",
+          "channelId": "cctv15",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/102/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-cctv15-139b2ad782",
           "channelId": "cctv15",
           "protocol": "HLS",
@@ -4295,6 +4329,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-cctv16-e494f1a8d5",
+          "channelId": "cctv16",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/169/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -5466,6 +5518,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-sat104-415ab67fa3",
+          "channelId": "sat104",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://119.39.9.8:9901/tsfile/live/0118_1.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-sat104-03c392e968",
           "channelId": "sat104",
           "protocol": "HLS",
@@ -6234,17 +6304,18 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat108-203f850a0b",
+          "id": "sub-vbskycn-sat108-203f850a0b",
           "channelId": "sat108",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "https://idclive.hljtv.com:4430/live/hljws_own.m3u8",
-          "priority": 35,
+          "priority": 25,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "suxuang",
+          "providerId": "vbskycn",
           "sourceProviders": [
+            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6439,6 +6510,25 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-sat109-b4fa303e6e",
+          "channelId": "sat109",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn",
+            "suxuang"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-sat109-79a7d91877",
           "channelId": "sat109",
           "protocol": "HLS",
@@ -6491,26 +6581,6 @@
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {}
-        },
-        {
-          "id": "sub-suxuang-sat109-b4fa303e6e",
-          "channelId": "sat109",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
-          "priority": 35,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "suxuang",
-          "sourceProviders": [
-            "suxuang"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {
-            "User-Agent": "aliplayer"
-          }
         },
         {
           "id": "sub-suxuang-sat109-c8e6f85110",
@@ -7289,6 +7359,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-sat112-da58873af4",
+          "channelId": "sat112",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/40/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-sat112-743ae2e5e0",
           "channelId": "sat112",
           "protocol": "HLS",
@@ -7472,6 +7560,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat113-80b02596e8",
+          "channelId": "sat113",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://live.zohi.tv/video/s10001-fztv-3/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8573,7 +8679,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8627,8 +8734,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -10481,6 +10587,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-sat128-e2245a2a53",
+          "channelId": "sat128",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://218.13.170.98:9901/tsfile/live/0141_1.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-sat128-6d9a2c1853",
           "channelId": "sat128",
           "protocol": "HLS",
@@ -10944,6 +11068,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat131-6dde8353c9",
+          "channelId": "sat131",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
