@@ -4965,24 +4965,6 @@
       "channelId": "sat102",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat102-e69b5de73a",
-          "channelId": "sat102",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/tianjin_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat102-3ae69e3f27",
           "channelId": "sat102",
           "protocol": "HLS",
