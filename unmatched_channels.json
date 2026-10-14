@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T22:51:33.491464+00:00",
+  "generatedAt": "2026-10-14T05:00:46.027019+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6639,12 +6639,12 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江国际"
+      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江少儿"
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -6723,8 +6723,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "3",
-      "name": "浙江民生"
+      "tvgId": "28",
+      "name": "金鹰卡通"
     },
     {
       "providerId": "vbskycn",
@@ -6835,11 +6835,6 @@
       "providerId": "vbskycn",
       "tvgId": "东方卫视4K",
       "name": "东方卫视4K"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "东森洋片台",
-      "name": "东森洋片"
     },
     {
       "providerId": "vbskycn",
@@ -7513,6 +7508,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "平遥新闻综合",
+      "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7739,7 +7739,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-14 06:25:32"
+      "name": "2026-10-14 12:26:52"
     },
     {
       "providerId": "vbskycn",
@@ -7843,6 +7843,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7915,6 +7925,16 @@
       "providerId": "vbskycn",
       "tvgId": "河北都市",
       "name": "河北都市"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "河源公共",
+      "name": "河源公共"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "河源综合",
+      "name": "河源综合"
     },
     {
       "providerId": "vbskycn",
@@ -8008,6 +8028,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江国际",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -8073,7 +8098,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8803,11 +8828,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "黄山公共生活",
-      "name": "黄山公共生活"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "黄山始信新道",
       "name": "黄山始信新道"
     },
@@ -8815,11 +8835,6 @@
       "providerId": "vbskycn",
       "tvgId": "黄山排云亭",
       "name": "黄山排云亭"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄山新闻综合",
-      "name": "黄山新闻综合"
     },
     {
       "providerId": "vbskycn",
