@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T11:38:22.822486+00:00",
+  "generatedAt": "2026-10-15T17:07:32.251146+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6638,16 +6638,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江民生"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6728,7 +6718,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "3",
+      "tvgId": "4",
       "name": "金鹰卡通"
     },
     {
@@ -6850,11 +6840,6 @@
       "providerId": "vbskycn",
       "tvgId": "东方卫视4K",
       "name": "东方卫视4K"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "东森洋片台",
-      "name": "东森洋片"
     },
     {
       "providerId": "vbskycn",
@@ -7020,11 +7005,6 @@
       "providerId": "vbskycn",
       "tvgId": "五星体育",
       "name": "五星体育"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "井研综合",
-      "name": "井研综合"
     },
     {
       "providerId": "vbskycn",
@@ -7764,7 +7744,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-15 18:27:44"
+      "name": "2026-10-16 00:32:11"
     },
     {
       "providerId": "vbskycn",
@@ -7953,16 +7933,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "河源公共",
-      "name": "河源公共"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "河源综合",
-      "name": "河源综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "法政先锋",
       "name": "法政先锋"
     },
@@ -8053,6 +8023,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江国际",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -8075,6 +8050,11 @@
       "providerId": "vbskycn",
       "tvgId": "浙江新闻频道",
       "name": "浙江新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -8118,7 +8098,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8775,6 +8755,11 @@
       "providerId": "vbskycn",
       "tvgId": "青田电视台",
       "name": "青田电视台"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "靖天映画",
+      "name": "靖天映画"
     },
     {
       "providerId": "vbskycn",
