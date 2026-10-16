@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T21:29:35.421553+00:00",
+  "generatedAt": "2026-10-16T04:39:11.633069+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6638,6 +6638,21 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江新闻"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6714,11 +6729,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "3",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "4",
       "name": "金鹰卡通"
     },
     {
@@ -7005,6 +7015,11 @@
       "providerId": "vbskycn",
       "tvgId": "五星体育",
       "name": "五星体育"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "井研综合",
+      "name": "井研综合"
     },
     {
       "providerId": "vbskycn",
@@ -7744,7 +7759,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-16 00:32:11"
+      "name": "2026-10-16 12:26:14"
     },
     {
       "providerId": "vbskycn",
@@ -7933,6 +7948,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "河源公共",
+      "name": "河源公共"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "河源综合",
+      "name": "河源综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "法政先锋",
       "name": "法政先锋"
     },
@@ -8023,11 +8048,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -8045,11 +8065,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江数码时代",
       "name": "浙江数码时代"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江新闻频道",
-      "name": "浙江新闻"
     },
     {
       "providerId": "vbskycn",
@@ -8755,11 +8770,6 @@
       "providerId": "vbskycn",
       "tvgId": "青田电视台",
       "name": "青田电视台"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "靖天映画",
-      "name": "靖天映画"
     },
     {
       "providerId": "vbskycn",
