@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T11:17:13.557261+00:00",
+  "generatedAt": "2026-10-18T15:56:49.454708+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -580,11 +580,6 @@
       "providerId": "chinaiptv",
       "tvgId": "金鹰纪实频道",
       "name": "金鹰纪实频道"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "长沙新闻频道",
-      "name": "长沙新闻频道"
     },
     {
       "providerId": "guovin",

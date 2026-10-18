@@ -5448,24 +5448,6 @@
       "channelId": "sat104",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat104-78f6df6bc7",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://livehhhttps.sxrtv.com/lsdream/p4y5do9/500/f2dpoy0.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat104-17be78d647",
           "channelId": "sat104",
           "protocol": "HLS",
@@ -8934,24 +8916,6 @@
       "channelId": "sat119",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat119-0267d999e8",
-          "channelId": "sat119",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/guangdong_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat119-f79e482cd1",
           "channelId": "sat119",
           "protocol": "HLS",
@@ -9215,24 +9179,6 @@
     {
       "channelId": "sat120",
       "sources": [
-        {
-          "id": "sub-chinaiptv-sat120-fc72ce26de",
-          "channelId": "sat120",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/guangxi_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
         {
           "id": "sub-burningc4-sat120-ceee6d6f28",
           "channelId": "sat120",
@@ -10418,24 +10364,6 @@
     {
       "channelId": "sat127",
       "sources": [
-        {
-          "id": "sub-chinaiptv-sat127-ea20a9b9f7",
-          "channelId": "sat127",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://stream.snrtv.com/sxbc-star-rtxBDT.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
         {
           "id": "sub-burningc4-sat127-91ad557c77",
           "channelId": "sat127",
