@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T04:50:09.713830+00:00",
+  "generatedAt": "2026-10-19T13:29:43.237121+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6653,6 +6653,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6728,11 +6733,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "4",
-      "name": "金鹰卡通"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "78",
       "name": "广东民生"
     },
@@ -6795,6 +6795,11 @@
       "providerId": "vbskycn",
       "tvgId": "万州三峡移民",
       "name": "万州三峡移民"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "万荣综合",
+      "name": "万荣综合"
     },
     {
       "providerId": "vbskycn",
@@ -7548,11 +7553,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "广州竞赛",
-      "name": "广州竞赛"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "广州综合",
       "name": "广州综合"
     },
@@ -7759,7 +7759,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-19 12:26:31"
+      "name": "2026-10-19 18:27:25"
     },
     {
       "providerId": "vbskycn",
@@ -8070,11 +8070,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江数码时代",
       "name": "浙江数码时代"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
