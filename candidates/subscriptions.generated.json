@@ -5444,24 +5444,6 @@
       "channelId": "sat104",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat104-78f6df6bc7",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://livehhhttps.sxrtv.com/lsdream/p4y5do9/500/f2dpoy0.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat104-17be78d647",
           "channelId": "sat104",
           "protocol": "HLS",
@@ -11672,24 +11654,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat135-fe1c9ec673",
-          "channelId": "sat135",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
+            "guovin",
             "vbskycn"
           ],
           "matchMethod": "normalized-name",

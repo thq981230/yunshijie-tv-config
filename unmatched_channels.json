@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T13:29:43.237121+00:00",
+  "generatedAt": "2026-10-19T20:37:17.574296+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6644,17 +6644,17 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
       "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "2",
       "name": "浙江新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -6730,6 +6730,11 @@
       "providerId": "vbskycn",
       "tvgId": "2025年春晚",
       "name": "2025年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "3",
+      "name": "金鹰卡通"
     },
     {
       "providerId": "vbskycn",
@@ -7553,6 +7558,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "广州竞赛",
+      "name": "广州竞赛"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广州综合",
       "name": "广州综合"
     },
@@ -7723,11 +7733,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "无心法师",
-      "name": "无心法师"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "旺苍新闻综合",
       "name": "旺苍新闻综合"
     },
@@ -7759,7 +7764,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-19 18:27:25"
+      "name": "2026-10-20 00:30:33"
     },
     {
       "providerId": "vbskycn",
@@ -7948,16 +7953,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "河源公共",
-      "name": "河源公共"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "河源综合",
-      "name": "河源综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "法政先锋",
       "name": "法政先锋"
     },
@@ -8048,11 +8043,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -8070,6 +8060,11 @@
       "providerId": "vbskycn",
       "tvgId": "浙江数码时代",
       "name": "浙江数码时代"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
