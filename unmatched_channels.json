@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T23:19:23.904771+00:00",
+  "generatedAt": "2026-10-19T04:50:09.713830+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -545,6 +545,11 @@
       "providerId": "chinaiptv",
       "tvgId": "民视新闻HD",
       "name": "民视新闻HD"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "海峡卫视",
+      "name": "海峡卫视"
     },
     {
       "providerId": "chinaiptv",
@@ -6509,11 +6514,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6644,7 +6644,12 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江民生"
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江新闻"
     },
     {
       "providerId": "vbskycn",
@@ -6723,12 +6728,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "3",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "3",
+      "tvgId": "4",
       "name": "金鹰卡通"
     },
     {
@@ -6795,11 +6795,6 @@
       "providerId": "vbskycn",
       "tvgId": "万州三峡移民",
       "name": "万州三峡移民"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "万荣综合",
-      "name": "万荣综合"
     },
     {
       "providerId": "vbskycn",
@@ -7764,7 +7759,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-19 06:26:26"
+      "name": "2026-10-19 12:26:31"
     },
     {
       "providerId": "vbskycn",
@@ -7868,6 +7863,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7940,6 +7945,16 @@
       "providerId": "vbskycn",
       "tvgId": "河北都市",
       "name": "河北都市"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "河源公共",
+      "name": "河源公共"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "河源综合",
+      "name": "河源综合"
     },
     {
       "providerId": "vbskycn",
@@ -8033,8 +8048,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
+      "tvgId": "浙江国际",
+      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -8058,8 +8073,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江新闻频道",
-      "name": "浙江新闻"
+      "tvgId": "浙江民生",
+      "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -8655,6 +8675,11 @@
       "providerId": "vbskycn",
       "tvgId": "鉴证实录",
       "name": "鉴证实录"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "铜梁综合",
+      "name": "铜梁综合"
     },
     {
       "providerId": "vbskycn",
