@@ -1720,6 +1720,24 @@
       "channelId": "cctv6",
       "sources": [
         {
+          "id": "sub-chinaiptv-cctv6-f27197fc19",
+          "channelId": "cctv6",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "alias",
+          "matchConfidence": 0.98,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -7014,7 +7032,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -7068,8 +7087,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8713,7 +8731,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8767,8 +8786,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8947,24 +8965,6 @@
     {
       "channelId": "sat119",
       "sources": [
-        {
-          "id": "sub-chinaiptv-sat119-0267d999e8",
-          "channelId": "sat119",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/guangdong_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
         {
           "id": "sub-burningc4-sat119-f79e482cd1",
           "channelId": "sat119",
