@@ -1314,24 +1314,6 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-cctv5-8eb51ab632",
-          "channelId": "cctv5",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://gmxw.7766.org:808/hls/93/index.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-suxuang-cctv5-0a25da9ca2",
           "channelId": "cctv5",
           "protocol": "HLS",
@@ -1719,6 +1701,24 @@
     {
       "channelId": "cctv6",
       "sources": [
+        {
+          "id": "sub-chinaiptv-cctv6-f27197fc19",
+          "channelId": "cctv6",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "alias",
+          "matchConfidence": 0.98,
+          "headers": {}
+        },
         {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
@@ -2431,24 +2431,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-cctv8-f00b6a6752",
-          "channelId": "cctv8",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://gmxw.7766.org:808/hls/96/index.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -4351,24 +4333,6 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-cctv16-e494f1a8d5",
-          "channelId": "cctv16",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://gmxw.7766.org:808/hls/169/index.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-suxuang-cctv16-124cb02e3d",
           "channelId": "cctv16",
           "protocol": "HLS",
@@ -5528,6 +5492,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat104-415ab67fa3",
+          "channelId": "sat104",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://119.39.9.8:9901/tsfile/live/0118_1.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -6960,6 +6942,7 @@
           "sourceProviders": [
             "fanmingming",
             "zwc_alive",
+            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -7032,8 +7015,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8659,8 +8641,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8714,7 +8695,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8893,24 +8875,6 @@
     {
       "channelId": "sat119",
       "sources": [
-        {
-          "id": "sub-chinaiptv-sat119-0267d999e8",
-          "channelId": "sat119",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/guangdong_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
         {
           "id": "sub-burningc4-sat119-f79e482cd1",
           "channelId": "sat119",
@@ -10361,24 +10325,6 @@
       "channelId": "sat127",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat127-ea20a9b9f7",
-          "channelId": "sat127",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://stream.snrtv.com/sxbc-star-rtxBDT.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat127-91ad557c77",
           "channelId": "sat127",
           "protocol": "HLS",
@@ -11200,24 +11146,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat132-e1a7818803",
-          "channelId": "sat132",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://gmxw.7766.org:808/hls/45/index.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
