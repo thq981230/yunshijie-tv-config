@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T21:47:51.020327+00:00",
+  "generatedAt": "2026-10-22T04:58:15.787163+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6523,6 +6523,101 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "浙江钱江频道"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影丧尸片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影八点档"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影刘德华"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影功夫片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影动作电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影周星星"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影喜剧专场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影嫣然影厅"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影战争片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影搞笑喜剧"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影梁家辉"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影犯罪片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影蜘蛛侠"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影谍战"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影谍战片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影贺岁"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影高分动作"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "直播中国精编直播"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "1987年春晚",
       "name": "1987年春晚"
     },
@@ -6555,6 +6650,21 @@
       "providerId": "vbskycn",
       "tvgId": "1996年春晚",
       "name": "1996年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -6670,6 +6780,11 @@
       "providerId": "vbskycn",
       "tvgId": "CHC电影",
       "name": "CHC电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "NewTV精品体育",
+      "name": "精品体育"
     },
     {
       "providerId": "vbskycn",
@@ -7343,6 +7458,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "宿州公共",
+      "name": "宿州公共"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "寒战",
       "name": "寒战"
     },
@@ -7430,11 +7550,6 @@
       "providerId": "vbskycn",
       "tvgId": "广州新闻",
       "name": "广州新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "广州竞赛",
-      "name": "广州竞赛"
     },
     {
       "providerId": "vbskycn",
@@ -7644,7 +7759,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-22 00:25:28"
+      "name": "2026-10-22 12:27:10"
     },
     {
       "providerId": "vbskycn",
@@ -7833,6 +7948,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "河源公共",
+      "name": "河源公共"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "河源综合",
+      "name": "河源综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "法政先锋",
       "name": "法政先锋"
     },
@@ -7923,16 +8048,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -7955,11 +8070,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江新闻频道",
       "name": "浙江新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -8003,7 +8113,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8283,6 +8393,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "纬来体育台",
+      "name": "纬来体育"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "绍兴公共",
       "name": "绍兴公共"
     },
@@ -8453,6 +8568,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "足球",
+      "name": "足球频道"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "辉南新闻",
       "name": "辉南新闻"
     },
@@ -8558,11 +8678,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "铜陵新闻综合",
-      "name": "铜陵新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "镇江二套社会民生",
       "name": "镇江二套社会民生"
     },
@@ -8570,6 +8685,11 @@
       "providerId": "vbskycn",
       "tvgId": "镇江新闻综合",
       "name": "镇江新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "长子综合",
+      "name": "长子综合"
     },
     {
       "providerId": "vbskycn",
