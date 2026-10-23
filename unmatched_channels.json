@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T21:42:27.015409+00:00",
+  "generatedAt": "2026-10-23T04:59:33.559064+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6524,7 +6524,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江教科影视"
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -6659,7 +6659,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江国际"
+      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
@@ -6740,6 +6740,11 @@
       "providerId": "vbskycn",
       "tvgId": "2025年春晚",
       "name": "2025年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "3",
+      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -7145,6 +7150,11 @@
       "providerId": "vbskycn",
       "tvgId": "兴隆综合",
       "name": "兴隆综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵器科技",
+      "name": "兵器科技"
     },
     {
       "providerId": "vbskycn",
@@ -7623,6 +7633,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "怀旧剧场",
+      "name": "CCTV怀旧剧场"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "怪兽电影",
       "name": "怪兽电影"
     },
@@ -7665,6 +7680,11 @@
       "providerId": "vbskycn",
       "tvgId": "敦化一套",
       "name": "敦化一套"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "文化精品",
+      "name": "CCTV文化精品"
     },
     {
       "providerId": "vbskycn",
@@ -7744,7 +7764,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-23 00:29:07"
+      "name": "2026-10-23 12:26:46"
     },
     {
       "providerId": "vbskycn",
@@ -7870,11 +7890,6 @@
       "providerId": "vbskycn",
       "tvgId": "永昌综合",
       "name": "永昌综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "汉源综合",
-      "name": "汉源综合"
     },
     {
       "providerId": "vbskycn",
@@ -8028,13 +8043,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
+      "tvgId": "浙江教科",
+      "name": "浙江教科"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江教科",
-      "name": "浙江教科"
+      "tvgId": "浙江教科影视",
+      "name": "浙江教科影视"
     },
     {
       "providerId": "vbskycn",
@@ -8050,11 +8065,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江民生",
       "name": "浙江民生"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生休闲",
-      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -8093,7 +8103,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江",
+      "tvgId": "浙江钱江都市",
       "name": "浙江钱江"
     },
     {
@@ -8323,8 +8333,18 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "福建公共",
+      "name": "福建公共"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "福建新闻",
       "name": "福建新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "福建旅游",
+      "name": "福建旅游"
     },
     {
       "providerId": "vbskycn",
@@ -8350,6 +8370,11 @@
       "providerId": "vbskycn",
       "tvgId": "笑看风云",
       "name": "笑看风云"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "第一剧场",
+      "name": "CCTV第一剧场"
     },
     {
       "providerId": "vbskycn",
@@ -8753,6 +8778,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "韩国电影1",
+      "name": "韩国电影1"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "韩国电影2",
+      "name": "韩国电影2"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "音乐欣赏",
       "name": "音乐欣赏"
     },
@@ -8760,6 +8795,16 @@
       "providerId": "vbskycn",
       "tvgId": "音乐现场",
       "name": "音乐现场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "风云剧场",
+      "name": "风云剧场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "风云音乐",
+      "name": "风云音乐"
     },
     {
       "providerId": "vbskycn",
