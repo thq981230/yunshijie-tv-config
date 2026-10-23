@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T04:59:33.559064+00:00",
+  "generatedAt": "2026-10-23T11:46:51.205052+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6524,11 +6524,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6659,11 +6654,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "2",
       "name": "浙江新闻"
     },
     {
@@ -6740,11 +6730,6 @@
       "providerId": "vbskycn",
       "tvgId": "2025年春晚",
       "name": "2025年春晚"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "3",
-      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -7764,7 +7749,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-23 12:26:46"
+      "name": "2026-10-23 18:27:43"
     },
     {
       "providerId": "vbskycn",
@@ -8043,6 +8028,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江国际",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江少儿",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -8065,6 +8060,11 @@
       "providerId": "vbskycn",
       "tvgId": "浙江民生",
       "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -8210,11 +8210,6 @@
       "providerId": "vbskycn",
       "tvgId": "烟台经济科技",
       "name": "烟台经济科技"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "熊猫直播",
-      "name": "熊猫直播"
     },
     {
       "providerId": "vbskycn",
@@ -8598,13 +8593,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "邢台新闻综合",
-      "name": "邢台综合"
+      "tvgId": "邢台生活",
+      "name": "邢台生活"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "邢台生活",
-      "name": "邢台生活"
+      "tvgId": "邢台综合",
+      "name": "邢台综合"
     },
     {
       "providerId": "vbskycn",
