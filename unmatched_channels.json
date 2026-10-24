@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T04:44:39.647197+00:00",
+  "generatedAt": "2026-10-24T11:11:34.263454+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6524,6 +6524,11 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
+      "name": "浙江教科影视"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6650,6 +6655,11 @@
       "providerId": "vbskycn",
       "tvgId": "1996年春晚",
       "name": "1996年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -7453,6 +7463,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "宿州新闻综合",
+      "name": "宿州新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "寒战",
       "name": "寒战"
     },
@@ -7754,7 +7769,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-24 12:27:31"
+      "name": "2026-10-24 18:27:43"
     },
     {
       "providerId": "vbskycn",
@@ -8033,18 +8048,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江教科影视",
-      "name": "浙江教科影视"
     },
     {
       "providerId": "vbskycn",
@@ -8103,7 +8108,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8593,13 +8598,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "邢台新闻综合",
-      "name": "邢台综合"
+      "tvgId": "邢台生活",
+      "name": "邢台生活"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "邢台生活",
-      "name": "邢台生活"
+      "tvgId": "邢台综合",
+      "name": "邢台综合"
     },
     {
       "providerId": "vbskycn",
