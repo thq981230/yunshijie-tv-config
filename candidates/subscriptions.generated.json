@@ -1720,6 +1720,24 @@
       "channelId": "cctv6",
       "sources": [
         {
+          "id": "sub-chinaiptv-cctv6-f27197fc19",
+          "channelId": "cctv6",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "alias",
+          "matchConfidence": 0.98,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -5552,24 +5570,6 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat104-415ab67fa3",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://119.39.9.8:9901/tsfile/live/0118_1.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-suxuang-sat104-03c392e968",
           "channelId": "sat104",
           "protocol": "HLS",
@@ -6996,7 +6996,6 @@
           "sourceProviders": [
             "fanmingming",
             "zwc_alive",
-            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -7070,6 +7069,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat111-fdfedb92a5",
+          "channelId": "sat111",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://ali-vl.cztv.com/channels/lantian/channel001/360p.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8713,7 +8730,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8767,8 +8785,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8947,24 +8964,6 @@
     {
       "channelId": "sat119",
       "sources": [
-        {
-          "id": "sub-chinaiptv-sat119-0267d999e8",
-          "channelId": "sat119",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/guangdong_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
         {
           "id": "sub-burningc4-sat119-f79e482cd1",
           "channelId": "sat119",
@@ -9549,11 +9548,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-9c4aaf08ae",
+          "id": "sub-chinaiptv-sat122-c71aefd20e",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610250406/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610250706/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -10639,24 +10638,6 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat128-e2245a2a53",
-          "channelId": "sat128",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://218.13.170.98:9901/tsfile/live/0141_1.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-suxuang-sat128-6d9a2c1853",
           "channelId": "sat128",
           "protocol": "HLS",
@@ -11726,7 +11707,24 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
+            "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat135-fe1c9ec673",
+          "channelId": "sat135",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
             "vbskycn"
           ],
           "matchMethod": "normalized-name",
