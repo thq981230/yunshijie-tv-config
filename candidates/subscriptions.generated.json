@@ -1720,24 +1720,6 @@
       "channelId": "cctv6",
       "sources": [
         {
-          "id": "sub-chinaiptv-cctv6-f27197fc19",
-          "channelId": "cctv6",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "alias",
-          "matchConfidence": 0.98,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -7068,24 +7050,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat111-fdfedb92a5",
-          "channelId": "sat111",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://ali-vl.cztv.com/channels/lantian/channel001/360p.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
+            "guovin",
             "vbskycn"
           ],
           "matchMethod": "normalized-name",
@@ -9229,6 +9194,24 @@
       "channelId": "sat120",
       "sources": [
         {
+          "id": "sub-chinaiptv-sat120-fc72ce26de",
+          "channelId": "sat120",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/guangxi_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-sat120-ceee6d6f28",
           "channelId": "sat120",
           "protocol": "HLS",
@@ -9548,11 +9531,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-c71aefd20e",
+          "id": "sub-chinaiptv-sat122-a54c2d7f6b",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610250706/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610251206/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -10632,6 +10615,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat128-e2245a2a53",
+          "channelId": "sat128",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://218.13.170.98:9901/tsfile/live/0141_1.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
