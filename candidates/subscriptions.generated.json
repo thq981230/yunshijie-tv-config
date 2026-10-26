@@ -6472,11 +6472,11 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat109-b4fa303e6e",
+          "id": "sub-vbskycn-sat109-c8e6f85110",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -6545,11 +6545,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat109-c8e6f85110",
+          "id": "sub-suxuang-sat109-b4fa303e6e",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -6561,7 +6561,7 @@
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {
-            "User-Agent": "AptvPlayer-UA"
+            "User-Agent": "aliplayer"
           }
         },
         {
@@ -8659,7 +8659,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8713,8 +8714,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -9477,11 +9477,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-22e76d1e54",
+          "id": "sub-chinaiptv-sat122-186469cf46",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610261206/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610262105/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
