@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T09:06:55.343542+00:00",
+  "generatedAt": "2026-10-27T15:24:42.062573+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6574,7 +6574,17 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江新闻"
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -7043,11 +7053,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "兵器科技",
-      "name": "兵器科技"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "兵团五师双河影",
       "name": "兵团五师双河影"
     },
@@ -7165,6 +7170,11 @@
       "providerId": "vbskycn",
       "tvgId": "哈尔滨新闻综合",
       "name": "哈尔滨新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "哈尔滨生活",
+      "name": "哈尔滨生活"
     },
     {
       "providerId": "vbskycn",
@@ -7448,11 +7458,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "怀旧剧场",
-      "name": "CCTV怀旧剧场"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "恒山悬空寺全景",
       "name": "恒山悬空寺全景"
     },
@@ -7475,11 +7480,6 @@
       "providerId": "vbskycn",
       "tvgId": "敦化一套",
       "name": "敦化一套"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "文化精品",
-      "name": "CCTV文化精品"
     },
     {
       "providerId": "vbskycn",
@@ -7554,7 +7554,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-27 12:27:19"
+      "name": "2026-10-27 18:28:20"
     },
     {
       "providerId": "vbskycn",
@@ -7788,16 +7788,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -7818,8 +7808,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
+      "tvgId": "浙江新闻频道",
+      "name": "浙江新闻"
     },
     {
       "providerId": "vbskycn",
@@ -8058,18 +8048,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "福建公共",
-      "name": "福建公共"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "福建新闻",
       "name": "福建新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "福建旅游",
-      "name": "福建旅游"
     },
     {
       "providerId": "vbskycn",
@@ -8085,11 +8065,6 @@
       "providerId": "vbskycn",
       "tvgId": "福建经济",
       "name": "福建经济"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "第一剧场",
-      "name": "CCTV第一剧场"
     },
     {
       "providerId": "vbskycn",
@@ -8448,16 +8423,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "韩国电影1",
-      "name": "韩国电影1"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "韩国电影2",
-      "name": "韩国电影2"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "音乐欣赏",
       "name": "音乐欣赏"
     },
@@ -8465,16 +8430,6 @@
       "providerId": "vbskycn",
       "tvgId": "音乐现场",
       "name": "音乐现场"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "风云剧场",
-      "name": "风云剧场"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "风云音乐",
-      "name": "风云音乐"
     },
     {
       "providerId": "vbskycn",
