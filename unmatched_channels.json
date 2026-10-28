@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T05:51:20.874169+00:00",
+  "generatedAt": "2026-10-28T13:06:04.958769+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6574,12 +6574,12 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江少儿"
+      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江民生"
+      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
@@ -6715,11 +6715,6 @@
       "providerId": "vbskycn",
       "tvgId": "万州三峡移民",
       "name": "万州三峡移民"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "万荣综合",
-      "name": "万荣综合"
     },
     {
       "providerId": "vbskycn",
@@ -7053,16 +7048,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "兵团五师双河影",
-      "name": "兵团五师双河影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "兵团五师双河新闻综合",
-      "name": "兵团五师双河新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "兵团八师石河子新闻综合",
       "name": "兵团八师石河子新闻综合"
     },
@@ -7300,6 +7285,11 @@
       "providerId": "vbskycn",
       "tvgId": "定襄综合",
       "name": "定襄综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "宿州新闻综合",
+      "name": "宿州新闻综合"
     },
     {
       "providerId": "vbskycn",
@@ -7559,7 +7549,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-28 12:24:56"
+      "name": "2026-10-28 18:27:25"
     },
     {
       "providerId": "vbskycn",
@@ -7778,6 +7768,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "津南一套",
+      "name": "津南一套"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江休闲台",
       "name": "浙江休闲台"
     },
@@ -7785,11 +7780,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江公共新闻",
       "name": "浙江公共新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -7815,6 +7805,11 @@
       "providerId": "vbskycn",
       "tvgId": "浙江新闻频道",
       "name": "浙江新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -7858,7 +7853,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8245,11 +8240,6 @@
       "providerId": "vbskycn",
       "tvgId": "贵州省兴义市万峰林",
       "name": "贵州省兴义市万峰林"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "足球",
-      "name": "足球频道"
     },
     {
       "providerId": "vbskycn",
