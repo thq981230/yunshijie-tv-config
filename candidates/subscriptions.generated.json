@@ -3657,7 +3657,7 @@
           "sourceProviders": [
             "vbskycn"
           ],
-          "matchMethod": "tvg-id",
+          "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {}
         },
@@ -5527,24 +5527,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat104-18f7bc5cf2",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -9512,11 +9494,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-4d07067b10",
+          "id": "sub-chinaiptv-sat122-3da3601acd",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610312006/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611010301/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -11065,6 +11047,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat131-6dde8353c9",
+          "channelId": "sat131",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,

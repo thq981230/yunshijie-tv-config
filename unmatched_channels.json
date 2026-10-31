@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T12:42:47.781522+00:00",
+  "generatedAt": "2026-10-31T19:21:27.645647+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6613,6 +6613,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6688,6 +6693,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "3",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "78",
       "name": "广东民生"
     },
@@ -6728,11 +6738,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "NewTV精品体育",
-      "name": "精品体育"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "izbds",
       "name": "支持作者"
     },
@@ -6745,11 +6750,6 @@
       "providerId": "vbskycn",
       "tvgId": "万州三峡移民",
       "name": "万州三峡移民"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "万荣综合",
-      "name": "万荣综合"
     },
     {
       "providerId": "vbskycn",
@@ -6785,11 +6785,6 @@
       "providerId": "vbskycn",
       "tvgId": "东丰综合",
       "name": "东丰综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "东方卫视4K",
-      "name": "东方卫视4K"
     },
     {
       "providerId": "vbskycn",
@@ -7078,11 +7073,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "兵器科技",
-      "name": "兵器科技"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "兵团五师双河影",
       "name": "兵团五师双河影"
     },
@@ -7333,11 +7323,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "宿州公共",
-      "name": "宿州公共"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "寒战",
       "name": "寒战"
     },
@@ -7488,11 +7473,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "怀旧剧场",
-      "name": "CCTV怀旧剧场"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "恒山悬空寺全景",
       "name": "恒山悬空寺全景"
     },
@@ -7515,11 +7495,6 @@
       "providerId": "vbskycn",
       "tvgId": "敦化一套",
       "name": "敦化一套"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "文化精品",
-      "name": "CCTV文化精品"
     },
     {
       "providerId": "vbskycn",
@@ -7604,7 +7579,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-10-31 18:28:31"
+      "name": "2026-11-01 00:20:31"
     },
     {
       "providerId": "vbskycn",
@@ -7838,11 +7813,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -7860,11 +7830,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江数码时代",
       "name": "浙江数码时代"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -7908,7 +7873,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8103,18 +8068,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "福建公共",
-      "name": "福建公共"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "福建新闻",
       "name": "福建新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "福建旅游",
-      "name": "福建旅游"
     },
     {
       "providerId": "vbskycn",
@@ -8130,11 +8085,6 @@
       "providerId": "vbskycn",
       "tvgId": "福建经济",
       "name": "福建经济"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "第一剧场",
-      "name": "CCTV第一剧场"
     },
     {
       "providerId": "vbskycn",
@@ -8295,11 +8245,6 @@
       "providerId": "vbskycn",
       "tvgId": "贵州省兴义市万峰林",
       "name": "贵州省兴义市万峰林"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "足球",
-      "name": "足球频道"
     },
     {
       "providerId": "vbskycn",
@@ -8510,16 +8455,6 @@
       "providerId": "vbskycn",
       "tvgId": "音乐现场",
       "name": "音乐现场"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "风云剧场",
-      "name": "风云剧场"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "风云音乐",
-      "name": "风云音乐"
     },
     {
       "providerId": "vbskycn",
