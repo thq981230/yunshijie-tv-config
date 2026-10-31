@@ -5533,11 +5533,11 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat104-415ab67fa3",
+          "id": "sub-vbskycn-sat104-18f7bc5cf2",
           "channelId": "sat104",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://119.39.9.8:9901/tsfile/live/0118_1.m3u8",
+          "url": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -6507,11 +6507,11 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat109-c8e6f85110",
+          "id": "sub-vbskycn-sat109-b4fa303e6e",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -6580,11 +6580,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat109-b4fa303e6e",
+          "id": "sub-suxuang-sat109-c8e6f85110",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -6596,7 +6596,7 @@
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {
-            "User-Agent": "aliplayer"
+            "User-Agent": "AptvPlayer-UA"
           }
         },
         {
@@ -9512,11 +9512,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-de82dea38b",
+          "id": "sub-chinaiptv-sat122-4d07067b10",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610311306/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202610312006/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -10396,11 +10396,11 @@
       "channelId": "sat127",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat127-ce8a1f87ff",
+          "id": "sub-chinaiptv-sat127-acde066afb",
           "channelId": "sat127",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://stream.snrtv.com/sxbc-star-elmqWY.m3u8",
+          "url": "http://stream.snrtv.com/sxbc-star-ozFHZ8.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -10886,24 +10886,6 @@
       "channelId": "sat130",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat130-6a58d73de5",
-          "channelId": "sat130",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://livepgc.cmc.ningxiahuangheyun.com/live/nxgg1M.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat130-d1bf5dd63c",
           "channelId": "sat130",
           "protocol": "HLS",
@@ -11083,24 +11065,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat131-6dde8353c9",
-          "channelId": "sat131",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
