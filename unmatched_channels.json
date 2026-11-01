@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T06:17:24.390763+00:00",
+  "generatedAt": "2026-11-01T16:05:45.864567+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -575,11 +575,6 @@
       "providerId": "chinaiptv",
       "tvgId": "澳门卫视",
       "name": "澳门卫视"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "金鹰卡通",
-      "name": "金鹰卡通"
     },
     {
       "providerId": "chinaiptv",
@@ -6603,6 +6598,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江经济生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6679,17 +6679,12 @@
     {
       "providerId": "vbskycn",
       "tvgId": "3",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "4",
       "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "4",
-      "name": "浙江新闻"
+      "tvgId": "3",
+      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
@@ -7599,7 +7594,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-01 12:29:10"
+      "name": "2026-11-01 18:25:26"
     },
     {
       "providerId": "vbskycn",
@@ -7843,6 +7838,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江新闻频道",
+      "name": "浙江新闻"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江民生",
       "name": "浙江民生"
     },
@@ -7865,11 +7865,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江经济",
       "name": "浙江经济"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江经济生活",
-      "name": "浙江经济生活"
     },
     {
       "providerId": "vbskycn",
