@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T16:05:45.864567+00:00",
+  "generatedAt": "2026-11-01T22:07:53.403140+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -575,6 +575,11 @@
       "providerId": "chinaiptv",
       "tvgId": "澳门卫视",
       "name": "澳门卫视"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "金鹰卡通",
+      "name": "金鹰卡通"
     },
     {
       "providerId": "chinaiptv",
@@ -6598,11 +6603,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江经济生活"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6679,11 +6679,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "3",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "3",
       "name": "浙江少儿"
     },
     {
@@ -6725,11 +6720,6 @@
       "providerId": "vbskycn",
       "tvgId": "CHC电影",
       "name": "CHC电影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "NewTV精品体育",
-      "name": "精品体育"
     },
     {
       "providerId": "vbskycn",
@@ -7248,6 +7238,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "四川科教",
+      "name": "四川科教"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "固镇新闻",
       "name": "固镇新闻"
     },
@@ -7594,7 +7589,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-01 18:25:26"
+      "name": "2026-11-02 00:19:17"
     },
     {
       "providerId": "vbskycn",
@@ -7673,6 +7668,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7720,11 +7725,6 @@
       "providerId": "vbskycn",
       "tvgId": "汶川新闻综合",
       "name": "汶川新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "汾西综合",
-      "name": "汾西综合"
     },
     {
       "providerId": "vbskycn",
@@ -7818,6 +7818,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江国际",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -7868,6 +7873,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江经济生活",
+      "name": "浙江经济生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江经视",
       "name": "浙江经视"
     },
@@ -7883,7 +7893,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江都市",
+      "tvgId": "浙江钱江",
       "name": "浙江钱江"
     },
     {
@@ -8118,11 +8128,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "纬来体育台",
-      "name": "纬来体育"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "绍兴公共",
       "name": "绍兴公共"
     },
@@ -8270,11 +8275,6 @@
       "providerId": "vbskycn",
       "tvgId": "贵州省兴义市万峰林",
       "name": "贵州省兴义市万峰林"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "足球",
-      "name": "足球频道"
     },
     {
       "providerId": "vbskycn",
@@ -13359,7 +13359,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-d4481e97]"
+      "name": "[session-cc40ddb2]"
     },
     {
       "providerId": "zwc_alive",
