@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T02:56:46.413722+00:00",
+  "generatedAt": "2026-11-03T10:58:47.028070+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6558,6 +6558,96 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "浙江钱江频道"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影丧尸片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影八点档"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影刘德华"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影功夫片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影动作电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影周星星"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影喜剧专场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影嫣然影厅"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影战争片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影搞笑喜剧"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影梁家辉"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影犯罪片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影蜘蛛侠"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影谍战"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影谍战片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影贺岁"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影高分动作"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "1987年春晚",
       "name": "1987年春晚"
     },
@@ -6668,6 +6758,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "27",
+      "name": "金鹰卡通"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "78",
       "name": "广东民生"
     },
@@ -6730,6 +6825,11 @@
       "providerId": "vbskycn",
       "tvgId": "万州三峡移民",
       "name": "万州三峡移民"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "万荣综合",
+      "name": "万荣综合"
     },
     {
       "providerId": "vbskycn",
@@ -6798,58 +6898,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "中央电视塔东",
-      "name": "中央电视塔东"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "中央电视塔南",
-      "name": "中央电视塔南"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "丽江古城万古楼遥望玉龙雪山",
-      "name": "丽江古城万古楼遥望玉龙雪山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "丽江古城大水车",
-      "name": "丽江古城大水车"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "丽江古城大研花巷观景",
-      "name": "丽江古城大研花巷观景"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "之江纪录",
       "name": "之江纪录"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "乌镇全景",
-      "name": "乌镇全景"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "乌镇蓝印花布",
-      "name": "乌镇蓝印花布"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "乌镇西市河",
-      "name": "乌镇西市河"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "乌镇龙形田",
-      "name": "乌镇龙形田"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "乐山大佛全景",
-      "name": "乐山大佛全景"
     },
     {
       "providerId": "vbskycn",
@@ -6868,48 +6918,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "云南丽江冰川",
-      "name": "云南丽江冰川"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南丽江印象实景",
-      "name": "云南丽江印象实景"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南丽江玉龙雪山",
-      "name": "云南丽江玉龙雪山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南丽江玉龙雪山草甸",
-      "name": "云南丽江玉龙雪山草甸"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南丽江蓝月谷",
-      "name": "云南丽江蓝月谷"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南大理崇圣寺三塔中景",
-      "name": "云南大理崇圣寺三塔中景"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南大理崇圣寺三塔远景",
-      "name": "云南大理崇圣寺三塔远景"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "云南娱乐",
       "name": "云南娱乐"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南白沙远眺玉龙雪山",
-      "name": "云南白沙远眺玉龙雪山"
     },
     {
       "providerId": "vbskycn",
@@ -6925,11 +6935,6 @@
       "providerId": "vbskycn",
       "tvgId": "云霄综合",
       "name": "云霄综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "五彩池",
-      "name": "五彩池"
     },
     {
       "providerId": "vbskycn",
@@ -7033,16 +7038,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "八里沟风景区天界山玻璃栈道",
-      "name": "八里沟风景区天界山玻璃栈道"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "八里沟风景区桃花湾瀑布",
-      "name": "八里沟风景区桃花湾瀑布"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "六安公共",
       "name": "六安公共"
     },
@@ -7053,11 +7048,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "六盘山红军长征景区",
-      "name": "六盘山红军长征景区"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "兰溪新闻综合",
       "name": "兰溪新闻综合"
     },
@@ -7065,6 +7055,11 @@
       "providerId": "vbskycn",
       "tvgId": "兴隆综合",
       "name": "兴隆综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵器科技",
+      "name": "兵器科技"
     },
     {
       "providerId": "vbskycn",
@@ -7113,11 +7108,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "南京玄武湖公园",
-      "name": "南京玄武湖公园"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "南国都市",
       "name": "南国都市"
     },
@@ -7130,11 +7120,6 @@
       "providerId": "vbskycn",
       "tvgId": "南宁都市生活",
       "name": "南宁都市生活"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "厦门鼓浪屿",
-      "name": "厦门鼓浪屿"
     },
     {
       "providerId": "vbskycn",
@@ -7233,36 +7218,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "四川四姑娘山隆珠措",
-      "name": "四川四姑娘山隆珠措"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "四川峨眉山云海日出",
-      "name": "四川峨眉山云海日出"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "四川峨眉山普贤菩萨铜像",
-      "name": "四川峨眉山普贤菩萨铜像"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "四川峨眉山远眺万佛顶",
-      "name": "四川峨眉山远眺万佛顶"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "四川峨眉山远眺贡嘎雪山",
-      "name": "四川峨眉山远眺贡嘎雪山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "四川科教",
-      "name": "四川科教"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "固镇新闻",
       "name": "固镇新闻"
     },
@@ -7290,16 +7245,6 @@
       "providerId": "vbskycn",
       "tvgId": "大湾区卫视",
       "name": "大湾区卫视"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "天涯石",
-      "name": "天涯石"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "天祝综合",
-      "name": "天祝综合"
     },
     {
       "providerId": "vbskycn",
@@ -7343,23 +7288,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "安徽池州九华山风景区九华山",
-      "name": "安徽池州九华山风景区九华山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "安徽黟县芦村远眺",
-      "name": "安徽黟县芦村远眺"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "安徽黟县西递牌坊",
-      "name": "安徽黟县西递牌坊"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "定襄综合",
       "name": "定襄综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "宿州新闻综合",
+      "name": "宿州新闻综合"
     },
     {
       "providerId": "vbskycn",
@@ -7428,6 +7363,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "平遥新闻综合",
+      "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7448,11 +7388,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "广州竞赛",
-      "name": "广州竞赛"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "广州综合",
       "name": "广州综合"
     },
@@ -7465,16 +7400,6 @@
       "providerId": "vbskycn",
       "tvgId": "广西国际",
       "name": "广西国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "广西桂林漓江景区",
-      "name": "广西桂林漓江景区"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "广西玉林大容山莲花山顶",
-      "name": "广西玉林大容山莲花山顶"
     },
     {
       "providerId": "vbskycn",
@@ -7503,11 +7428,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "张掖七彩丹霞",
-      "name": "张掖七彩丹霞"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "张掖新闻综合",
       "name": "张掖新闻综合"
     },
@@ -7528,13 +7448,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "怪兽电影",
-      "name": "怪兽电影"
+      "tvgId": "怀旧剧场",
+      "name": "CCTV怀旧剧场"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "恒山悬空寺全景",
-      "name": "恒山悬空寺全景"
+      "tvgId": "怪兽电影",
+      "name": "怪兽电影"
     },
     {
       "providerId": "vbskycn",
@@ -7570,6 +7490,11 @@
       "providerId": "vbskycn",
       "tvgId": "敦化一套",
       "name": "敦化一套"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "文化精品",
+      "name": "CCTV文化精品"
     },
     {
       "providerId": "vbskycn",
@@ -7648,28 +7573,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀山",
-      "name": "普陀山"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "普陀新闻综合",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-03 06:24:12"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "月牙泉",
-      "name": "月牙泉"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "望乡台",
-      "name": "望乡台"
+      "name": "2026-11-03 18:28:22"
     },
     {
       "providerId": "vbskycn",
@@ -7763,6 +7673,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7785,16 +7705,6 @@
       "providerId": "vbskycn",
       "tvgId": "江津新闻",
       "name": "江津新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "江苏南京牛首山",
-      "name": "江苏南京牛首山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "江苏徐州云龙湖风景区云龙山观景台西",
-      "name": "江苏徐州云龙湖风景区云龙山观景台西"
     },
     {
       "providerId": "vbskycn",
@@ -7845,51 +7755,6 @@
       "providerId": "vbskycn",
       "tvgId": "泗洪新闻综合",
       "name": "泗洪新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山主峰",
-      "name": "泰山主峰"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山十八盘",
-      "name": "泰山十八盘"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山南天门",
-      "name": "泰山南天门"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山大观峰",
-      "name": "泰山大观峰"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山太平岭",
-      "name": "泰山太平岭"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山望人松",
-      "name": "泰山望人松"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山玉皇顶",
-      "name": "泰山玉皇顶"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山白云亭悬崖",
-      "name": "泰山白云亭悬崖"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "泰山碧霞祠",
-      "name": "泰山碧霞祠"
     },
     {
       "providerId": "vbskycn",
@@ -7998,11 +7863,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江舟山东极岛",
-      "name": "浙江舟山东极岛"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江遂昌",
       "name": "浙江遂昌"
     },
@@ -8053,26 +7913,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "湖南张家界天门山西线玻璃栈道",
-      "name": "湖南张家界天门山西线玻璃栈道"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "湖南张家界宝峰湖",
-      "name": "湖南张家界宝峰湖"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "湖南张家界御笔峰",
-      "name": "湖南张家界御笔峰"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "湖南张家界水绕四门",
-      "name": "湖南张家界水绕四门"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "湖州公共民生",
       "name": "湖州公共民生"
     },
@@ -8120,11 +7960,6 @@
       "providerId": "vbskycn",
       "tvgId": "狄仁杰电影",
       "name": "狄仁杰电影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "狮子山鸟瞰丽江古城",
-      "name": "狮子山鸟瞰丽江古城"
     },
     {
       "providerId": "vbskycn",
@@ -8203,11 +8038,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "直播中国",
-      "name": "直播中国"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "磐石",
       "name": "磐石"
     },
@@ -8238,16 +8068,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "福建武夷山玉女峰",
-      "name": "福建武夷山玉女峰"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "福建漳州醉美沙滩翡翠湾",
-      "name": "福建漳州醉美沙滩翡翠湾"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "福建经济",
       "name": "福建经济"
     },
@@ -8260,6 +8080,11 @@
       "providerId": "vbskycn",
       "tvgId": "笑看风云",
       "name": "笑看风云"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "第一剧场",
+      "name": "CCTV第一剧场"
     },
     {
       "providerId": "vbskycn",
@@ -8398,6 +8223,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "西峰综合",
+      "name": "西峰综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "西游记2",
       "name": "西游记2"
     },
@@ -8425,11 +8255,6 @@
       "providerId": "vbskycn",
       "tvgId": "象山新闻综合",
       "name": "象山综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "贵州省兴义市万峰林",
-      "name": "贵州省兴义市万峰林"
     },
     {
       "providerId": "vbskycn",
@@ -8508,13 +8333,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "都江堰鱼嘴",
-      "name": "都江堰鱼嘴"
+      "tvgId": "野蛮亲家",
+      "name": "野蛮亲家"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "野蛮亲家",
-      "name": "野蛮亲家"
+      "tvgId": "金川乡村",
+      "name": "金川乡村"
     },
     {
       "providerId": "vbskycn",
@@ -8593,33 +8418,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "陕西洋县国宝朱鹮02",
-      "name": "陕西洋县国宝朱鹮02"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "雅安新闻综合",
       "name": "雅安新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "雪乡大石碑",
-      "name": "雪乡大石碑"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "雪乡梦幻家园",
-      "name": "雪乡梦幻家园"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "青岛崂山八水河",
-      "name": "青岛崂山八水河"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "青岛崂山双福",
-      "name": "青岛崂山双福"
     },
     {
       "providerId": "vbskycn",
@@ -8653,6 +8453,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "韩国电影1",
+      "name": "韩国电影1"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "韩国电影2",
       "name": "韩国电影2"
     },
@@ -8668,6 +8473,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "风云剧场",
+      "name": "风云剧场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "风云音乐",
+      "name": "风云音乐"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "飞碟之谜01",
       "name": "飞碟之谜01"
     },
@@ -8678,53 +8493,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "鸣沙山",
-      "name": "鸣沙山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄山",
-      "name": "黄山"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄山始信新道",
-      "name": "黄山始信新道"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄山排云亭",
-      "name": "黄山排云亭"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄山飞来石",
-      "name": "黄山飞来石"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄果树六角亭瀑布",
-      "name": "黄果树六角亭瀑布"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "黄渤电影",
       "name": "黄渤电影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄花城水长城01",
-      "name": "黄花城水长城01"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄花城水长城03",
-      "name": "黄花城水长城03"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "黄龙",
-      "name": "黄龙"
     },
     {
       "providerId": "vbskycn",
