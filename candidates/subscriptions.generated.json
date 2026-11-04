@@ -4652,18 +4652,17 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-cctv18-260acc9746",
+          "id": "sub-suxuang-cctv18-00e5b38657",
           "channelId": "cctv18",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8",
-          "priority": 25,
+          "url": "http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631",
+          "priority": 35,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
+          "providerId": "suxuang",
           "sourceProviders": [
-            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -4671,11 +4670,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-cctv18-00e5b38657",
+          "id": "sub-suxuang-cctv18-260acc9746",
           "channelId": "cctv18",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631",
+          "url": "http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -6248,18 +6247,17 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat108-203f850a0b",
+          "id": "sub-suxuang-sat108-203f850a0b",
           "channelId": "sat108",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "https://idclive.hljtv.com:4430/live/hljws_own.m3u8",
-          "priority": 25,
+          "priority": 35,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
+          "providerId": "suxuang",
           "sourceProviders": [
-            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6454,11 +6452,11 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat109-b4fa303e6e",
+          "id": "sub-vbskycn-sat109-c8e6f85110",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -6527,11 +6525,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat109-c8e6f85110",
+          "id": "sub-suxuang-sat109-b4fa303e6e",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -6543,7 +6541,7 @@
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {
-            "User-Agent": "AptvPlayer-UA"
+            "User-Agent": "aliplayer"
           }
         },
         {
@@ -9458,11 +9456,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-b74bf47406",
+          "id": "sub-chinaiptv-sat122-681a84018a",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611040306/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611040905/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -11581,24 +11579,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat135-fe1c9ec673",
-          "channelId": "sat135",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
+            "guovin",
             "vbskycn"
           ],
           "matchMethod": "normalized-name",
