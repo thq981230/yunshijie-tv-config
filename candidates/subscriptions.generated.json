@@ -5371,24 +5371,6 @@
       "channelId": "sat104",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat104-04edc0c1e0",
-          "channelId": "sat104",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://livehhhttps.sxrtv.com/lsdream/q8RVWgs/1000/75sqwR0.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-sat104-17be78d647",
           "channelId": "sat104",
           "protocol": "HLS",
@@ -6247,17 +6229,18 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat108-203f850a0b",
+          "id": "sub-vbskycn-sat108-203f850a0b",
           "channelId": "sat108",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "https://idclive.hljtv.com:4430/live/hljws_own.m3u8",
-          "priority": 35,
+          "priority": 25,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "suxuang",
+          "providerId": "vbskycn",
           "sourceProviders": [
+            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6922,7 +6905,6 @@
           "sourceProviders": [
             "fanmingming",
             "zwc_alive",
-            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6996,6 +6978,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat111-6794ca0628",
+          "channelId": "sat111",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://ali-xwl.cztv.com/live/channel011080Plxw.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8621,7 +8621,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8676,24 +8677,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat118-9ea6508d54",
-          "channelId": "sat118",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -9456,11 +9439,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-681a84018a",
+          "id": "sub-chinaiptv-sat122-df275c8b41",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611040905/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611041800/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
