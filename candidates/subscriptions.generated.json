@@ -5426,11 +5426,11 @@
       "channelId": "sat104",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat104-c4b1c3fd39",
+          "id": "sub-chinaiptv-sat104-27834cb6bd",
           "channelId": "sat104",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "https://livehhhttps.sxrtv.com/lsdream/lce1mC4/800/y3tvle0.m3u8",
+          "url": "https://livehhhttps.sxrtv.com/lsdream/q8RVWgs/1000/22sqvR0.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -9495,11 +9495,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-fd7343d67c",
+          "id": "sub-chinaiptv-sat122-ac186084fc",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611061806/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "http://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611062006/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
