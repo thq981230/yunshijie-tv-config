@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T17:45:49.929817+00:00",
+  "generatedAt": "2026-11-07T21:56:51.557639+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -510,6 +510,11 @@
       "providerId": "chinaiptv",
       "tvgId": "信大",
       "name": "信大"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "凤凰中文",
+      "name": "凤凰中文"
     },
     {
       "providerId": "chinaiptv",
@@ -13204,7 +13209,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-124cd2aa]"
+      "name": "[session-ca4da9a6]"
     },
     {
       "providerId": "zwc_alive",
