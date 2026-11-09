@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T19:44:37.770886+00:00",
+  "generatedAt": "2026-11-09T00:57:46.499820+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -550,11 +550,6 @@
       "providerId": "chinaiptv",
       "tvgId": "澳门卫视",
       "name": "澳门卫视"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "金鹰卡通",
-      "name": "金鹰卡通"
     },
     {
       "providerId": "guovin",
@@ -13254,7 +13249,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-ca4da9a6]"
+      "name": "[session-3f4eb1a6]"
     },
     {
       "providerId": "zwc_alive",
