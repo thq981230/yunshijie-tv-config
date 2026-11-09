@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T11:43:54.990716+00:00",
+  "generatedAt": "2026-11-09T22:27:57.716950+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -535,6 +535,11 @@
       "providerId": "chinaiptv",
       "tvgId": "民视新闻HD",
       "name": "民视新闻HD"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "海峡卫视",
+      "name": "海峡卫视"
     },
     {
       "providerId": "chinaiptv",
@@ -6513,6 +6518,96 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "浙江钱江频道"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影丧尸片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影八点档"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影刘德华"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影功夫片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影动作电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影周星星"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影喜剧专场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影嫣然影厅"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影战争片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影搞笑喜剧"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影梁家辉"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影犯罪片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影蜘蛛侠"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影谍战"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影谍战片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影贺岁"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影高分动作"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "1987年春晚",
       "name": "1987年春晚"
     },
@@ -6620,6 +6715,16 @@
       "providerId": "vbskycn",
       "tvgId": "2025年春晚",
       "name": "2025年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "3",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "3",
+      "name": "金鹰卡通"
     },
     {
       "providerId": "vbskycn",
@@ -7223,11 +7328,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "平遥新闻综合",
-      "name": "平遥新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7433,13 +7533,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀新闻综合",
+      "tvgId": "普陀电视台",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-09 18:24:53"
+      "name": "2026-11-10 06:25:33"
     },
     {
       "providerId": "vbskycn",
@@ -7530,16 +7630,6 @@
       "providerId": "vbskycn",
       "tvgId": "武汉新闻综合",
       "name": "武汉一台新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "武进新闻",
-      "name": "武进新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "武进生活",
-      "name": "武进生活"
     },
     {
       "providerId": "vbskycn",
@@ -7645,11 +7735,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江公共新闻",
       "name": "浙江公共新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -7830,11 +7915,6 @@
       "providerId": "vbskycn",
       "tvgId": "珲春新闻",
       "name": "珲春新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "璧山综合",
-      "name": "璧山综合"
     },
     {
       "providerId": "vbskycn",
@@ -13139,7 +13219,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-3f4eb1a6]"
+      "name": "[session-134c01be]"
     },
     {
       "providerId": "zwc_alive",
