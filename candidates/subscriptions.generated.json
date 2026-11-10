@@ -1313,6 +1313,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-cctv5-8eb51ab632",
+          "channelId": "cctv5",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/93/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-cctv5-0a25da9ca2",
           "channelId": "cctv5",
           "protocol": "HLS",
@@ -2324,24 +2342,6 @@
             "burningc4"
           ],
           "matchMethod": "tvg-id",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-zwc_alive-cctv8-38cce04ebd",
-          "channelId": "cctv8",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://tv.cry33.com/ys4k.php?id=8k",
-          "priority": 20,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "zwc_alive",
-          "sourceProviders": [
-            "zwc_alive"
-          ],
-          "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {}
         },
@@ -4145,6 +4145,24 @@
           "headers": {}
         },
         {
+          "id": "sub-vbskycn-cctv15-302235a3e3",
+          "channelId": "cctv15",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/102/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-suxuang-cctv15-139b2ad782",
           "channelId": "cctv15",
           "protocol": "HLS",
@@ -4326,6 +4344,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-cctv16-e494f1a8d5",
+          "channelId": "cctv16",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/169/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -4670,17 +4706,18 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-cctv18-00e5b38657",
+          "id": "sub-vbskycn-cctv18-260acc9746",
           "channelId": "cctv18",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631",
-          "priority": 35,
+          "url": "http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8",
+          "priority": 25,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "suxuang",
+          "providerId": "vbskycn",
           "sourceProviders": [
+            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -4688,11 +4725,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-cctv18-260acc9746",
+          "id": "sub-suxuang-cctv18-00e5b38657",
           "channelId": "cctv18",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8",
+          "url": "http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -6265,17 +6302,18 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat108-203f850a0b",
+          "id": "sub-vbskycn-sat108-203f850a0b",
           "channelId": "sat108",
           "protocol": "HLS",
           "type": "STATIC",
           "url": "https://idclive.hljtv.com:4430/live/hljws_own.m3u8",
-          "priority": 35,
+          "priority": 25,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "suxuang",
+          "providerId": "vbskycn",
           "sourceProviders": [
+            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6470,11 +6508,11 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat109-c8e6f85110",
+          "id": "sub-vbskycn-sat109-b4fa303e6e",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -6543,11 +6581,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-sat109-b4fa303e6e",
+          "id": "sub-suxuang-sat109-c8e6f85110",
           "channelId": "sat109",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+          "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -6559,7 +6597,7 @@
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
           "headers": {
-            "User-Agent": "aliplayer"
+            "User-Agent": "AptvPlayer-UA"
           }
         },
         {
@@ -6939,7 +6977,6 @@
           "providerId": "fanmingming",
           "sourceProviders": [
             "fanmingming",
-            "zwc_alive",
             "vbskycn",
             "suxuang"
           ],
@@ -8639,8 +8676,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8695,6 +8731,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat118-9ea6508d54",
+          "channelId": "sat118",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -11162,6 +11216,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat132-e1a7818803",
+          "channelId": "sat132",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://gmxw.7766.org:808/hls/45/index.m3u8",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
