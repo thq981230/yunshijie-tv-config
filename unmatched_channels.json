@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T23:28:10.639122+00:00",
+  "generatedAt": "2026-11-11T06:37:08.933469+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -513,16 +513,6 @@
     },
     {
       "providerId": "chinaiptv",
-      "tvgId": "凤凰中文",
-      "name": "凤凰中文"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "凤凰资讯",
-      "name": "凤凰资讯"
-    },
-    {
-      "providerId": "chinaiptv",
       "tvgId": "华视HD",
       "name": "华视HD"
     },
@@ -535,11 +525,6 @@
       "providerId": "chinaiptv",
       "tvgId": "民视新闻HD",
       "name": "民视新闻HD"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "海峡卫视",
-      "name": "海峡卫视"
     },
     {
       "providerId": "chinaiptv",
@@ -6719,6 +6704,11 @@
     {
       "providerId": "vbskycn",
       "tvgId": "3",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "3",
       "name": "金鹰卡通"
     },
     {
@@ -7023,16 +7013,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "兵团五师双河影",
-      "name": "兵团五师双河影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "兵团五师双河新闻综合",
-      "name": "兵团五师双河新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "兵团八师石河子新闻综合",
       "name": "兵团八师石河子新闻综合"
     },
@@ -7328,6 +7308,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "平遥新闻综合",
+      "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7539,7 +7524,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-11 06:25:58"
+      "name": "2026-11-11 12:25:40"
     },
     {
       "providerId": "vbskycn",
@@ -7560,11 +7545,6 @@
       "providerId": "vbskycn",
       "tvgId": "杭州余杭综合",
       "name": "余杭综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "松潘新闻综合",
-      "name": "松潘新闻综合"
     },
     {
       "providerId": "vbskycn",
@@ -7630,6 +7610,16 @@
       "providerId": "vbskycn",
       "tvgId": "武汉新闻综合",
       "name": "武汉一台新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
     },
     {
       "providerId": "vbskycn",
@@ -7740,11 +7730,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江国际",
       "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
