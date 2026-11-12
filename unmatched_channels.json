@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T00:48:26.082382+00:00",
+  "generatedAt": "2026-11-12T11:25:48.889079+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6504,11 +6504,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6633,6 +6628,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江教科影视"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6709,7 +6709,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "3",
-      "name": "金鹰卡通"
+      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
@@ -7010,6 +7010,16 @@
       "providerId": "vbskycn",
       "tvgId": "兵器科技",
       "name": "兵器科技"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵团五师双河影",
+      "name": "兵团五师双河影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵团五师双河新闻综合",
+      "name": "兵团五师双河新闻综合"
     },
     {
       "providerId": "vbskycn",
@@ -7518,13 +7528,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀电视台",
+      "tvgId": "普陀新闻综合",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-12 06:26:01"
+      "name": "2026-11-12 18:28:09"
     },
     {
       "providerId": "vbskycn",
@@ -7545,6 +7555,11 @@
       "providerId": "vbskycn",
       "tvgId": "杭州余杭综合",
       "name": "余杭综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "松潘新闻综合",
+      "name": "松潘新闻综合"
     },
     {
       "providerId": "vbskycn",
@@ -7610,6 +7625,11 @@
       "providerId": "vbskycn",
       "tvgId": "武汉新闻综合",
       "name": "武汉一台新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
     },
     {
       "providerId": "vbskycn",
@@ -7728,18 +7748,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江教科影视",
-      "name": "浙江教科影视"
     },
     {
       "providerId": "vbskycn",
@@ -7760,6 +7770,11 @@
       "providerId": "vbskycn",
       "tvgId": "浙江民生",
       "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -8255,11 +8270,6 @@
       "providerId": "vbskycn",
       "tvgId": "野蛮亲家",
       "name": "野蛮亲家"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "金川乡村",
-      "name": "金川乡村"
     },
     {
       "providerId": "vbskycn",

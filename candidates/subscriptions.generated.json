@@ -1205,6 +1205,24 @@
       "channelId": "cctv5",
       "sources": [
         {
+          "id": "sub-chinaiptv-cctv5-dde6a3b4fb",
+          "channelId": "cctv5",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://hlslive1-byte-w4.volcfcdn.com/live/hls_cdrm/enc1/av1/cctv5plus/1080p/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "alias",
+          "matchConfidence": 0.98,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-cctv5-c61547f03b",
           "channelId": "cctv5",
           "protocol": "HLS",
@@ -4706,18 +4724,17 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-cctv18-260acc9746",
+          "id": "sub-suxuang-cctv18-00e5b38657",
           "channelId": "cctv18",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8",
-          "priority": 25,
+          "url": "http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631",
+          "priority": 35,
           "quality": "AUTO",
           "enabled": true,
           "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
+          "providerId": "suxuang",
           "sourceProviders": [
-            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -4725,11 +4742,11 @@
           "headers": {}
         },
         {
-          "id": "sub-suxuang-cctv18-00e5b38657",
+          "id": "sub-suxuang-cctv18-260acc9746",
           "channelId": "cctv18",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://www.tszhgjj.cn:7000/rtp/239.253.93.134:6631",
+          "url": "http://vip1.xinketongxun.fun:8082/tsfile/live/1026_1.m3u8",
           "priority": 35,
           "quality": "AUTO",
           "enabled": true,
@@ -5498,11 +5515,11 @@
           "headers": {}
         },
         {
-          "id": "sub-vbskycn-sat104-415ab67fa3",
+          "id": "sub-vbskycn-sat104-18f7bc5cf2",
           "channelId": "sat104",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "http://119.39.9.8:9901/tsfile/live/0118_1.m3u8",
+          "url": "http://m3u8.channel.wsrtv.com.cn/cms/videos/nmip-media/channellive/channel7/playlist.m3u8",
           "priority": 25,
           "quality": "AUTO",
           "enabled": true,
@@ -7315,24 +7332,6 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat112-da58873af4",
-          "channelId": "sat112",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://gmxw.7766.org:808/hls/40/index.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
-            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -11546,24 +11545,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat135-fe1c9ec673",
-          "channelId": "sat135",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://l.cztvcloud.com/channels/lantian/SXxinchang2/720p.m3u8#",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
+            "guovin",
             "vbskycn"
           ],
           "matchMethod": "normalized-name",
