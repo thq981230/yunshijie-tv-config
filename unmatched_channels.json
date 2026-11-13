@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T01:53:46.741233+00:00",
+  "generatedAt": "2026-11-13T11:09:15.324031+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -353,8 +353,8 @@
     },
     {
       "providerId": "chinaiptv",
-      "tvgId": "CGTN-News",
-      "name": "CGNT 新闻频道"
+      "tvgId": "CGTN",
+      "name": "CGNT 记录频道"
     },
     {
       "providerId": "chinaiptv",
@@ -6524,6 +6524,11 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
+      "name": "浙江民生休闲"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6648,6 +6653,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江经济生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6723,8 +6738,18 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "3",
-      "name": "浙江新闻"
+      "tvgId": "4",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "4",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "5",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -7073,6 +7098,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "南京教科",
+      "name": "南京教科"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "南京新闻综合",
+      "name": "南京新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "南国都市",
       "name": "南国都市"
     },
@@ -7323,6 +7358,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "平遥新闻综合",
+      "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7534,7 +7574,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-13 06:26:08"
+      "name": "2026-11-13 18:27:53"
     },
     {
       "providerId": "vbskycn",
@@ -7625,6 +7665,16 @@
       "providerId": "vbskycn",
       "tvgId": "武汉新闻综合",
       "name": "武汉一台新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
     },
     {
       "providerId": "vbskycn",
@@ -7733,16 +7783,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -7763,16 +7803,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生休闲",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江生活",
       "name": "浙江生活"
     },
@@ -7785,11 +7815,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江经济",
       "name": "浙江经济"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江经济生活",
-      "name": "浙江经济生活"
     },
     {
       "providerId": "vbskycn",
@@ -8290,11 +8315,6 @@
       "providerId": "vbskycn",
       "tvgId": "鉴证实录",
       "name": "鉴证实录"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "铜梁综合",
-      "name": "铜梁综合"
     },
     {
       "providerId": "vbskycn",
