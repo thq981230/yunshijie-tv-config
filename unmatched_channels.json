@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T18:13:26.972381+00:00",
+  "generatedAt": "2026-11-14T22:32:33.944771+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6524,6 +6524,11 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
+      "name": "浙江民生休闲"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6654,7 +6659,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "2",
-      "name": "浙江民生"
+      "name": "浙江经济生活"
     },
     {
       "providerId": "vbskycn",
@@ -7333,11 +7338,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "平遥新闻综合",
-      "name": "平遥新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7410,11 +7410,6 @@
       "providerId": "vbskycn",
       "tvgId": "德惠综合",
       "name": "德惠综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "怀仁综合",
-      "name": "怀仁综合"
     },
     {
       "providerId": "vbskycn",
@@ -7549,7 +7544,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-15 00:30:33"
+      "name": "2026-11-15 06:26:00"
     },
     {
       "providerId": "vbskycn",
@@ -7643,16 +7638,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "武进新闻",
-      "name": "武进新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "武进生活",
-      "name": "武进生活"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7690,11 +7675,6 @@
       "providerId": "vbskycn",
       "tvgId": "汶川新闻综合",
       "name": "汶川新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "汾西综合",
-      "name": "汾西综合"
     },
     {
       "providerId": "vbskycn",
@@ -7788,8 +7768,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江民生休闲",
-      "name": "浙江民生休闲"
+      "tvgId": "浙江民生",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -7805,11 +7785,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江经济",
       "name": "浙江经济"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江经济生活",
-      "name": "浙江经济生活"
     },
     {
       "providerId": "vbskycn",
@@ -8310,6 +8285,11 @@
       "providerId": "vbskycn",
       "tvgId": "鉴证实录",
       "name": "鉴证实录"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "铜梁综合",
+      "name": "铜梁综合"
     },
     {
       "providerId": "vbskycn",
@@ -13244,7 +13224,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-3f45799c]"
+      "name": "[session-6f45a59c]"
     },
     {
       "providerId": "zwc_alive",
