@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T10:36:16.442961+00:00",
+  "generatedAt": "2026-11-14T18:13:26.972381+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -353,6 +353,11 @@
     },
     {
       "providerId": "chinaiptv",
+      "tvgId": "CGTN",
+      "name": "CGNT 记录频道"
+    },
+    {
+      "providerId": "chinaiptv",
       "tvgId": "CGTN-News",
       "name": "CGNT 新闻频道"
     },
@@ -540,11 +545,6 @@
       "providerId": "chinaiptv",
       "tvgId": "民视新闻HD",
       "name": "民视新闻HD"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "海峡卫视",
-      "name": "海峡卫视"
     },
     {
       "providerId": "chinaiptv",
@@ -6653,6 +6653,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -7538,13 +7543,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀电视台",
+      "tvgId": "普陀新闻综合",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-14 18:30:07"
+      "name": "2026-11-15 00:30:33"
     },
     {
       "providerId": "vbskycn",
@@ -7783,11 +7788,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江民生休闲",
       "name": "浙江民生休闲"
     },
@@ -7930,6 +7930,11 @@
       "providerId": "vbskycn",
       "tvgId": "珲春新闻",
       "name": "珲春新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "璧山综合",
+      "name": "璧山综合"
     },
     {
       "providerId": "vbskycn",
@@ -8248,13 +8253,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "邢台生活",
-      "name": "邢台生活"
+      "tvgId": "邢台新闻综合",
+      "name": "邢台综合"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "邢台综合",
-      "name": "邢台综合"
+      "tvgId": "邢台生活",
+      "name": "邢台生活"
     },
     {
       "providerId": "vbskycn",
@@ -8305,11 +8310,6 @@
       "providerId": "vbskycn",
       "tvgId": "鉴证实录",
       "name": "鉴证实录"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "铜梁综合",
-      "name": "铜梁综合"
     },
     {
       "providerId": "vbskycn",
