@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T22:32:33.944771+00:00",
+  "generatedAt": "2026-11-15T06:43:39.890259+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -355,11 +355,6 @@
       "providerId": "chinaiptv",
       "tvgId": "CGTN",
       "name": "CGNT 记录频道"
-    },
-    {
-      "providerId": "chinaiptv",
-      "tvgId": "CGTN-News",
-      "name": "CGNT 新闻频道"
     },
     {
       "providerId": "chinaiptv",
@@ -6524,11 +6519,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6650,16 +6640,6 @@
       "providerId": "vbskycn",
       "tvgId": "1996年春晚",
       "name": "1996年春晚"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江经济生活"
     },
     {
       "providerId": "vbskycn",
@@ -7338,6 +7318,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "平遥新闻综合",
+      "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7410,6 +7395,11 @@
       "providerId": "vbskycn",
       "tvgId": "德惠综合",
       "name": "德惠综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "怀仁综合",
+      "name": "怀仁综合"
     },
     {
       "providerId": "vbskycn",
@@ -7538,13 +7528,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀新闻综合",
+      "tvgId": "普陀电视台",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-15 06:26:00"
+      "name": "2026-11-15 12:27:50"
     },
     {
       "providerId": "vbskycn",
@@ -7638,6 +7628,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "武进新闻",
+      "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7675,6 +7675,11 @@
       "providerId": "vbskycn",
       "tvgId": "汶川新闻综合",
       "name": "汶川新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "汾西综合",
+      "name": "汾西综合"
     },
     {
       "providerId": "vbskycn",
@@ -7743,6 +7748,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江少儿",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
     },
@@ -7773,6 +7783,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江生活",
       "name": "浙江生活"
     },
@@ -7788,6 +7803,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江经济生活",
+      "name": "浙江经济生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江经视",
       "name": "浙江经视"
     },
@@ -7798,7 +7818,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江",
+      "tvgId": "浙江钱江都市",
       "name": "浙江钱江"
     },
     {
