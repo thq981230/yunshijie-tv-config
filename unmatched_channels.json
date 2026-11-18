@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T13:25:05.825628+00:00",
+  "generatedAt": "2026-11-18T20:39:03.111844+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6504,12 +6504,12 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江钱江频道"
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "电影丧尸片"
+      "name": "浙江钱江频道"
     },
     {
       "providerId": "vbskycn",
@@ -6534,27 +6534,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "电影周星星"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "电影喜剧专场"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
-      "name": "电影嫣然影厅"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
-      "name": "电影战争片"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
-      "name": "电影搞笑喜剧"
     },
     {
       "providerId": "vbskycn",
@@ -6625,6 +6605,16 @@
       "providerId": "vbskycn",
       "tvgId": "1996年春晚",
       "name": "1996年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江教科影视"
     },
     {
       "providerId": "vbskycn",
@@ -6743,11 +6733,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "NewTV精品体育",
-      "name": "精品体育"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "izbds",
       "name": "支持作者"
     },
@@ -6765,6 +6750,11 @@
       "providerId": "vbskycn",
       "tvgId": "万州三峡移民",
       "name": "万州三峡移民"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "万荣综合",
+      "name": "万荣综合"
     },
     {
       "providerId": "vbskycn",
@@ -7293,6 +7283,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "平遥新闻综合",
+      "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7365,6 +7360,11 @@
       "providerId": "vbskycn",
       "tvgId": "德惠综合",
       "name": "德惠综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "怀仁综合",
+      "name": "怀仁综合"
     },
     {
       "providerId": "vbskycn",
@@ -7499,7 +7499,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-18 18:33:49"
+      "name": "2026-11-19 00:25:08"
     },
     {
       "providerId": "vbskycn",
@@ -7713,18 +7713,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江少儿",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "浙江教科",
       "name": "浙江教科"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江教科影视",
-      "name": "浙江教科影视"
     },
     {
       "providerId": "vbskycn",
@@ -7745,11 +7735,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江民生",
       "name": "浙江民生"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生休闲",
-      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -7998,11 +7983,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "纬来体育台",
-      "name": "纬来体育"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "绍兴公共",
       "name": "绍兴公共"
     },
@@ -8175,11 +8155,6 @@
       "providerId": "vbskycn",
       "tvgId": "贺岁电影",
       "name": "贺岁电影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "足球",
-      "name": "足球频道"
     },
     {
       "providerId": "vbskycn",
