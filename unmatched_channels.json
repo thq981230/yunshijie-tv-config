@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T16:09:38.229932+00:00",
+  "generatedAt": "2026-11-18T00:59:49.748337+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6504,6 +6504,11 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
+      "name": "浙江民生休闲"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6633,6 +6638,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6708,7 +6718,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "5",
+      "tvgId": "3",
       "name": "浙江国际"
     },
     {
@@ -7313,11 +7323,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "平遥新闻综合",
-      "name": "平遥新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "广元公共",
       "name": "广元公共"
     },
@@ -7513,23 +7518,18 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "易门综合",
-      "name": "易门综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "晋江电视台",
       "name": "晋江电视台"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀电视台",
+      "tvgId": "普陀新闻综合",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-17 18:27:59"
+      "name": "2026-11-18 06:31:06"
     },
     {
       "providerId": "vbskycn",
@@ -7620,11 +7620,6 @@
       "providerId": "vbskycn",
       "tvgId": "武汉新闻综合",
       "name": "武汉一台新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "武进新闻",
-      "name": "武进新闻"
     },
     {
       "providerId": "vbskycn",
@@ -7760,16 +7755,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江新闻频道",
       "name": "浙江新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江民生休闲",
-      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -13249,7 +13234,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-d64591a6]"
+      "name": "[session-1d49ffa1]"
     },
     {
       "providerId": "zwc_alive",
