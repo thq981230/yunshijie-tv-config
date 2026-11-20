@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T20:44:16.579960+00:00",
+  "generatedAt": "2026-11-20T02:22:47.652873+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6504,16 +6504,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江教科影视"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6688,6 +6678,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "3",
+      "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "AMC音乐",
       "name": "AMC音乐"
     },
@@ -6715,6 +6710,11 @@
       "providerId": "vbskycn",
       "tvgId": "CGTN阿语",
       "name": "CGTN阿语"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "CHC电影",
+      "name": "CHC电影"
     },
     {
       "providerId": "vbskycn",
@@ -6803,16 +6803,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "云南娱乐",
-      "name": "云南娱乐"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "云南都市",
-      "name": "云南都市"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "云和新闻综合",
       "name": "云和新闻综合"
     },
@@ -6830,11 +6820,6 @@
       "providerId": "vbskycn",
       "tvgId": "亳州农村",
       "name": "亳州农村"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "人间卫视",
-      "name": "人间卫视"
     },
     {
       "providerId": "vbskycn",
@@ -6895,6 +6880,16 @@
       "providerId": "vbskycn",
       "tvgId": "兵器科技",
       "name": "兵器科技"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵团五师双河影",
+      "name": "兵团五师双河影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵团五师双河新闻综合",
+      "name": "兵团五师双河新闻综合"
     },
     {
       "providerId": "vbskycn",
@@ -7343,13 +7338,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀新闻综合",
+      "tvgId": "普陀电视台",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-20 02:36:46"
+      "name": "2026-11-20 06:34:27"
     },
     {
       "providerId": "vbskycn",
@@ -7415,16 +7410,6 @@
       "providerId": "vbskycn",
       "tvgId": "武侠电影",
       "name": "武侠电影"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "武进新闻",
-      "name": "武进新闻"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "武进生活",
-      "name": "武进生活"
     },
     {
       "providerId": "vbskycn",
@@ -7543,6 +7528,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江教科影视",
+      "name": "浙江教科影视"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江教育",
       "name": "浙江教育"
     },
@@ -7558,8 +7548,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江民生",
-      "name": "浙江民生"
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -7588,7 +7578,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江",
+      "tvgId": "浙江钱江都市",
       "name": "浙江钱江"
     },
     {
@@ -7858,11 +7848,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "西安新闻",
-      "name": "西安新闻"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "西安都市",
       "name": "西安都市"
     },
@@ -8013,23 +7998,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "陕西秦腔",
-      "name": "陕西秦腔"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "陕西都市青春",
-      "name": "陕西都市青春"
+      "tvgId": "陕西银龄",
+      "name": "陕西银龄"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "雅安新闻综合",
       "name": "雅安新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "青川综合",
-      "name": "青川综合"
     },
     {
       "providerId": "vbskycn",
