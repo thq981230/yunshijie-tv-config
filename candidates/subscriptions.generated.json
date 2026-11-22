@@ -6887,7 +6887,6 @@
           "sourceProviders": [
             "fanmingming",
             "zwc_alive",
-            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6960,7 +6959,8 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
+            "guovin",
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -8622,24 +8622,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin"
-          ],
-          "matchMethod": "normalized-name",
-          "matchConfidence": 1.0,
-          "headers": {}
-        },
-        {
-          "id": "sub-vbskycn-sat118-9ea6508d54",
-          "channelId": "sat118",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8",
-          "priority": 25,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "vbskycn",
-          "sourceProviders": [
+            "guovin",
             "vbskycn"
           ],
           "matchMethod": "normalized-name",
@@ -9403,11 +9386,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-521f06d604",
+          "id": "sub-chinaiptv-sat122-23baef4829",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "https://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611220906/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "https://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611221906/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
