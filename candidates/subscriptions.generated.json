@@ -1701,24 +1701,6 @@
       "channelId": "cctv6",
       "sources": [
         {
-          "id": "sub-chinaiptv-cctv6-f27197fc19",
-          "channelId": "cctv6",
-          "protocol": "HLS",
-          "type": "STATIC",
-          "url": "https://piccpndks.v.kcdnvip.com/audio/cctv6_2/index.m3u8",
-          "priority": 10,
-          "quality": "AUTO",
-          "enabled": true,
-          "sourceClass": "COMMUNITY_SOURCE",
-          "providerId": "chinaiptv",
-          "sourceProviders": [
-            "chinaiptv"
-          ],
-          "matchMethod": "alias",
-          "matchConfidence": 0.98,
-          "headers": {}
-        },
-        {
           "id": "sub-burningc4-cctv6-4f51d7fd35",
           "channelId": "cctv6",
           "protocol": "HLS",
@@ -3657,7 +3639,7 @@
           "sourceProviders": [
             "vbskycn"
           ],
-          "matchMethod": "normalized-name",
+          "matchMethod": "tvg-id",
           "matchConfidence": 1.0,
           "headers": {}
         },
@@ -6905,6 +6887,7 @@
           "sourceProviders": [
             "fanmingming",
             "zwc_alive",
+            "vbskycn",
             "suxuang"
           ],
           "matchMethod": "normalized-name",
@@ -6977,8 +6960,7 @@
           "sourceClass": "COMMUNITY_SOURCE",
           "providerId": "guovin",
           "sourceProviders": [
-            "guovin",
-            "vbskycn"
+            "guovin"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
@@ -9421,11 +9403,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-f4e4dc4905",
+          "id": "sub-chinaiptv-sat122-521f06d604",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "https://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611220306/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "https://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611220906/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
@@ -10938,6 +10920,24 @@
           "providerId": "guovin",
           "sourceProviders": [
             "guovin"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
+          "id": "sub-vbskycn-sat131-6dde8353c9",
+          "channelId": "sat131",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "http://218.84.12.186:8001/hls/main/playlist.m3u8?zxinjd;http://218.84.12.186:8001/hls/main/playlist.m3u8zxinjd",
+          "priority": 25,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "vbskycn",
+          "sourceProviders": [
+            "vbskycn"
           ],
           "matchMethod": "normalized-name",
           "matchConfidence": 1.0,
