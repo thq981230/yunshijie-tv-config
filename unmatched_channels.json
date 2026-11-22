@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T11:36:15.635201+00:00",
+  "generatedAt": "2026-11-22T19:47:18.711902+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6504,12 +6504,22 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
+      "name": "浙江民生休闲"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "1",
       "name": "电影丧尸片"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1",
+      "name": "电影八点档"
     },
     {
       "providerId": "vbskycn",
@@ -6608,11 +6618,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "2",
-      "name": "浙江少儿"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6679,7 +6684,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "3",
-      "name": "浙江民生"
+      "name": "浙江国际"
     },
     {
       "providerId": "vbskycn",
@@ -6705,6 +6710,11 @@
       "providerId": "vbskycn",
       "tvgId": "CGTN阿语",
       "name": "CGTN阿语"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "CHC电影",
+      "name": "CHC电影"
     },
     {
       "providerId": "vbskycn",
@@ -6988,11 +6998,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "哈尔滨都市咨询",
-      "name": "哈尔滨都市咨询"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "嘉兴新闻综合",
       "name": "嘉兴新闻综合"
     },
@@ -7060,6 +7065,11 @@
       "providerId": "vbskycn",
       "tvgId": "安多卫视",
       "name": "安多卫视"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "安徽导视",
+      "name": "安徽导视"
     },
     {
       "providerId": "vbskycn",
@@ -7293,13 +7303,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "普陀新闻综合",
+      "tvgId": "普陀电视台",
       "name": "普陀电视台"
     },
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-22 16:09:39"
+      "name": "2026-11-23 00:09:11"
     },
     {
       "providerId": "vbskycn",
@@ -7373,11 +7383,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "武进生活",
-      "name": "武进生活"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "永嘉新闻综合",
       "name": "永嘉新闻综合"
     },
@@ -7418,13 +7423,13 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "汾西综合",
-      "name": "汾西综合"
+      "tvgId": "沈腾电影",
+      "name": "沈腾电影"
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "沈腾电影",
-      "name": "沈腾电影"
+      "tvgId": "沐川综合",
+      "name": "沐川综合"
     },
     {
       "providerId": "vbskycn",
@@ -7473,8 +7478,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江国际",
-      "name": "浙江国际"
+      "tvgId": "浙江少儿",
+      "name": "浙江少儿"
     },
     {
       "providerId": "vbskycn",
@@ -7503,8 +7508,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江民生休闲",
-      "name": "浙江民生休闲"
+      "tvgId": "浙江民生",
+      "name": "浙江民生"
     },
     {
       "providerId": "vbskycn",
@@ -7570,6 +7575,11 @@
       "providerId": "vbskycn",
       "tvgId": "湖州新闻综合",
       "name": "湖州新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "滦平新闻",
+      "name": "滦平新闻"
     },
     {
       "providerId": "vbskycn",
@@ -7753,6 +7763,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "营山电视台",
+      "name": "营山电视台"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "萧山新闻综合",
       "name": "萧山新闻综合"
     },
@@ -7775,11 +7790,6 @@
       "providerId": "vbskycn",
       "tvgId": "西宁新闻综合",
       "name": "西宁新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "西安新闻",
-      "name": "西安新闻"
     },
     {
       "providerId": "vbskycn",
@@ -7903,11 +7913,6 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "长子综合",
-      "name": "长子综合"
-    },
-    {
-      "providerId": "vbskycn",
       "tvgId": "长白山电视台",
       "name": "长白山电视台"
     },
@@ -7920,6 +7925,11 @@
       "providerId": "vbskycn",
       "tvgId": "陀枪师姐",
       "name": "陀枪师姐"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "陕西都市青春",
+      "name": "陕西都市青春"
     },
     {
       "providerId": "vbskycn",
