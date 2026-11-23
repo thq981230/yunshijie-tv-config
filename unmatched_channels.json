@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T19:47:18.711902+00:00",
+  "generatedAt": "2026-11-23T01:47:43.981333+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -6504,11 +6504,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6618,6 +6613,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "2",
+      "name": "浙江经济生活"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2000年春晚",
       "name": "2000年春晚"
     },
@@ -6685,6 +6685,11 @@
       "providerId": "vbskycn",
       "tvgId": "3",
       "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "AMC音乐",
+      "name": "AMC音乐"
     },
     {
       "providerId": "vbskycn",
@@ -6803,6 +6808,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "云南娱乐",
+      "name": "云南娱乐"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "云南都市",
+      "name": "云南都市"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "云和新闻综合",
       "name": "云和新闻综合"
     },
@@ -6823,8 +6838,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "任丘综合",
-      "name": "任丘综合"
+      "tvgId": "人间卫视",
+      "name": "人间卫视"
     },
     {
       "providerId": "vbskycn",
@@ -6875,6 +6890,11 @@
       "providerId": "vbskycn",
       "tvgId": "兴隆综合",
       "name": "兴隆综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "兵器科技",
+      "name": "兵器科技"
     },
     {
       "providerId": "vbskycn",
@@ -6993,8 +7013,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "哈尔滨资讯",
-      "name": "哈尔滨资讯"
+      "tvgId": "哈尔滨都市咨询",
+      "name": "哈尔滨都市咨询"
     },
     {
       "providerId": "vbskycn",
@@ -7040,11 +7060,6 @@
       "providerId": "vbskycn",
       "tvgId": "夹江新闻综合",
       "name": "夹江新闻综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "奎屯哈萨克语",
-      "name": "奎屯哈萨克语"
     },
     {
       "providerId": "vbskycn",
@@ -7208,6 +7223,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "怀旧剧场",
+      "name": "CCTV怀旧剧场"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "怪兽电影",
       "name": "怪兽电影"
     },
@@ -7230,6 +7250,11 @@
       "providerId": "vbskycn",
       "tvgId": "敦化一套",
       "name": "敦化一套"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "文化精品",
+      "name": "CCTV文化精品"
     },
     {
       "providerId": "vbskycn",
@@ -7309,7 +7334,7 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-23 00:09:11"
+      "name": "2026-11-23 08:07:47"
     },
     {
       "providerId": "vbskycn",
@@ -7320,6 +7345,11 @@
       "providerId": "vbskycn",
       "tvgId": "李连杰电影",
       "name": "李连杰电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "来宾综合",
+      "name": "来宾综合"
     },
     {
       "providerId": "vbskycn",
@@ -7380,6 +7410,11 @@
       "providerId": "vbskycn",
       "tvgId": "武进新闻",
       "name": "武进新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "武进生活",
+      "name": "武进生活"
     },
     {
       "providerId": "vbskycn",
@@ -7513,6 +7548,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江留学",
       "name": "浙江留学"
     },
@@ -7520,11 +7560,6 @@
       "providerId": "vbskycn",
       "tvgId": "浙江经济",
       "name": "浙江经济"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "浙江经济生活",
-      "name": "浙江经济生活"
     },
     {
       "providerId": "vbskycn",
@@ -7538,7 +7573,7 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "浙江钱江",
+      "tvgId": "浙江钱江都市",
       "name": "浙江钱江"
     },
     {
@@ -7673,6 +7708,16 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "福建公共",
+      "name": "福建公共"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "福建旅游",
+      "name": "福建旅游"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "笑傲江湖",
       "name": "笑傲江湖"
     },
@@ -7680,6 +7725,11 @@
       "providerId": "vbskycn",
       "tvgId": "笑看风云",
       "name": "笑看风云"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "第一剧场",
+      "name": "CCTV第一剧场"
     },
     {
       "providerId": "vbskycn",
@@ -7790,6 +7840,16 @@
       "providerId": "vbskycn",
       "tvgId": "西宁新闻综合",
       "name": "西宁新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "西安新闻",
+      "name": "西安新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "西安都市",
+      "name": "西安都市"
     },
     {
       "providerId": "vbskycn",
@@ -7913,6 +7973,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "长子综合",
+      "name": "长子综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "长白山电视台",
       "name": "长白山电视台"
     },
@@ -7928,6 +7993,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "陕西新闻咨询",
+      "name": "陕西新闻咨询"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "陕西都市青春",
       "name": "陕西都市青春"
     },
@@ -7938,6 +8008,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "青川综合",
+      "name": "青川综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "青田电视台",
       "name": "青田电视台"
     },
@@ -7945,6 +8020,26 @@
       "providerId": "vbskycn",
       "tvgId": "靖宇",
       "name": "靖宇"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "韩国EBS少儿",
+      "name": "韩国EBS少儿"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "音乐欣赏",
+      "name": "音乐欣赏"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "风云剧场",
+      "name": "风云剧场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "风云音乐",
+      "name": "风云音乐"
     },
     {
       "providerId": "vbskycn",
@@ -12739,7 +12834,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-7f459f90]"
+      "name": "[session-e84a84bd]"
     },
     {
       "providerId": "zwc_alive",
