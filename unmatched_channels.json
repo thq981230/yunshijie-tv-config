@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T12:38:25.966907+00:00",
+  "generatedAt": "2026-11-27T23:30:30.588519+00:00",
   "items": [
     {
       "providerId": "aptv",
@@ -350,6 +350,11 @@
       "providerId": "chinaiptv",
       "tvgId": "Bloomberg TV Asia",
       "name": "Bloomberg TV Asia"
+    },
+    {
+      "providerId": "chinaiptv",
+      "tvgId": "CGTN-News",
+      "name": "CGNT 新闻频道"
     },
     {
       "providerId": "chinaiptv",
@@ -6524,11 +6529,6 @@
     {
       "providerId": "vbskycn",
       "tvgId": "1",
-      "name": "浙江民生休闲"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "1",
       "name": "浙江钱江频道"
     },
     {
@@ -6618,6 +6618,31 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "1993年春晚",
+      "name": "1993年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1994年春晚",
+      "name": "1994年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1995年春晚",
+      "name": "1995年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "1996年春晚",
+      "name": "1996年春晚"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "2000年春晚",
+      "name": "2000年春晚"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "2001年春晚",
       "name": "2001年春晚"
     },
@@ -6678,8 +6703,8 @@
     },
     {
       "providerId": "vbskycn",
-      "tvgId": "5",
-      "name": "浙江国际"
+      "tvgId": "AMC音乐",
+      "name": "AMC音乐"
     },
     {
       "providerId": "vbskycn",
@@ -6705,6 +6730,11 @@
       "providerId": "vbskycn",
       "tvgId": "CGTN阿语",
       "name": "CGTN阿语"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "CHC电影",
+      "name": "CHC电影"
     },
     {
       "providerId": "vbskycn",
@@ -7063,6 +7093,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "奎屯哈萨克语",
+      "name": "奎屯哈萨克语"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "奎屯汉语",
       "name": "奎屯汉语"
     },
@@ -7075,6 +7110,11 @@
       "providerId": "vbskycn",
       "tvgId": "宇宙科幻合集",
       "name": "宇宙科幻合集"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "安多卫视",
+      "name": "安多卫视"
     },
     {
       "providerId": "vbskycn",
@@ -7130,6 +7170,11 @@
       "providerId": "vbskycn",
       "tvgId": "平遥新闻综合",
       "name": "平遥新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "广元公共",
+      "name": "广元公共"
     },
     {
       "providerId": "vbskycn",
@@ -7248,6 +7293,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "文山州新闻综合",
+      "name": "文山州新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "文成新闻综合",
       "name": "文成新闻综合"
     },
@@ -7270,6 +7320,11 @@
       "providerId": "vbskycn",
       "tvgId": "新沂新闻",
       "name": "新沂新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "新沂生活",
+      "name": "新沂生活"
     },
     {
       "providerId": "vbskycn",
@@ -7309,7 +7364,12 @@
     {
       "providerId": "vbskycn",
       "tvgId": "更新时间",
-      "name": "2026-11-27 20:11:39"
+      "name": "2026-11-28 04:11:23"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "朝天综合",
+      "name": "朝天综合"
     },
     {
       "providerId": "vbskycn",
@@ -7320,6 +7380,11 @@
       "providerId": "vbskycn",
       "tvgId": "李连杰电影",
       "name": "李连杰电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "来宾综合",
+      "name": "来宾综合"
     },
     {
       "providerId": "vbskycn",
@@ -7428,6 +7493,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "沐川综合",
+      "name": "沐川综合"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "河北农民",
       "name": "河北农民"
     },
@@ -7473,6 +7543,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "浙江国际",
+      "name": "浙江国际"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "浙江少儿",
       "name": "浙江少儿"
     },
@@ -7505,6 +7580,11 @@
       "providerId": "vbskycn",
       "tvgId": "浙江民生",
       "name": "浙江民生"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "浙江民生休闲",
+      "name": "浙江民生休闲"
     },
     {
       "providerId": "vbskycn",
@@ -7573,6 +7653,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "滦平新闻",
+      "name": "滦平新闻"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "灌篮高手",
       "name": "灌篮高手"
     },
@@ -7595,6 +7680,11 @@
       "providerId": "vbskycn",
       "tvgId": "王晶电影",
       "name": "王晶电影"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "玛纳斯",
+      "name": "玛纳斯"
     },
     {
       "providerId": "vbskycn",
@@ -7625,11 +7715,6 @@
       "providerId": "vbskycn",
       "tvgId": "甘孜综合",
       "name": "甘孜综合"
-    },
-    {
-      "providerId": "vbskycn",
-      "tvgId": "番禺综合",
-      "name": "番禺综合"
     },
     {
       "providerId": "vbskycn",
@@ -7680,6 +7765,16 @@
       "providerId": "vbskycn",
       "tvgId": "第一剧场",
       "name": "CCTV第一剧场"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "绍兴公共",
+      "name": "绍兴公共"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "绍兴公共",
+      "name": "绍兴电视台公共"
     },
     {
       "providerId": "vbskycn",
@@ -7753,6 +7848,11 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "营山电视台",
+      "name": "营山电视台"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "萧山新闻综合",
       "name": "萧山新闻综合"
     },
@@ -7770,6 +7870,21 @@
       "providerId": "vbskycn",
       "tvgId": "衢江新闻综合",
       "name": "衢江新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "西宁新闻综合",
+      "name": "西宁新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "西安新闻",
+      "name": "西安新闻"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "西安都市",
+      "name": "西安都市"
     },
     {
       "providerId": "vbskycn",
@@ -7830,6 +7945,11 @@
       "providerId": "vbskycn",
       "tvgId": "遂昌综合",
       "name": "遂昌综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "邢台新闻综合",
+      "name": "邢台综合"
     },
     {
       "providerId": "vbskycn",
@@ -7913,8 +8033,28 @@
     },
     {
       "providerId": "vbskycn",
+      "tvgId": "陕西新闻咨询",
+      "name": "陕西新闻咨询"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "陕西秦腔",
+      "name": "陕西秦腔"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "陕西银龄",
+      "name": "陕西银龄"
+    },
+    {
+      "providerId": "vbskycn",
       "tvgId": "雅安新闻综合",
       "name": "雅安新闻综合"
+    },
+    {
+      "providerId": "vbskycn",
+      "tvgId": "青川综合",
+      "name": "青川综合"
     },
     {
       "providerId": "vbskycn",
@@ -12744,7 +12884,7 @@
     {
       "providerId": "zwc_alive",
       "tvgId": "",
-      "name": "[session-bf44cba4]"
+      "name": "[session-15428abc]"
     },
     {
       "providerId": "zwc_alive",
