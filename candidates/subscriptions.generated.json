@@ -4961,6 +4961,24 @@
       "channelId": "sat102",
       "sources": [
         {
+          "id": "sub-chinaiptv-sat102-e69b5de73a",
+          "channelId": "sat102",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/tianjin_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
+        {
           "id": "sub-burningc4-sat102-3ae69e3f27",
           "channelId": "sat102",
           "protocol": "HLS",
@@ -5728,6 +5746,24 @@
     {
       "channelId": "sat106",
       "sources": [
+        {
+          "id": "sub-chinaiptv-sat106-ac1cc0fe36",
+          "channelId": "sat106",
+          "protocol": "HLS",
+          "type": "STATIC",
+          "url": "https://piccpndks.v.kcdnvip.com/audio/liaoning_2/index.m3u8",
+          "priority": 10,
+          "quality": "AUTO",
+          "enabled": true,
+          "sourceClass": "COMMUNITY_SOURCE",
+          "providerId": "chinaiptv",
+          "sourceProviders": [
+            "chinaiptv"
+          ],
+          "matchMethod": "normalized-name",
+          "matchConfidence": 1.0,
+          "headers": {}
+        },
         {
           "id": "sub-burningc4-sat106-1ce18ab88d",
           "channelId": "sat106",
@@ -9403,11 +9439,11 @@
       "channelId": "sat122",
       "sources": [
         {
-          "id": "sub-chinaiptv-sat122-b017253b55",
+          "id": "sub-chinaiptv-sat122-711f6b4a66",
           "channelId": "sat122",
           "protocol": "HLS",
           "type": "STATIC",
-          "url": "https://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611280706/app_2/_definst_/ls_2.stream/chunklist.m3u8",
+          "url": "https://p2.ioioz.com/videojs.php?id=https://sjlivecdn9.cbg.cn/202611281506/app_2/_definst_/ls_2.stream/chunklist.m3u8",
           "priority": 10,
           "quality": "AUTO",
           "enabled": true,
